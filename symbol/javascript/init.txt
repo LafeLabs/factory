@@ -68,6 +68,7 @@ for(var index = 0;index < softkeys.length;index++){
             doTheThing(0300);
             newtd.id = "key" + keyarray[keyindex];
             
+            ctx.lineWidth = 2;
             if(parseInt(keyarray[keyindex],8) > 01000){
                 doTheThing(parseInt(keyarray[keyindex],8));
             }

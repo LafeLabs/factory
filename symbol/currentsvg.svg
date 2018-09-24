@@ -15,19 +15,9 @@
     "y0": 399,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "0341,0333,0341,0333,0341,0333,0341,0333,0341,0333,0341,0333,0341,0333,0341,0333,0221,0341,0333,",
+    "glyph": "",
     "table": []
 }
 </json>
 -->
-    <circle cx="250" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="350" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="450" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="550" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="650" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="750" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="850" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <circle cx="950" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
-    <line x1="1050" y1="250" x2="1050" y2="150" style="stroke:black;stroke-width:4" />
-	<path d = "M1050 150 L1047 155 L1053 155 L1050 150 Z" stroke = "black" stroke-width = "4" fill = "black" />    <circle cx="1050" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
 </svg>
