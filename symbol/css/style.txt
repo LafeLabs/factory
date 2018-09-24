@@ -42,8 +42,11 @@ body{
 #keytable{
     position:absolute;
     width:100%;
-    bottom:0px;
+    bottom:150px;
     z-index:2;
+}
+#keytable td{
+    text-align:center;
 }
 #mainCanvas{
     top:0px;
@@ -55,5 +58,8 @@ body{
     position:absolute;
     left:0px;
     right:0px;
+    bottom:0px;
     overflow:scroll;
+    height:120px;
 }
+

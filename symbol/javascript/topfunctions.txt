@@ -47,12 +47,14 @@ function drawGlyph(localString){
 function spellGlyph(localString){
     var tempArray = localString.split(',');
     for(var index = 0;index < tempArray.length;index++){
-        ctx.lineWidth = 2;
+        ctx.lineWidth = 4;
         // ctx.strokeStyle="black";
-        if(x > 0.94*innerWidth){
-            y+= 1.1*side;
-            x = side;
-        }
+
+///        if(x > 0.94*innerWidth){
+   //         y+= 1.1*side;
+     //       x = side;
+       // }
+
         doTheThing(parseInt(tempArray[index],8) + 01000);
         if(parseInt(tempArray[index],8) > 01000){
             doTheThing(01060);

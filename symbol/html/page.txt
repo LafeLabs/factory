@@ -1,5 +1,8 @@
 <table id = "linkTable">
     <tr><td>
+        <a href = "editor.php">EDIT CODE</a>
+    </td></tr>
+    <tr><td>
         <a href = "svgfeed.php">FEED</a>
     </td></tr>
     <tr><td>

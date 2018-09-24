@@ -13,13 +13,18 @@ ctx.clearRect(0,0,innerWidth,innerHeight);
 doTheThing(0300);
 drawGlyph(currentGlyph);
 
-if(editMode){
-    doTheThing(0300);
-    side = 25;
-    x = 150;
-    y = innerHeight - 100;
-    spellGlyph(currentGlyph);
-}
+
+ctx = document.getElementById("spellCanvas").getContext("2d")
+document.getElementById("spellCanvas").width = (currentGlyph.length/4)*90 + 80;
+document.getElementById("spellCanvas").height = 80;
+ctx.clearRect(0,0,document.getElementById("spellCanvas").width,document.getElementById("spellCanvas").height);
+
+
+doTheThing(0300);
+side = 70;
+x = 5;
+y = 75;
+spellGlyph(currentGlyph);
 
 
     var glyphArray = currentGlyph.split(",");
