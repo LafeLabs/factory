@@ -1,0 +1,59 @@
+body{
+    overflow:hidden;
+}
+#mainCanvas{
+    position:absolute;
+    z-index:0;
+    left:0px;
+    top:0px;
+}
+.button{
+    padding:0.5em 0.5em 0.5em 0.5em;
+    font-family:courier;
+    cursor:pointer;
+    border:solid;
+    border-radius:0.5em;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
+}
+.softkey{
+    width:55px;
+    height:55px;
+    border-radius:5px;
+    border:solid;
+    padding:5px 5px 5px 5px;
+}
+#linkTable{
+        position:absolute;
+        z-index:2;
+        left:0px;
+        top:0px;
+}
+#savesvg{
+        position:absolute;
+        z-index:2;
+        right:0px;
+        top:0px;
+}
+#keytable{
+    position:absolute;
+    width:100%;
+    bottom:0px;
+    z-index:2;
+}
+#mainCanvas{
+    top:0px;
+    left:0px;
+    position:absolute;
+    z-index:0;
+}
+#spellBox{
+    position:absolute;
+    left:0px;
+    right:0px;
+    overflow:scroll;
+}

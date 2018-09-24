@@ -1,0 +1,24 @@
+<table id = "linkTable">
+    <tr><td>
+        <a href = "svgfeed.php">FEED</a>
+    </td></tr>
+    <tr><td>
+        <a href = "stylejsoneditor.php">STYLE</a>
+    </td></tr>
+    <tr><td>
+        <a href = "shapetableeditor.php">SHAPES</a>
+    </td></tr>
+    <tr><td><input id = "actionInput"/></td></tr>
+</table>
+<div class = "button" id = "savesvg">SAVE</div>
+ 
+
+<canvas id="invisibleCanvas" style="display:none"></canvas>
+<canvas id="mainCanvas"></canvas>
+
+<div id = "spellBox">
+    <canvas id="spellCanvas"></canvas>
+</div>
+
+<table id = "keytable">
+</table>

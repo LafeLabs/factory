@@ -1,0 +1,44 @@
+[
+    {
+        "url": "json/set.txt",
+        "latlon": "38.88947, -77.03526",
+        "widthfeet": 1000,
+        "fontfeet": 100,
+        "angle": 0
+    },
+    {
+        "url": "https://pastebin.com/raw/e6myFm6g",
+        "latlon": "38.889032, -77.050523",
+        "widthfeet": 1000,
+        "fontfeet": 100,
+        "angle": 0
+    },
+    {
+        "url": "https://pastebin.com/raw/mRC8qeBY",
+        "latlon": "38.897750, -77.036216",
+        "widthfeet": 1000,
+        "fontfeet": 100,
+        "angle": 45
+    },
+    {
+        "url": "https://pastebin.com/raw/ACFLJnZ5",
+        "latlon": "38.889873, -77.008294",
+        "widthfeet": 1000,
+        "fontfeet": 100,
+        "angle": 0
+    },
+    {
+        "widthfeet": 7673.458595683003,
+        "angle": -0.005007535565493808,
+        "latlon": "38.91031854450021,-77.0373190195208",
+        "fontfeet": 383.67292978415014,
+        "url": "../feed/mapalignfeed/html/html1537141803.txt"
+    },
+    {
+        "widthfeet": 7476.284694331738,
+        "angle": 0.006842352332332324,
+        "latlon": "38.88237605254115,-77.06571528423407",
+        "fontfeet": 373.8142347165869,
+        "url": "../feed/mapalignfeed/html/html1537142005.txt"
+    }
+]

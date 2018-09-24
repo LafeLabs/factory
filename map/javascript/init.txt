@@ -1,0 +1,49 @@
+
+viewdata = JSON.parse(document.getElementById("viewdata").innerHTML);
+x0 = 0.5*innerWidth;
+y0 = 0.5*innerHeight;
+
+feetperpixel = viewdata.feetperpixel;
+
+setdata = JSON.parse(document.getElementById("setdata").innerHTML);
+mapdata = JSON.parse(document.getElementById("mapdata").innerHTML);
+divdata = document.getElementById("contentdata").getElementsByTagName("datum");
+
+mainMap = document.getElementById("mainMap");
+mainMap.src = mapdata.imgurl;
+mainMap.style.width = (mapdata.widthfeet/feetperpixel).toString() + "px";
+mainMap.style.fontSize = (mapdata.fontfeet/feetperpixel).toString() + "px";
+
+r = finddistance(viewdata.latlon,mapdata.latlon);
+theta = findangle(viewdata.latlon,mapdata.latlon);
+x = r*Math.cos(theta - 0.5*Math.PI);
+y = r*Math.sin(theta - 0.5*Math.PI + viewdata.angle*Math.PI/180);
+
+mainMap.style.left = (x0 + x/feetperpixel).toString() + "px";
+mainMap.style.top = (y0 + y/feetperpixel).toString() + "px";
+mainMap.style.transform = "rotate(" + (viewdata.angle + mapdata.angle).toString() + "deg)";
+    
+
+for(var index = 0;index < divdata.length;index++){
+    var newdiv = document.createElement("DIV");
+    if(setdata[index].url != undefined){
+        newdiv.innerHTML = divdata[index].innerHTML;
+    }
+    if(setdata[index].imgurl != undefined){
+        var newimg = document.createElement("IMG");
+        newimg.style.width = "100%";
+        newimg.src = setdata[index].imgurl;
+        newdiv.appendChild(newimg);
+    }
+    document.getElementById("mainpage").appendChild(newdiv);
+    newdiv.className = "mapelement";
+    r = finddistance(viewdata.latlon,setdata[index].latlon);
+    theta = findangle(viewdata.latlon,setdata[index].latlon);
+    x = r*Math.cos(theta - 0.5*Math.PI);
+    y = r*Math.sin(theta - 0.5*Math.PI + viewdata.angle*Math.PI/180);
+    newdiv.style.width = (setdata[index].widthfeet/feetperpixel).toString() + "px";
+    newdiv.style.fontSize = (setdata[index].fontfeet/feetperpixel).toString() + "px";
+    newdiv.style.left = (x0 + x/feetperpixel).toString() + "px";
+    newdiv.style.top = (y0 + y/feetperpixel).toString() + "px";
+    newdiv.style.transform = "rotate(" + (viewdata.angle + setdata[index].angle).toString() + "deg)";
+}
