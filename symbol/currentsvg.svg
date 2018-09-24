@@ -15,9 +15,10 @@
     "y0": 399,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "",
+    "glyph": "0341,0222,",
     "table": []
 }
 </json>
 -->
-</svg>
+    <circle cx="250" cy = "250" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
+	<path d = "M288 288 L288 212 L212 212 L212 288 L288 288 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M288 188 L288 112 L212 112 L212 188 L288 188 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M288 88 L288 12 L212 12 L212 88 L288 88 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M288 -12 L288 -88 L212 -88 L212 -12 L288 -12 Z" stroke = "black" stroke-width = "4" fill = "black" /></svg>
