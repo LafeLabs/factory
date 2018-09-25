@@ -115,4 +115,6 @@ unit = 100;
 x0 =  0.5*innerWidth;
 y0 = 0.5*innerHeight;
 
+currentJSON.svgwidth = innerWidth;
+currentJSON.svgheight = innerHeight;
 

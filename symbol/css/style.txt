@@ -14,9 +14,7 @@ body{
     border:solid;
     border-radius:0.5em;
 }
-.button:hover{
-    background-color:green;
-}
+
 .button:active{
     background-color:yellow;
 }

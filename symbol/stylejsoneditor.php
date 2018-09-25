@@ -171,7 +171,7 @@ for(var index = 0;index < 8;index++){
 
     inputs[3*index].onchange = function(){
         var inputIndex = parseInt(this.id.substring(1));
-        stylejson["line" + (inputIndex/3).toString()] = this.value;
+        stylejson["line" + (inputIndex/3).toString()] = parseFloat(this.value);
         redraw();
     }
     inputs[3*index + 1].onchange = function(){

@@ -28,9 +28,76 @@ if(isset($_GET['path'])){
 */
 </script>
 <script id = "topfunctions">
-<?php
-echo file_get_contents("javascript/topfunctions.txt");
-?>   
+
+ function string2byteCode(localString){
+    var localByteCode = "";
+    for(var stringIndex = 0;stringIndex < localString.length;stringIndex++){
+        var tempCharCode = localString.charCodeAt(stringIndex);
+        if(tempCharCode != 0){
+            localByteCode += "0";
+            localByteCode += tempCharCode.toString(8);
+            localByteCode += ",";
+        }
+    }
+    return localByteCode;
+}
+        
+function byteCode2string(localByteCode){
+    var localString = "";
+    var stringArray = localByteCode.split(",");
+    for(var index = 0;index < stringArray.length;index++){
+        var myCharCode = String.fromCharCode(parseInt(stringArray[index],8));
+        if(parseInt(stringArray[index],8) >= 040 && parseInt(stringArray[index],8) < 0177 ){
+            localString += myCharCode;
+        }
+        if(parseInt(stringArray[index],8) == 012){//newline
+            localString += myCharCode;
+        }
+        if(parseInt(stringArray[index],8) == 011){//vertical tab
+            localString += myCharCode;
+        }		
+        if(parseInt(stringArray[index],8) >= 0400 && parseInt(stringArray[index],8) <= 0777){
+            if(currentTable[parseInt(stringArray[index],8)].length > 0){
+                localString += byteCode2string(currentTable[parseInt(stringArray[index],8)]);
+            }
+        }		
+        
+    }
+    return localString;
+}
+        
+function drawGlyph(localString){
+    var tempArray = localString.split(',');
+    for(var index = 0;index < tempArray.length;index++){
+        doTheThing(parseInt(tempArray[index],8));
+    }
+}
+    
+function spellGlyph(localString){
+    var tempArray = localString.split(',');
+    for(var index = 0;index < tempArray.length;index++){
+        ctx.lineWidth = 2;
+        // ctx.strokeStyle="black";
+
+///        if(x > 0.94*innerWidth){
+   //         y+= 1.1*side;
+     //       x = side;
+       // }
+
+        doTheThing(parseInt(tempArray[index],8) + 01000);
+        if(parseInt(tempArray[index],8) > 01000){
+            doTheThing(01060);
+            doTheThing(01061);
+            var sixtyfours = (parseInt(tempArray[index],8) & 0700) >> 6;
+            var eights = (parseInt(tempArray[index],8) & 070) >> 3;
+            var ones = parseInt(tempArray[index],8) & 07;
+            doTheThing(01060 + sixtyfours);            
+            doTheThing(01060 + eights);            
+            doTheThing(01060 + ones);            
+        }
+    }
+}
+
 </script>
 <script id = "actions">
 function doTheThing(localCommand){    
@@ -89,16 +156,6 @@ echo file_get_contents("json/stylejson.txt");
     <canvas id="invisibleCanvas" style="display:none"></canvas>
     <canvas id="mainCanvas"></canvas>
     <textarea id="textIO"></textarea>
-    <table id = "zoompan">
-        <tr>
-            <td class = "button">up</td>
-            <td class = "button">down</td>
-            <td class = "button">left</td>
-            <td class = "button">right</td>
-            <td class = "button">out</td>
-            <td class = "button">in</td>
-        </tr>
-    </table>
     <table id = "controlTable">
         <tr id = "addressline">
             <td>ADDRESS:</td><td><input/></td>
@@ -113,23 +170,7 @@ echo file_get_contents("json/stylejson.txt");
             <td>STACK:</td><td><input/></td>
         </tr>
     </table>
-    <table id = "imageTable">   
-    <tr>
-        <td>IMAGE URL:</td><td><input/></td>
-    </tr>
-    <tr>
-        <td>IMAGE WIDTH:</td><td><input/></td>
-    </tr>
-    <tr>
-        <td>IMAGE TOP:</td><td><input/></td>
-    </tr>
-    <tr>
-        <td>IMAGE LEFT:</td><td><input/></td>
-    </tr>
-    <tr>
-        <td>IMAGE ANGLE:</td><td><input/></td>
-    </tr>
-</table>
+
     <table id = "buttonTable">
         <tr><td class = "button" id = "actionsymbol">ACTION/SYMBOL</td></tr>
         <tr><td class = "button" id = "savetable">SAVE TABLE</td></tr>
@@ -149,32 +190,26 @@ function init(){
     doTheThing(06);//import embedded hypercube in this .html doc
     doTheThing(07);//initialize Geometron global variables
 
-path = document.getElementById("pathdiv").innerHTML;
-if(path.length > 1){
-    document.getElementById("factorylink").href = "index.php?path=" + path;
-}
+    path = document.getElementById("pathdiv").innerHTML;
+    if(path.length > 1){
+        document.getElementById("factorylink").href = "index.php?path=" + path;
+    }
 
-backlink = document.getElementById("backurldata").innerHTML;
+    backlink = document.getElementById("backurldata").innerHTML;
 
-if(backlink.length>1){
-    document.getElementById("backlink").href = backlink;
-    document.getElementById("backlink").innerHTML = backlink;
-}
-else{
-    document.getElementById("backlink").href = "tree.php";
-    document.getElementById("backlink").innerHTML = "tree.php";
-}
+    if(backlink.length>1){
+        document.getElementById("backlink").href = backlink;
+        document.getElementById("backlink").innerHTML = backlink;
+    }
+    else{
+        document.getElementById("backlink").href = "tree.php";
+        document.getElementById("backlink").innerHTML = "tree.php";
+    }
 
 
-currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
-imagedata = document.getElementById("imageTable").getElementsByTagName("input");
-styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
+    currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);
+    styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
 
-imagedata[0].value = currentJSON.imgurl;
-imagedata[1].value = currentJSON.imgw;
-imagedata[2].value = currentJSON.imgtop;
-imagedata[3].value = currentJSON.imgleft;
-imagedata[4].value = currentJSON.imgangle;
 
     document.getElementById("mainCanvas").width = innerWidth;
     document.getElementById("mainCanvas").height = innerHeight;
@@ -189,7 +224,6 @@ imagedata[4].value = currentJSON.imgangle;
     currentGlyph = currentTable[currentAddress] + ",0207,";
     glyphEditMode = true;
     shapeTableEditMode = true;
-    zoompanbuttons = document.getElementById("zoompan").getElementsByClassName("button");
     controls[1].select();
 }
 
@@ -223,10 +257,6 @@ function redraw(){
         }
     }
 
-    document.getElementById("mainImage").style.width = (currentJSON.imgw*unit).toString()  + "px";
-    document.getElementById("mainImage").style.left = (x0 + currentJSON.imgleft*unit).toString()  + "px";
-    document.getElementById("mainImage").style.top = (y0 + currentJSON.imgtop*unit).toString()  + "px";
-    document.getElementById("mainImage").style.transform = "rotate(" + currentJSON.imgangle.toString() +"deg)";
     document.getElementById("glyphspellinput").value = cleanGlyph;
     
 
@@ -552,46 +582,6 @@ controls[3].onkeypress = function(a){//stack
     }
 }
 
-zoompanbuttons[0].onclick = function(){
-    doTheThing(030);
-}
-zoompanbuttons[1].onclick = function(){
-    doTheThing(031);
-}
-zoompanbuttons[2].onclick = function(){
-    doTheThing(032);
-}
-zoompanbuttons[3].onclick = function(){
-    doTheThing(033);
-}
-zoompanbuttons[4].onclick = function(){
-    doTheThing(036);
-}
-zoompanbuttons[5].onclick = function(){
-    doTheThing(037);
-}
-
-imagedata[0].onchange = function(){
-    document.getElementById("mainImage").src = this.value;
-    currentJSON.imgurl = this.value;
-}
-
-imagedata[1].onchange = function(){
-    currentJSON.imgw = parseFloat(this.value);
-    redraw();
-}
-imagedata[2].onchange = function(){
-    currentJSON.imgtop = parseFloat(this.value);
-    redraw();
-}
-imagedata[3].onchange = function(){
-    currentJSON.imgleft = parseFloat(this.value);
-    redraw();
-}
-imagedata[4].onchange = function(){
-    currentJSON.imgangle = parseFloat(this.value);
-    redraw();
-}
 </script>
 <style>
     

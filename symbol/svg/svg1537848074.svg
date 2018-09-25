@@ -1,0 +1,28 @@
+<svg width="1368" height="798" viewbox = "0 0 1368 798"  xmlns="http://www.w3.org/2000/svg">
+
+<!--
+<json>
+{
+    "imgurl": "",
+    "imgw": 4.743971328437736,
+    "imgleft": -2.2873205904167726,
+    "imgtop": -3.171985664218851,
+    "imgangle": 0,
+    "svgwidth": 1368,
+    "svgheight": 798,
+    "unit": 100,
+    "x0": 684,
+    "y0": 399,
+    "x0rel": 0,
+    "y0rel": 0,
+    "glyph": "0341,0332,0341,0330,0341,0336,0331,0341,0331,0333,0341,0232,",
+    "table": []
+}
+</json>
+-->
+    <circle cx="684" cy = "399" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
+    <circle cx="584" cy = "399" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
+    <circle cx="584" cy = "299" r = "100" stroke = "black" stroke-width = "4" fill = "none" />
+    <circle cx="584" cy = "349" r = "50" stroke = "black" stroke-width = "4" fill = "none" />
+    <circle cx="634" cy = "399" r = "50" stroke = "black" stroke-width = "4" fill = "none" />
+	<path d = "M634 361 L667 380 L667 418 L634 437 L601 418 L601 380 L634 361 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M677 286 L710 305 L710 343 L677 362 L644 343 L644 305 L677 286 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M677 286 L710 305 L710 343 L677 362 L644 343 L644 305 L677 286 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M721 211 L754 230 L754 268 L721 287 L688 268 L688 230 L721 211 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M721 211 L754 230 L754 268 L721 287 L688 268 L688 230 L721 211 Z" stroke = "black" stroke-width = "4" fill = "black" />	<path d = "M764 136 L797 155 L797 193 L764 212 L731 193 L731 155 L764 136 Z" stroke = "black" stroke-width = "4" fill = "black" /></svg>
