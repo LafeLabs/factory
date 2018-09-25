@@ -66,6 +66,7 @@
 			"font.txt",
 			"keyboard.txt",
 			"shapetable.txt",
+			"symbolkeyboard.txt",
 			"symbols010xx.txt",
 			"symbols013xx.txt"
 		]

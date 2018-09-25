@@ -47,6 +47,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "bytecode file">bytecode/shapetable.txt</div>
     <div class = "bytecode file">bytecode/font.txt</div>
     <div class = "bytecode file">bytecode/keyboard.txt</div>
+    <div class = "bytecode file">bytecode/symbolkeyboard.txt</div>
     <div class = "bytecode file">bytecode/symbols013xx.txt</div>
     <div class = "bytecode file">bytecode/symbols010xx.txt</div>
 
