@@ -175,6 +175,7 @@
 		"files":[
 			"currentjson.txt",
 			"dna.txt",
+			"softkeys.txt",
 			"stylejson.txt",
 			"treedna.txt"
 		]
@@ -237,6 +238,90 @@
 			"tree.txt",
 			"treednagenerator.txt",
 			"treereplicator.txt"
+		]
+	},
+	{
+		"path":"combiner/php",
+		"files":[
+			"curvetree.txt",
+			"dnagenerator.txt",
+			"editor.txt",
+			"feededitor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"loadfeed.txt",
+			"loadhtmlfeed.txt",
+			"loadjsonfeed.txt",
+			"loadmemefeed.txt",
+			"loadsvgfeed.txt",
+			"makefeedsindex.txt",
+			"makehtmlindex.txt",
+			"makejsonindex.txt",
+			"makememeindex.txt",
+			"makesvgindex.txt",
+			"newdir.txt",
+			"replicator.txt",
+			"symboltree.txt",
+			"text2php.txt",
+			"tree.txt",
+			"treednagenerator.txt",
+			"treereplicator.txt"
+		]
+	},
+	{
+		"path":"combiner/html",
+		"files":[
+			"feed.txt"
+		]
+	},
+	{
+		"path":"combiner/json",
+		"files":[
+			"dna.txt",
+			"imagelist.txt"
+		]
+	},
+	{
+		"path":"aligner/php",
+		"files":[
+			"curvetree.txt",
+			"dnagenerator.txt",
+			"editor.txt",
+			"feededitor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"loadfeed.txt",
+			"loadhtmlfeed.txt",
+			"loadjsonfeed.txt",
+			"loadmemefeed.txt",
+			"loadsvgfeed.txt",
+			"makefeedsindex.txt",
+			"makehtmlindex.txt",
+			"makejsonindex.txt",
+			"makememeindex.txt",
+			"makesvgindex.txt",
+			"newdir.txt",
+			"replicator.txt",
+			"symboltree.txt",
+			"text2php.txt",
+			"tree.txt",
+			"treednagenerator.txt",
+			"treereplicator.txt"
+		]
+	},
+	{
+		"path":"aligner/html",
+		"files":[
+			"feed.txt"
+		]
+	},
+	{
+		"path":"aligner/json",
+		"files":[
+			"dna.txt",
+			"imagelist.txt"
 		]
 	},
 	{

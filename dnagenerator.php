@@ -69,6 +69,21 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("curve/php");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("combiner/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("combiner/html");
+$finalstring .= ",\n";
+$finalstring .= getfiles("combiner/json");
+$finalstring .= ",\n";
+
+$finalstring .= getfiles("aligner/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("aligner/html");
+$finalstring .= ",\n";
+$finalstring .= getfiles("aligner/json");
+$finalstring .= ",\n";
+
+
 $finalstring .= getfiles("map/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("map/html");
