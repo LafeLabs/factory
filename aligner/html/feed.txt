@@ -24,6 +24,11 @@
 <img id = "image0"/>
 </div>
 
+<table id = "pantable">
+    <tr><td>SCALE</td></tr>
+    <tr><td>ROTATE</td></tr>
+</table>
+
 <script>
 
 imageslist = JSON.parse(document.getElementById("imagesdatadiv").innerHTML);
@@ -46,18 +51,36 @@ topimages[imageIndex].style.border = "solid";
 
 imageWidth = 0.5*innerWidth;
 
+mc = new Hammer(document.getElementById("image0"));
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[imageIndex].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
+    topimages[imageIndex].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+});    
 
-mc = new Hammer(topimages[0]);
-mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-mc.on("panleft panright panup pandown tap press", function(ev) {
-    topimages[0].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
-    topimages[0].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+
+for(var index = 0;index < topimages.length;index++){
+    topimages[index].id = "i" + index.toString();
+    topimages[index].onclick = function(){
+        topimages[imageIndex].style.border = "none";
+        imageIndex = parseInt(this.id.substring(1));
+        topimages[imageIndex].style.border = "solid";
+    }
+}
+
+
+
+pans = document.getElementById("pantable").getElementsByTagName("TD");
+mc1 = new Hammer(pans[0]);
+mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc1.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[imageIndex].style.width = (ev.deltaX + 0.2*imageWidth).toString() + "px";
 });
-mc = new Hammer(topimages[1]);
-mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
-mc.on("panleft panright panup pandown tap press", function(ev) {
-    topimages[1].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
-    topimages[1].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+
+mc2 = new Hammer(pans[1]);
+mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc2.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[imageIndex].style.transform = "rotate(" + (ev.deltaX*Math.PI/10).toString() + "deg)";
 });
 
 
@@ -88,6 +111,20 @@ mc.on("panleft panright panup pandown tap press", function(ev) {
     position:absolute;
     right:0px;
     top:0px;
+}
+#pantable{
+    position:absolute;
+    bottom:0px;
+    left:0px;
+    width:50%;
+    z-index:1;
+}
+#pantable td{
+    height:100px;
+    width:100%;
+    font-size:22px;
+    border:solid;
+    text-align:center;
 }
 
 </style>
