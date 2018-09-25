@@ -10,7 +10,7 @@
     "y0": 399,
     "x0rel": 0,
     "y0rel": 0,
-    "glyph": "0336,0222,0335,0222,0335,0222,0335,0222,",
+    "glyph": "",
     "table": [
         "0220:0304,0313,0210,0210,0336,0333,0331,0337,0204,0336,0330,0332,0337,0211,0211,",
         "0221:0304,0313,0330,0220,",
@@ -22,7 +22,7 @@
         "0233:0313,0306,0362,0203,0335,0335,0203,0335,0335,0203,0335,0335,0363,",
         "01220:0333,0200,0332,0336,0333,0330,0220,0333,0331,0337,",
         "01221:0333,0200,0336,0332,0337,0221,0336,0333,0337,0331,",
-        "01222:0333,0200,0336,0332,0222,0331,0331,0331,0333,0337,",
+        "01222:0333,0200,0336,0332,0222,0331,0331,0331,0333,0337,0336,0332,0337,",
         "01223:0333,0200,0336,0332,0223,0331,0331,0331,0333,0337,",
         "01230:0333,0200,0336,0330,0332,0230,0331,0304,0333,0337,",
         "01231:0333,0200,0332,0336,0330,0231,0335,0331,0334,0331,0331,0304,0337,0333,",
@@ -32,4 +32,4 @@
 }
 </json>
 -->
-	<path d = "M703 418 L703 380 L665 380 L665 418 L703 418 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M703 368 L703 330 L665 330 L665 368 L703 368 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M703 318 L703 280 L665 280 L665 318 L703 318 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M703 268 L703 230 L665 230 L665 268 L703 268 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M665 268 L703 268 L703 230 L665 230 L665 268 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M715 268 L753 268 L753 230 L715 230 L715 268 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M765 268 L803 268 L803 230 L765 230 L765 268 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M815 268 L853 268 L853 230 L815 230 L815 268 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M815 230 L815 268 L853 268 L853 230 L815 230 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M815 280 L815 318 L853 318 L853 280 L815 280 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M815 330 L815 368 L853 368 L853 330 L815 330 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M815 380 L815 418 L853 418 L853 380 L815 380 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M853 380 L815 380 L815 418 L853 418 L853 380 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M803 380 L765 380 L765 418 L803 418 L803 380 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M753 380 L715 380 L715 418 L753 418 L753 380 Z" stroke = "black" stroke-width = "2" fill = "black" />	<path d = "M703 380 L665 380 L665 418 L703 418 L703 380 Z" stroke = "black" stroke-width = "2" fill = "black" /></svg>
+</svg>

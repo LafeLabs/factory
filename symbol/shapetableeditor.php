@@ -79,10 +79,10 @@ function spellGlyph(localString){
         ctx.lineWidth = 2;
         // ctx.strokeStyle="black";
 
-///        if(x > 0.94*innerWidth){
-   //         y+= 1.1*side;
-     //       x = side;
-       // }
+        if(x > 0.94*innerWidth){
+            y+= 1.1*side;
+            x = side;
+        }
 
         doTheThing(parseInt(tempArray[index],8) + 01000);
         if(parseInt(tempArray[index],8) > 01000){
@@ -173,8 +173,6 @@ echo file_get_contents("json/stylejson.txt");
 
     <table id = "buttonTable">
         <tr><td class = "button" id = "actionsymbol">ACTION/SYMBOL</td></tr>
-        <tr><td class = "button" id = "savetable">SAVE TABLE</td></tr>
-        <tr><td class = "button" id = "savefont">SAVE FONT</td></tr>
         <tr><td class = "button" id = "importbytecode">IMPORT BYTECODE</td></tr>
         <tr><td class = "button" id = "exportshapes">EXPORT SHAPES</td></tr>
         <tr><td class = "button" id = "exportfont">EXPORT FONT</td></tr>
@@ -344,43 +342,7 @@ document.getElementById("actionsymbol").onclick = function(){
         redraw();
     }
 }
-document.getElementById("savetable").onclick = function(){
-    currentFile = "bytecode/shapetable.txt";
-    bytecodedata = "";
-    for(var index = 0220;index < 0250;index++){
-        if(currentTable[index].length > 1){
-            bytecodedata += "0" + index.toString(8) + ":" + currentTable[index] + "\n";   
-        }
-    }
-    for(var index = 01220;index < 01250;index++){
-        if(currentTable[index].length > 1){
-            bytecodedata +=  "0" + index.toString(8) + ":" + currentTable[index] + "\n";   
-        }
-    }
 
-    data = encodeURIComponent(bytecodedata);
-    var httpc = new XMLHttpRequest();
-    var url = "filesaver.php";        
-    httpc.open("POST", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
-}
-document.getElementById("savefont").onclick = function(){
-    currentFile = "bytecode/font.txt";
-    bytecodedata = "";
-    for(var index = 01040;index < 01177;index++){
-        if(currentTable[index].length > 1){
-            bytecodedata += "0" + index.toString(8) + ":" + currentTable[index] + "\n";   
-        }
-    }
-    data = encodeURIComponent(bytecodedata);
-    var httpc = new XMLHttpRequest();
-    var url = "filesaver.php";        
-    httpc.open("POST", url, true);
-    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
-    
-}
 document.getElementById("importbytecode").onclick = function(){
     var inputbytecode = document.getElementById("textIO").value;
     var bytecodearray = inputbytecode.split("\n");

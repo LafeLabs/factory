@@ -1,0 +1,93 @@
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "../combiner/">../combiner/</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "editor.php">editor.php</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../">../</a>
+        </td>
+    </tr>
+</table>
+
+
+    
+<div id = "imagebox">
+<img id = "image0"/>
+</div>
+
+<script>
+
+imageslist = JSON.parse(document.getElementById("imagesdatadiv").innerHTML);
+
+document.getElementById("image0").src = imageslist[0];
+
+imageIndex= 0;
+topimages = [];
+for(var index = 1;index < imageslist.length;index++){
+    var newimg = document.createElement("IMG");
+    newimg.src = imageslist[index];
+    newimg.className = "topimage";
+    document.getElementById("imagebox").appendChild(newimg);
+    topimages.push(newimg);
+    newimg.style.width = "100px";
+    newimg.style.top = "100px";
+    newimg.style.left = (120*index).toString() + "px";
+}
+topimages[imageIndex].style.border = "solid";
+
+imageWidth = 0.5*innerWidth;
+
+
+mc = new Hammer(topimages[0]);
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[0].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
+    topimages[0].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+});
+mc = new Hammer(topimages[1]);
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[1].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
+    topimages[1].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+});
+
+
+</script>
+<style>
+.topimage{
+    position:absolute;
+    z-index:1;
+}
+#imagebox{
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+    bottom:0px;
+    border:solid;
+}
+#image0{
+    position:absolute;
+    left:0px;
+    width:50%;
+    top:0px;
+    display:block;
+    border:solid;
+}
+#linktable{
+    z-index:2;
+    position:absolute;
+    right:0px;
+    top:0px;
+}
+
+</style>

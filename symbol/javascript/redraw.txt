@@ -48,6 +48,7 @@ else{
     currentFile = "json/currentjson.txt";
 }
 
+currentJSON.table = [];
 data = encodeURIComponent(JSON.stringify(currentJSON,null, "    "));
 var httpc = new XMLHttpRequest();
 var url = "filesaver.php";        

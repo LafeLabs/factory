@@ -1,5 +1,7 @@
 body{
     overflow:hidden;
+    font-family:Helvetica;
+    font-size:2em;
 }
 #mainCanvas{
     position:absolute;

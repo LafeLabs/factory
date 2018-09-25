@@ -31,6 +31,20 @@ document.getElementById("savepng").onclick = function(){
 */
 
 document.getElementById("savesvg").onclick = function(){
+    currentJSON.table = [];
+    for(var index = 0220;index < 0277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+    for(var index = 01220;index < 01277;index++){
+        if(currentTable[index].length > 3){
+            var tableline = "0" + index.toString(8) + ":" + currentTable[index];
+            currentJSON.table.push(tableline);
+        }
+    }
+
     svgwidth = currentJSON.svgwidth;
     svgheight = currentJSON.svgheight;
     tempx0 = x0;
@@ -57,8 +71,10 @@ document.getElementById("savesvg").onclick = function(){
     }
     x0 = tempx0;
     y0 = tempy0;
+    currentJSON.table = [];
     redraw();
-    
+        
+
 }
  
 saveSVG(); 
@@ -104,6 +120,7 @@ function saveSVG(){
     }
     x0 = tempx0;
     y0 = tempy0;
+    currentJSON.table = [];
 
 
 

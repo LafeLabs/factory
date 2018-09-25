@@ -1,0 +1,121 @@
+<p>
+    <a href = "editor.php">editor.php</a>
+</p>
+<p>
+    <a href = "../">../</a>
+</p>
+<p>
+    <a href = "../aligner/">../aligner/</a>
+</p>
+<div id = "imagesfeed">
+</div>
+<div id = "outfeed">
+</div>
+
+<script>
+
+    imagelist  = document.getElementById("imagesdatadiv").innerHTML.split(",");
+    for(var index = 0;index < imagelist.length;index++){
+        if(imagelist[index].length > 1){
+            var newimg = document.createElement("IMG");
+            newimg.src = "../images/images/" + imagelist[index];
+            document.getElementById("imagesfeed").appendChild(newimg);
+            newimg.onclick = function(){
+                var newimg2 = document.createElement("img");
+                newimg2.src = this.src;
+                document.getElementById("outfeed").appendChild(newimg2);
+                redraw();
+                newimg2.onclick = function(){
+                    document.getElementById("outfeed").removeChild(this);
+                    redraw();
+                }
+            }
+        }
+    }   
+    
+    symbollist  = document.getElementById("symbolsdatadiv").innerHTML.split(",");
+    for(var index = 0;index < symbollist.length;index++){
+        if(symbollist[index].length > 1){
+            var newimg = document.createElement("IMG");
+            newimg.src = "../symbol/svg/" + symbollist[index];
+            document.getElementById("imagesfeed").appendChild(newimg);
+            newimg.onclick = function(){
+                var newimg2 = document.createElement("img");
+                newimg2.src = this.src;
+                document.getElementById("outfeed").appendChild(newimg2);
+                redraw();
+                newimg2.onclick = function(){
+                    document.getElementById("outfeed").removeChild(this);
+                    redraw();
+                }
+                
+            }
+
+        }
+    }   
+    
+    function redraw(){
+        currentFile = "json/imagelist.txt";
+        imagelist = [];
+        outimages = document.getElementById("outfeed").getElementsByTagName("IMG");
+        for(var index = 0;index < outimages.length;index++){
+            imagelist.push(outimages[index].src);
+        }
+        data = encodeURIComponent(JSON.stringify(imagelist,null, "    "));
+        var httpc = new XMLHttpRequest();
+        var url = "filesaver.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+
+    }
+</script>
+<style>
+    #imagesfeed{
+        position:absolute;
+        width:15%;
+        left:5%;
+        top:5em;
+        bottom:1em;
+        overflow:scroll;
+        border:solid;
+    }
+    #imagesfeed img{
+        width:50%;
+        display:block;
+        margin:auto;
+        cursor:pointer;
+        margin-top:1em;
+        margin-bottom:1em;
+        border:solid;
+
+    }
+    #imagesfeed img:active{
+        background-color:yellow;
+        border-width:5px;
+    }
+    #outfeed{
+        position:absolute;
+        width:25%;
+        right:5%;
+        top:5em;
+        bottom:1em;
+        overflow:scroll;
+        border:solid;
+    }
+    #outfeed img{
+        width:70%;
+        display:block;
+        margin:auto;
+        cursor:pointer;
+        margin-top:1em;
+        margin-bottom:1em;
+        border:solid;
+
+    }
+    #outfeed img:active{
+        background-color:yellow;
+        border-width:5px;
+    }
+
+</style>
