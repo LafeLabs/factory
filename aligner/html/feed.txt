@@ -59,6 +59,7 @@ for(var index = 1;index < imageslist.length;index++){
 topimages[imageIndex].style.border = "solid";
 
 imageWidth = 0.5*innerWidth;
+document.getElementById("image0").style.width = imageWidth.toString()  +  "px";
 
 mc = new Hammer(document.getElementById("image0"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });

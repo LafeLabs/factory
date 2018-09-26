@@ -33,6 +33,7 @@ EGO DEATH:
     <div class = "html file">html/feed.txt</div>
 
     <div class = "php file">php/memefeed.txt</div>
+    <div class = "php file">php/deleteallmemes.txt</div>
     
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>

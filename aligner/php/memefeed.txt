@@ -47,6 +47,7 @@ echo $datatext;
         </td>
     </tr>
 </table>
+<div id = "delete">!DELETE ALL!</div>
 <div id = "feedbox">
     
 </div>
@@ -73,6 +74,15 @@ for(var index = 0;index < memejson.length;index++){
         newdiv.appendChild(newimg2);
     }
     
+}
+
+document.getElementById("delete").onclick = function(){
+    var httpc = new XMLHttpRequest();
+    var url = "deleteallmemes.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send();//
+    document.getElementById("feedbox").innerHTML = "";
 }
 
 </script>
@@ -110,6 +120,19 @@ for(var index = 0;index < memejson.length;index++){
         position:absolute;
         right:0px;
         top:0px;
+    }
+    #delete{
+        position:absolute;
+        z-index:2;
+        right:0px;
+        bottom:0px;
+        cursor:pointer;
+        border:solid;
+        border-color:red;
+        color:red;
+    }
+    #delete:active{
+        background-color:yellow;
     }
 </style>
 </body>

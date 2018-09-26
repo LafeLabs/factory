@@ -266,6 +266,7 @@
 	{
 		"path":"aligner/php",
 		"files":[
+			"deleteallmemes.txt",
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",

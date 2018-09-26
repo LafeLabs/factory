@@ -20,9 +20,6 @@
 <p>
     <a href = "editor.php">editor.php</a>
 </p>
-<p>
-    <a href = "index.php?path=pagefromfeed/">pagefromfeed/</a>
-</p>
 <style>
     h1{
         font-size:3em;
