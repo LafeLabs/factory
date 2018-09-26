@@ -53,7 +53,7 @@ echo $datatext;
 </div>
 <script>
 
-feedwidth = innerWidth*0.8;
+feedwidth = innerWidth;
 memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
 for(var index = 0;index < memejson.length;index++){
     var newdiv = document.createElement("DIV");
@@ -95,10 +95,10 @@ document.getElementById("delete").onclick = function(){
     }
     #feedbox{
         position:absolute;
-        left:5%;
+        left:0px;
         top:5em;
-        bottom:10px;
-        width:80%;
+        bottom:5em;
+        right:0px;
         border:solid;
         text-align:center;
         overflow:scroll;
@@ -106,6 +106,7 @@ document.getElementById("delete").onclick = function(){
     .memebox{
         width:100%;
         position:relative;
+        overflow:hidden;
     }
     .bottomimage{
         width:100%;
