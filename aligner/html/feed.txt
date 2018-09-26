@@ -16,6 +16,14 @@
             <a href = "../">../</a>
         </td>
     </tr>
+    <tr>
+        <td>
+            <a href = "memefeed.php">memefeed.php</a>
+        </td>
+    </tr>
+    <tr>
+        <td class = "button" id = "publish">PUBLISH</td>
+    </tr>
 </table>
 
 
@@ -46,6 +54,7 @@ for(var index = 1;index < imageslist.length;index++){
     newimg.style.width = "100px";
     newimg.style.top = "100px";
     newimg.style.left = (120*index).toString() + "px";
+    newimg.style.transform = "rotate(0deg)";
 }
 topimages[imageIndex].style.border = "solid";
 
@@ -83,6 +92,29 @@ mc2.on("panleft panright panup pandown tap press", function(ev) {
     topimages[imageIndex].style.transform = "rotate(" + (ev.deltaX*Math.PI/10).toString() + "deg)";
 });
 
+document.getElementById("publish").onclick = function(){
+    outjson = {};
+    outjson.imgurl = document.getElementById("image0").src;
+    outjson.topimages = [];
+    for(var index = 0;index < topimages.length;index++){
+        var imgjson = {};
+        imgjson.url = topimages[index].src;
+        imgjson.xoverw = parseFloat(topimages[index].style.left)/imageWidth;
+        imgjson.yoverw = parseFloat(topimages[index].style.top)/imageWidth;
+        imgjson.woverw = parseFloat(topimages[index].style.width)/imageWidth;
+        imgjson.angle = parseFloat(topimages[0].style.transform.substr(7));
+        outjson.topimages.push(imgjson);
+    }
+    
+    timestamp = Math.round((new Date().getTime())/1000);
+    data = encodeURIComponent(JSON.stringify(outjson,null,"    "));
+
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=" + "memes/meme" + timestamp + ".txt");//send text to filesaver.php
+}
 
 </script>
 <style>
@@ -126,5 +158,12 @@ mc2.on("panleft panright panup pandown tap press", function(ev) {
     border:solid;
     text-align:center;
 }
-
+.button{
+    cursor:pointer;
+    border:solid;
+    border-radius:5px;
+}
+.button:active{
+    background-color:yellow;
+}
 </style>

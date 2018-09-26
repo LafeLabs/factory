@@ -29,12 +29,15 @@ EGO DEATH:
     <a href = "dnagenerator.php">dnagenerator.php</a>
     <a href = "text2php.php">text2php.php</a>
     <a href = "tree.php">tree.php</a>
+    <a href = "memefeed.php">memefeed.php</a>
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
 
     <div class = "html file">html/feed.txt</div>
+
+    <div class = "php file">php/memefeed.txt</div>
     
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>
@@ -57,6 +60,7 @@ EGO DEATH:
     <div class = "php file">php/loadhtmlfeed.txt</div>
     <div class = "php file">php/makememeindex.txt</div>
     <div class = "php file">php/loadmemefeed.txt</div>
+
 
     <div class = "php file">php/symboltree.txt</div>
     <div class = "php file">php/curvetree.txt</div>
