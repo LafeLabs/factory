@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Combiner</title>
+<title>Aligner</title>
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 

@@ -23,6 +23,11 @@
     mkdir("curve");
         mkdir("curve/svg");
     mkdir("map");
+    mkdir("images");
+        mkdir("images/images");
+    mkdir("combiner");
+    mkdir("aligner");
+        mkdir("aligner/memes");
 
     foreach($dna as $dirs){
         mkdir($dirs->path);

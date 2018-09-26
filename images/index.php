@@ -22,9 +22,17 @@ foreach(array_reverse($files) as $value){
 echo $listtext;
 
 ?></div>
-<p>
+<table>
+    <tr>
+        <td>
     <a href = "editor.php">editor.php</a>
-</p>
+        </td>
+        <td>
+        <a href = "../combiner/">../combiner/</a>
+        </td>
+    </tr>
+</table>
+
 <div class = "button" id = "delete">! DELETE ALL !</div>
 
 <form action="upload.php" method="post" enctype="multipart/form-data">

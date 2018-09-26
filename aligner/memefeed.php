@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+    <title>Meme Feed</title>
 </head>
 <body>
 <div id = "memefilediv" style = "display:none"><?php
@@ -65,11 +66,10 @@ for(var index = 0;index < memejson.length;index++){
         var newimg2 = document.createElement("img");
         newimg2.className = "topimage";
         newimg2.src = memejson[index].topimages[imgindex].url;
-        newimg2.style.transform = "rotate(" + (memejson[index].topimages[imgindex].angle).toString() + "deg)";
         newimg2.style.width = (memejson[index].topimages[imgindex].woverw*feedwidth).toString() + "px";
         newimg2.style.left = (memejson[index].topimages[imgindex].xoverw*feedwidth).toString() + "px";
         newimg2.style.top = (memejson[index].topimages[imgindex].yoverw*feedwidth).toString() + "px";
-
+        newimg2.style.transform = "rotate(" + (memejson[index].topimages[imgindex].angle).toString() + "deg)";
         newdiv.appendChild(newimg2);
     }
     

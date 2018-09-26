@@ -166,6 +166,7 @@
 			"font.txt",
 			"keyboard.txt",
 			"shapetable.txt",
+			"symbolkeyboard.txt",
 			"symbols010xx.txt",
 			"symbols013xx.txt"
 		]
@@ -302,6 +303,7 @@
 			"makejsonindex.txt",
 			"makememeindex.txt",
 			"makesvgindex.txt",
+			"memefeed.txt",
 			"newdir.txt",
 			"replicator.txt",
 			"symboltree.txt",
@@ -322,6 +324,26 @@
 		"files":[
 			"dna.txt",
 			"imagelist.txt"
+		]
+	},
+	{
+		"path":"images/php",
+		"files":[
+			"deleteallimages.txt",
+			"dnagenerator.txt",
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"replicator.txt",
+			"text2php.txt",
+			"upload.txt"
+		]
+	},
+	{
+		"path":"images/json",
+		"files":[
+			"dna.txt"
 		]
 	},
 	{

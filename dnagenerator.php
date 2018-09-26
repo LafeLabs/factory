@@ -83,6 +83,11 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("aligner/json");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("images/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("images/json");
+$finalstring .= ",\n";
+
 
 $finalstring .= getfiles("map/php");
 $finalstring .= ",\n";

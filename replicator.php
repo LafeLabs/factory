@@ -1,6 +1,6 @@
 <?php
 
-    $url = "https://raw.githubusercontent.com/LafeLabs/root2/master/json/dna.txt";
+    $url = "https://raw.githubusercontent.com/LafeLabs/factory/master/json/dna.txt";
     $dnaraw = file_get_contents($url);
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];
@@ -23,6 +23,11 @@
     mkdir("curve");
         mkdir("curve/svg");
     mkdir("map");
+    mkdir("images");
+        mkdir("images/images");
+    mkdir("combiner");
+    mkdir("aligner");
+        mkdir("aligner/memes");
 
     foreach($dna as $dirs){
         mkdir($dirs->path);

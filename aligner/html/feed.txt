@@ -102,7 +102,7 @@ document.getElementById("publish").onclick = function(){
         imgjson.xoverw = parseFloat(topimages[index].style.left)/imageWidth;
         imgjson.yoverw = parseFloat(topimages[index].style.top)/imageWidth;
         imgjson.woverw = parseFloat(topimages[index].style.width)/imageWidth;
-        imgjson.angle = parseFloat(topimages[0].style.transform.substr(7));
+        imgjson.angle = parseFloat(topimages[index].style.transform.substr(7));
         outjson.topimages.push(imgjson);
     }
     

@@ -23,12 +23,7 @@ EGO DEATH:
 <body>
 <div id = "linkscroll">
     <a href = "index.php">index.php</a>
-    <a href = "feededitor.php">feededitor.php</a>
-    <a href = "feed/">feed/</a>
-    <a href = "treednagenerator.php">treednagenerator.php</a>
-    <a href = "dnagenerator.php">dnagenerator.php</a>
     <a href = "text2php.php">text2php.php</a>
-    <a href = "tree.php">tree.php</a>
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
@@ -38,36 +33,9 @@ EGO DEATH:
     
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>
-    <div class = "php file">php/feededitor.txt</div>
     <div class = "php file">php/filesaver.txt</div>
     <div class = "php file">php/fileloader.txt</div>
-    <div class = "php file">php/newdir.txt</div>
     <div class = "php file">php/text2php.txt</div>
-    <div class = "php file">php/tree.txt</div>
-
-    <div class = "php file">php/loadfeed.txt</div>
-    <div class = "php file">php/makefeedsindex.txt</div>
-    
-    <div class = "php file">php/makejsonindex.txt</div>
-    <div class = "php file">php/makesvgindex.txt</div>
-    <div class = "php file">php/loadjsonfeed.txt</div>
-    <div class = "php file">php/loadsvgfeed.txt</div>
-
-    <div class = "php file">php/makehtmlindex.txt</div>
-    <div class = "php file">php/loadhtmlfeed.txt</div>
-    <div class = "php file">php/makememeindex.txt</div>
-    <div class = "php file">php/loadmemefeed.txt</div>
-
-    <div class = "php file">php/symboltree.txt</div>
-    <div class = "php file">php/curvetree.txt</div>
-    
-    <div class = "php file">php/treereplicator.txt</div>
-    <div class = "php file">php/treednagenerator.txt</div>
-    <div class = "php file">php/replicator.txt</div>
-    <div class = "php file">php/dnagenerator.txt</div>
-
-    <div class = "json file">json/treedna.txt</div>
-    <div class = "json file">json/dna.txt</div>
 
 </div>
 

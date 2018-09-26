@@ -1,12 +1,32 @@
-<p>
-    <a href = "editor.php">editor.php</a>
-</p>
-<p>
-    <a href = "../">../</a>
-</p>
-<p>
-    <a href = "../aligner/">../aligner/</a>
-</p>
+<table id = "linktable">
+    <tr>
+        <td>
+            <a href = "editor.php">editor.php</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../">../</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../aligner/">../aligner/</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../images/">../images/</a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../symbol/">../symbol/</a>
+        </td>
+    </tr>
+
+</table>
+
 <div id = "imagesfeed">
 </div>
 <div id = "outfeed">
@@ -117,5 +137,9 @@
         background-color:yellow;
         border-width:5px;
     }
-
+#linktable{
+    position:absolute;
+    top:0px;
+    right:10px;
+}
 </style>
