@@ -51,14 +51,12 @@ echo $datatext;
     <tr>
         <td>PAGE NAME:</td>
         <td><input id = "pagename"/></td>
+        <td id = "publish">PUBLISH</td>
     </tr>
 </table>
-<div id = "feedbox">
-    
-</div>
-<div id = "memeoutbox">
-    
-</div>
+<div id = "feedbox"></div>
+
+<div id = "memeoutbox"></div>
 <script>
 
 feedwidth = 0.4*innerWidth;
@@ -91,6 +89,21 @@ for(var index = 0;index < memejson.length;index++){
     
 }
 
+document.getElementById("publish").onclick = function(){
+    if(document.getElementById("pagename").value.length > 1 && document.getElementById("memeoutbox").innerHTML.length > 1){
+        
+        currentFile = document.getElementById("pagename").value;
+        data = encodeURIComponent(JSON.stringify(localmemejson,null,"    "));
+        var httpc = new XMLHttpRequest();
+        var url = "makenewpage.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("data="+data+"&filename="+currentFile);//send text to makenewpage.php
+    }
+    else{
+        alert("Not enough information inputted, need both a meme and a name.");
+    }
+}
 
 </script>
 
@@ -150,7 +163,15 @@ for(var index = 0;index < memejson.length;index++){
         right:0px;
         bottom:0px;
     }
-
+    #publish{
+        border:solid;
+        border-radius:5px;
+        text-align:center;
+        cursor:pointer;
+    }
+    #publish:active{
+        background-color:yellow;
+    }
 </style>
 </body>
 </html>

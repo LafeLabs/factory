@@ -48,6 +48,7 @@ EGO DEATH:
     <div class = "php file">php/newdir.txt</div>
     <div class = "php file">php/dnagenerator.txt</div>
     <div class = "php file">php/replicator.txt</div>
+    <div class = "php file">php/makenewpage.txt</div>
 
     <div class = "php file">php/meme2page.txt</div>
 
