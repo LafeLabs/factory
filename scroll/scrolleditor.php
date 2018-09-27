@@ -3,7 +3,6 @@
 <head>
     <title>Scroll Editor</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js" type="text/javascript" charset="utf-8"></script>
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
    <script>
 	MathJax.Hub.Config({
@@ -22,7 +21,24 @@
         echo $_GET['path'];
     }
 ?></div>
+<div style = "display:none" id = "memedatadiv"><?php
 
+$files = scandir(getcwd()."/../aligner/memes");
+
+$datatext = "[\n";
+
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".." && substr($value,-4) == ".txt"){
+        $datatext .= file_get_contents("../aligner/memes/".$value);
+        $datatext .= ",\n";
+    }
+}
+$datatext = rtrim($datatext, ",\n");
+$datatext .= "\n]";
+echo $datatext;
+
+
+?></div>
 <div id = "scrolldisplay"  class = "mathjax"></div>
 
 <div id = "linkscroll">
@@ -45,6 +61,9 @@
 <div id="maineditor" contenteditable="true" spellcheck="true"></div>
 <textarea id = "texbox"></textarea>
 <script>
+
+memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+
 
 path = document.getElementById("pathdiv").innerHTML;
 
