@@ -1,3 +1,3 @@
 <p><a href = "../">../</a></p>
-<p><a href = "pageeditor.php">pageeditor.php</a></p>
-<p><a href = "tree.php">tree.php</a></p>
+<p><a href = "editor.php">editor.php</a></p>
+<p><a href = "meme2page.php">meme2page.php</a></p>
