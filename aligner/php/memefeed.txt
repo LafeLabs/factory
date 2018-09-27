@@ -47,7 +47,7 @@ echo $datatext;
         </td>
     </tr>
 </table>
-<div id = "delete">!DELETE ALL!</div>
+<div id = "delete" style = "display:none">!DELETE ALL!</div>
 <div id = "feedbox">
     
 </div>

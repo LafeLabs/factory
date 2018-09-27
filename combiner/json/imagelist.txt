@@ -1,6 +1,7 @@
 [
+    "http://localhost:8000/images/images/image3",
     "http://localhost:8000/images/images/image4",
-    "http://localhost:8000/symbol/svg/svg1537857049.svg",
-    "http://localhost:8000/symbol/svg/svg1537857049.svg",
-    "http://localhost:8000/symbol/svg/svg1537857049.svg"
+    "http://localhost:8000/images/images/image4",
+    "http://localhost:8000/images/images/image4",
+    "http://localhost:8000/images/images/image4"
 ]

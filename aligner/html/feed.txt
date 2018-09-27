@@ -32,16 +32,32 @@
 <img id = "image0"/>
 </div>
 
-<table id = "pantable">
-    <tr><td>SCALE</td></tr>
-    <tr><td>ROTATE</td></tr>
-</table>
+<div id = "scale">SCALE</div>
+<div id = "rotate">ROTATE</div>
 
 <script>
 
 imageslist = JSON.parse(document.getElementById("imagesdatadiv").innerHTML);
 
 document.getElementById("image0").src = imageslist[0];
+
+imageWidth = innerWidth;
+document.getElementById("image0").style.width = imageWidth.toString()  +  "px";
+
+document.getElementById("image0").onload = function(){
+    screenAspectRatio = innerWidth/innerHeight;
+    imageAspectRatio = this.width/this.height;
+    imageWidth = innerWidth;
+    this.style.width = imageWidth.toString() + "px";
+    heightMax = innerHeight - 200;
+    if(this.height > heightMax){
+        this.style.height = (heightMax).toString() + "px";
+        this.style.width = (heightMax*imageAspectRatio).toString() + "px";
+        imageWidth = heightMax*imageAspectRatio;
+    }
+    
+}
+
 
 imageIndex= 0;
 topimages = [];
@@ -56,10 +72,7 @@ for(var index = 1;index < imageslist.length;index++){
     newimg.style.left = (120*index).toString() + "px";
     newimg.style.transform = "rotate(0deg)";
 }
-topimages[imageIndex].style.border = "solid";
 
-imageWidth = 0.5*innerWidth;
-document.getElementById("image0").style.width = imageWidth.toString()  +  "px";
 
 mc = new Hammer(document.getElementById("image0"));
 mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
@@ -68,6 +81,12 @@ mc.on("panleft panright panup pandown tap press", function(ev) {
     topimages[imageIndex].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
 });    
 
+/*mcback = new Hammer(document.getElementById("imagebox"));
+mcback.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mcback.on("panleft panright panup pandown tap press", function(ev) {
+    topimages[imageIndex].style.left = (ev.deltaX + 0.5*imageWidth).toString() + "px";
+    topimages[imageIndex].style.top = (ev.deltaY + 0.3*imageWidth).toString() + "px";
+});    */
 
 for(var index = 0;index < topimages.length;index++){
     topimages[index].id = "i" + index.toString();
@@ -78,16 +97,19 @@ for(var index = 0;index < topimages.length;index++){
     }
 }
 
+topimages[imageIndex].style.border = "solid";
 
 
-pans = document.getElementById("pantable").getElementsByTagName("TD");
-mc1 = new Hammer(pans[0]);
+//pans = document.getElementById("pantable").getElementsByTagName("TD");
+
+
+mc1 = new Hammer(document.getElementById("scale"));
 mc1.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc1.on("panleft panright panup pandown tap press", function(ev) {
     topimages[imageIndex].style.width = (ev.deltaX + 0.2*imageWidth).toString() + "px";
 });
 
-mc2 = new Hammer(pans[1]);
+mc2 = new Hammer(document.getElementById("rotate"));
 mc2.get('pan').set({ direction: Hammer.DIRECTION_ALL });
 mc2.on("panleft panright panup pandown tap press", function(ev) {
     topimages[imageIndex].style.transform = "rotate(" + (ev.deltaX*Math.PI/10).toString() + "deg)";
@@ -130,14 +152,14 @@ document.getElementById("publish").onclick = function(){
     right:0px;
     bottom:0px;
     border:solid;
+    overflow:hidden;
 }
 #image0{
     position:absolute;
     left:0px;
-    width:50%;
+    width:100%;
     top:0px;
     display:block;
-    border:solid;
 }
 #linktable{
     z-index:2;
@@ -159,6 +181,23 @@ document.getElementById("publish").onclick = function(){
     border:solid;
     text-align:center;
 }
+#rotate{
+    position:absolute;
+    right:0px;
+    height:100px;
+    bottom:0px;
+    left:0px;
+    border:solid;
+}
+#scale{
+    position:absolute;
+    right:0px;
+    height:100px;
+    bottom:100px;
+    left:0px;
+    border:solid;
+}
+
 .button{
     cursor:pointer;
     border:solid;
