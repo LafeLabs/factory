@@ -1,3 +1,5 @@
 <p><a href = "../">../</a></p>
 <p><a href = "editor.php">editor.php</a></p>
 <p><a href = "meme2page.php">meme2page.php</a></p>
+
+<img src = "rainbow/images/baseimage.png"/>

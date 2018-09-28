@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+</head>
+<div id = "memedatadiv" style = "display:none">
+<!--<memedata/>-->    
+</div>
+<body>
+<div id = "imagebox">
+    <img id = "baseimage"/>
+</div>
+<script>
+    memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+    fileextension = memejson.imgurl.substr(-4);
+    document.getElementById("baseimage").src = "images/baseimage" + fileextension;
+    feedwidth = innerWidth;
+    for(var index = 0;index < memejson.topimages.length;index++){
+        var newimg = document.createElement("img");
+        newimg.className = "topimage";
+        
+        newimg.src = "images/topimage" + index.toString() + memejson.topimages[index].url.substr(-4);
+        
+        newimg.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
+        newimg.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
+        newimg.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
+        newimg.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";
+        document.getElementById("imagebox").appendChild(newimg);
+    }
+
+</script>
+<style>
+.topimage{
+    position:absolute;
+    z-index:0;
+}
+#baseimage{
+    width:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+}
+#imagebox{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    z-index:-1;
+}        
+</style>
+</body>
+</html>

@@ -4,18 +4,6 @@
     <title>Meme 2 Page</title>
 </head>
 <body>
-<div id = "memefilediv" style = "display:none"><?php
-
-$files = scandir(getcwd()."../aligner/memes");
-$listtext = "";
-foreach(array_reverse($files) as $value){
-    if($value != "." && $value != ".." && substr($value,-4) == ".txt"){
-        $listtext .= $value.",";
-    }
-}
-echo $listtext;
-
-?></div>        
 <div id = "memedatadiv" style = "display:none"><?php
 
 $files = scandir(getcwd()."/../aligner/memes");
@@ -80,6 +68,7 @@ for(var index = 0;index < memejson.length;index++){
         var newimg2 = document.createElement("img");
         newimg2.className = "topimage";
         newimg2.src = memejson[index].topimages[imgindex].url;
+        
         newimg2.style.width = (memejson[index].topimages[imgindex].woverw*feedwidth).toString() + "px";
         newimg2.style.left = (memejson[index].topimages[imgindex].xoverw*feedwidth).toString() + "px";
         newimg2.style.top = (memejson[index].topimages[imgindex].yoverw*feedwidth).toString() + "px";

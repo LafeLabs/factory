@@ -14,12 +14,16 @@
     $filename = $_POST["filename"];//name of new directory
 
     $inputmemejson =json_decode($data);
-    $baseimageurl = $inputmemejson->imgurl;  
-    $fileextension = substr($baseimageurl,-4);
+    $baseimageurl = $inputmemejson->imgurl; 
+    $patharray = explode("/",$baseimageurl);
+    
+    $fullfilename = "../".$patharray[count($patharray) - 3]."/".$patharray[count($patharray) - 2]."/".$patharray[count($patharray) - 1];
+    $fileextension = substr($fullfilename,-4);
+
     mkdir($filename);
         mkdir($filename."/images");
-        mkdir($filename."/json");
-    copy($baseimageurl,$filename."/images/baseimage".$fileextension);
+        mkdir($filename."/json");   
+    copy($fullfilename,$filename."/images/baseimage".$fileextension);
     
     $file = fopen($filename."/json/memejson.txt","w");// create new file with this name
     fwrite($file,$data); //write data to file
@@ -28,15 +32,20 @@
     $topimagesarray = $inputmemejson->topimages;
     $topimageindex = 0;
     foreach($topimagesarray as $value){
-        $fileextension = substr($value->url,-4);
-        copy($value->url,$filename."/images/topimage".$topimageindex.$fileextension);
+        $patharray = explode("/",$value->url);
+        $fullfilename = "../".$patharray[count($patharray) - 3]."/".$patharray[count($patharray) - 2]."/".$patharray[count($patharray) - 1];   
+        $fileextension = substr($fullfilename,-4);
+        copy($fullfilename,$filename."/images/topimage".$topimageindex.$fileextension);
         $topimageindex += 1;
-    }
+    }   
+    
     //make index.html
-    $indexhtml = "<!doctype html>\n<html>\n<head>\n";
-    $indexhtml .= "<title>".$filename."</title>\n";
-    $indexhtml .= "</head>\n<body>\n";
-    $indexhtml .= "</body>\n</html>";
+    $indextemplate = file_get_contents("html/template.txt");
+    
+    $indextop = explode("<!--<memedata/>-->",$indextemplate)[0];
+    $indexbottom = explode("<!--<memedata/>-->",$indextemplate)[1];
+
+    $indexhtml = $indextop.$data.$indexbottom;
     $file = fopen($filename."/index.html","w");// create new file with this name
     fwrite($file,$indexhtml); //write data to file
     fclose($file);  //close file
