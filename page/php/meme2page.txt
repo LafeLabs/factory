@@ -28,10 +28,8 @@ echo $datatext;
         <td>
             <a href=  "editor.php">EDIT CODE</a>
         </td>
-    </tr>
-    <tr>
         <td>
-            <a href=  "../aligner/index.php">ALIGNER</a>
+            <a href=  "../aligner/index.php"><img style = "width:100px" src = "../factory_symbols/aligner.svg"></a>
         </td>
     </tr>
 </table>

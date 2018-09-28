@@ -6,6 +6,73 @@
 
 <h1>Watershed Factory</h1>
 
+<table id = "factorytable">
+    <tr>
+        <td>
+            <a href = "symbol/stylejsoneditor.php">
+                <img src = "factory_symbols/style.svg">
+            </a>
+        </td>
+        <td></td>
+        <td></td>
+        <td>
+            <a href = "textfeed/">
+                <img src = "factory_symbols/textfeed.svg">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "symbol/shapetableeditor.php">
+                <img src = "factory_symbols/shapes.svg">
+            </a>
+        </td>
+        <td>
+            <a href = "symbol/">
+                <img src = "factory_symbols/symbol.svg">
+            </a>
+        </td>
+        <td></td>
+        <td>
+            <a href = "images/">
+                <img src = "factory_symbols/images.svg">
+            </a>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <a href = "combiner/">
+                <img src = "factory_symbols/combiner.svg">
+            </a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <a href = "aligner/">
+                <img src = "factory_symbols/aligner.svg">
+            </a>
+        </td>
+        <td></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <a href = "page/meme2page.php">
+                <img src = "factory_symbols/page.svg">
+            </a>
+        </td>
+        <td></td>
+    </tr>
+
+</table>
+
+
 <ul>
     <li><a href = "textfeed/">textfeed/</a></li>
     <li><a href = "deck/">deck/</a></li>
@@ -29,5 +96,19 @@
     ul{
         font-size:2em;
         list-style-type:none;
+    }
+    #factorytable{
+        margin:auto;
+        display:block;
+        width:100%;
+        text-align:center;
+    }  
+    td{
+        text-align:center;
+        width:22%;
+    }
+    tr{
+        text-align:center;
+        width:100%;
     }
 </style>
