@@ -40,6 +40,7 @@ echo $datatext;
         <td>PAGE NAME:</td>
         <td><input id = "pagename"/></td>
         <td id = "publish">PUBLISH</td>
+        <td id = "pagelink"></td>
     </tr>
 </table>
 <div id = "feedbox"></div>
@@ -88,6 +89,11 @@ document.getElementById("publish").onclick = function(){
         httpc.open("POST", url, true);
         httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
         httpc.send("data="+data+"&filename="+currentFile);//send text to makenewpage.php
+        
+        newa = document.createElement("a");
+        newa.innerHTML = currentFile;
+        newa.href = currentFile + "/";
+        document.getElementById("pagelink").appendChild(newa);
     }
     else{
         alert("Not enough information inputted, need both a meme and a name.");

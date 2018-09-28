@@ -34,7 +34,9 @@
 			"index.txt",
 			"loadpage.txt",
 			"makejsonindex.txt",
+			"makenewpage.txt",
 			"makepagesindex.txt",
+			"meme2page.txt",
 			"newdir.txt",
 			"pageeditor.txt",
 			"replicator.txt",
@@ -45,7 +47,8 @@
 	{
 		"path":"page/html",
 		"files":[
-			"page.txt"
+			"page.txt",
+			"template.txt"
 		]
 	},
 	{
