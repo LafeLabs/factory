@@ -33,16 +33,45 @@ foreach(array_reverse($files) as $value){
 
 <table id = "toptable">
     <tr>
+        <td>color:</td><td><input id = "colorinput" value = "black"></td>
+    </tr>
+    <tr>
+        <td>fontSize:</td><td><input id = "sizeinput" value = "22px"></td>
+    </tr>
+    <tr>
+        <td>fontFamily:</td><td><input id = "fontinput" value = "Helvetica"></td>
+    </tr>
+    <tr>
         <td>ENTER WORDS:</td>
         <td><input id = "wordsinput"/></td>
         <td class = "button" id = "delete">CLEAR</td>
-        <td><a href = "editor.php">EDITOR</a></td>
-        <td><a href = "../combiner/">COMBINER</a></td>
     </tr>
+
 </table>
 
 <div id = "scrolldiv"  class = "mathjax"></div>
 
+
+<table id = "bottomtable">
+    <tr>
+        <td>
+            <a href = "../symbols/">
+                <img src = "../factory_symbols/images.svg">
+            </a>
+        </td>
+        <td>
+            <a href = "../combiner/">
+                <img src = "../factory_symbols/combiner.svg">
+            </a>
+        </td>
+        <td>
+            <a href = "editor.php">EDIT CODE</a>
+        </td>
+        <td>
+            <a href = "../">../</a>
+        </td>
+    </tr>
+</table>
 
 <script>
 
@@ -83,7 +112,9 @@ document.getElementById("wordsinput").onchange = function(){
 
     var newp = document.createElement("P");
     newp.innerHTML = this.value;
-    
+    newp.style.fontSize = document.getElementById("sizeinput").value;
+    newp.style.color = document.getElementById("colorinput").value;
+    newp.style.fontFamily = document.getElementById("fontinput").value;
     if(document.getElementById("scrolldiv").innerHTML.length > 0){
         var ps = document.getElementById("scrolldiv").getElementsByTagName("P");
         document.getElementById("scrolldiv").insertBefore(newp,ps[0]);
@@ -129,11 +160,14 @@ document.getElementById("delete").onclick = function(){
 </script>
 
 <style>
-
+    body{
+        font-family:Helvetica;
+        font-size:22px;
+    }
 
     .button{
         cursor:pointer;
-        font-size:30px;
+        font-size:22px;
         padding-left:1em;
         padding-right:1em;
         padding-top:10px;
@@ -147,7 +181,7 @@ document.getElementById("delete").onclick = function(){
     }
     #wordsinput{
         width:25em;
-        font-size:30px;
+        font-size:22px;
     }
     #wordsinputbox{
         position:absolute;
@@ -161,13 +195,26 @@ document.getElementById("delete").onclick = function(){
     }
     #scrolldiv{
         position:absolute;
-        top:5em;
+        top:8em;
         bottom:5em;
         right:0px;
         left:0px;
         overflow:scroll;
         padding:1em 1em 1em 1em;
         border-top:solid;
+    }
+    #bottomtable{
+        position:absolute;
+        left:0px;
+        bottom:0px;
+    }
+    #bottomtable img{
+        width:100px;
+    }
+    #toptable{
+        position:absolute;
+        left:0px;
+        top:0px;
     }
 </style>
 

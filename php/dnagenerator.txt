@@ -17,6 +17,20 @@ function getfiles($localpath){
     return $outstring;
 }
 
+function getALLfiles($localpath){
+    $outstring = "";
+    $files = scandir(getcwd()."/".$localpath);
+    $outstring .= "\t{\n\t\t\"path\":\"".$localpath."\",\n\t\t\"files\":[\n";
+    
+    foreach($files as $value){
+        if($value != "." && $value != ".."){
+            $outstring .= "\t\t\t\"".$value."\",\n";
+        }
+    }
+    $outstring = substr($outstring,0,-2);
+    $outstring .= "\n\t\t]\n\t}";
+    return $outstring;
+}
 
 $finalstring = "[\n";
 
@@ -25,6 +39,9 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("html");
 $finalstring .= ",\n";
 $finalstring .= getfiles("json");
+$finalstring .= ",\n";
+
+$finalstring .= getALLfiles("factory_symbols");
 $finalstring .= ",\n";
 
 $finalstring .= getfiles("page/php");

@@ -25,6 +25,19 @@
 		]
 	},
 	{
+		"path":"factory_symbols",
+		"files":[
+			"aligner.svg",
+			"combiner.svg",
+			"images.svg",
+			"page.svg",
+			"shapes.svg",
+			"style.svg",
+			"symbol.svg",
+			"textfeed.svg"
+		]
+	},
+	{
 		"path":"page/php",
 		"files":[
 			"dnagenerator.txt",

@@ -1,6 +1,18 @@
 <table id = "linktable">
     <tr>
         <td>
+            <a href = "../textfeed/"><img style = "width:100px" src = "../factory_symbols/textfeed.svg"/></a>
+        </td>        
+        <td>
+            <a href = "../symbol/"><img style = "width:100px" src = "../factory_symbols/symbol.svg"/></a>
+        </td>
+        <td>
+            <a href = "../images/"><img style = "width:100px" src = "../factory_symbols/images.svg"/></a>
+        </td>
+        <td>
+            <a href = "../aligner/"><img style = "width:100px" src = "../factory_symbols/aligner.svg"/></a>
+        </td>
+        <td>
             <a href = "editor.php">editor.php</a>
         </td>
     </tr>
@@ -9,22 +21,6 @@
             <a href = "../">../</a>
         </td>
     </tr>
-    <tr>
-        <td>
-            <a href = "../aligner/">../aligner/</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href = "../images/">../images/</a>
-        </td>
-    </tr>
-    <tr>
-        <td>
-            <a href = "../symbol/">../symbol/</a>
-        </td>
-    </tr>
-
 </table>
 
 <div id = "imagesfeed">

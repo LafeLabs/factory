@@ -3,7 +3,10 @@
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "../combiner/">../combiner/</a>
+            <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
+        </td>
+        <td>
+            <a href = "../page/meme2page.php"><img style = "width:100px" src = "../factory_symbols/page.svg"></a>
         </td>
     </tr>
     <tr>
