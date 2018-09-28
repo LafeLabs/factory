@@ -21,11 +21,27 @@
         
         newimg.src = "images/topimage" + index.toString() + memejson.topimages[index].url.substr(-4);
         
-        newimg.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
-        newimg.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
-        newimg.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
-        newimg.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";
-        document.getElementById("imagebox").appendChild(newimg);
+        if(memejson.topimages[index].href.length > 1){
+            var newa = document.createElement("a");
+            newa.href = memejson.topimages[index].href;
+            newa.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
+            newa.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
+            newa.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
+            newa.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";       
+            newa.style.position = "absolute";
+            newimg.style.left = "0px";
+            newimg.style.top = "0px";
+            newimg.style.width = "100%";
+            newa.appendChild(newimg);
+            document.getElementById("imagebox").appendChild(newa);
+        }
+        else{
+            newimg.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
+            newimg.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
+            newimg.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
+            newimg.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";
+            document.getElementById("imagebox").appendChild(newimg);   
+        }
     }
 
 </script>

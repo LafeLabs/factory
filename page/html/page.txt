@@ -1,4 +1,21 @@
+    <h1>Page Factory Products</h1>
 <p><a href = "../">../</a></p>
 <p><a href = "editor.php">editor.php</a></p>
 <p><a href = "meme2page.php">meme2page.php</a></p>
+<ul id = "dirlinklist">
+    
+</ul>
 
+<script>
+dirlist = document.getElementById("dirlistdiv").innerHTML.split(",");
+for(var index = 0;index < dirlist.length - 1;index++){
+    var newli = document.createElement("LI");
+    var newa = document.createElement("A");
+    newa.innerHTML = dirlist[index];
+    newa.href = dirlist[index] + "/";
+    newli.appendChild(newa);
+    document.getElementById("dirlinklist").appendChild(newli);
+    
+}
+
+</script>

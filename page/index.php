@@ -39,6 +39,16 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 </head>
 <body>
+<div id = "dirlistdiv" style = "display:none"><?php
+
+$files = scandir(getcwd());
+foreach($files as $value){
+    if($value != "." && $value != ".." && is_dir($value) && $value != "json" && $value != "html" && $value != "php" && $value != "pages"){
+        echo $value.",";
+    }
+}
+
+?></div>
 <div id = "jsondiv" style = "display:none"><?php
 
 if(isset($_GET['json'])){

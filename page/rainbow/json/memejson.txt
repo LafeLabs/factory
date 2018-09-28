@@ -6,21 +6,24 @@
             "xoverw": 0.6053511705685619,
             "yoverw": 0.7732441471571906,
             "woverw": 0.16722408026755853,
-            "angle": 0
+            "angle": 0,
+            "href": "index.php"
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
             "xoverw": 0.5367892976588629,
             "yoverw": 0.4421404682274247,
             "woverw": 0.16722408026755853,
-            "angle": 0
+            "angle": 0,
+            "href": "editor.php"
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
             "xoverw": 0.5234113712374582,
             "yoverw": 0.17290969899665554,
             "woverw": 0.16722408026755853,
-            "angle": 0
+            "angle": 0,
+            "href": "../"
         }
     ]
 }

@@ -43,6 +43,9 @@ echo $datatext;
         <td id = "pagelink"></td>
     </tr>
 </table>
+<table id = "imagelinktable">
+    
+</table>
 <div id = "feedbox"></div>
 
 <div id = "memeoutbox"></div>
@@ -63,6 +66,20 @@ for(var index = 0;index < memejson.length;index++){
         document.getElementById("memeoutbox").innerHTML = this.innerHTML;
         localmemeindex = parseInt(this.id.substr(1));
         localmemejson = memejson[localmemeindex];
+        document.getElementById("imagelinktable").innerHTML = "";
+        for(var bindex = 0;bindex < localmemejson.topimages.length;bindex++){
+            var newtr = document.createElement("TR");
+            var newtd = document.createElement("TD");
+            var newimg = document.createElement("IMG");
+            newimg.src = localmemejson.topimages[bindex].url;
+            newtd.appendChild(newimg);
+            newtr.appendChild(newtd);
+            var newtd = document.createElement("TD");
+            newtr.appendChild(newtd);
+            newtd.innerHTML = "<input/>";
+            document.getElementById("imagelinktable").appendChild(newtr);
+        }
+
     }
     newdiv.appendChild(newimg);
     for(var imgindex = 0;imgindex < memejson[index].topimages.length;imgindex++){
@@ -82,6 +99,10 @@ for(var index = 0;index < memejson.length;index++){
 document.getElementById("publish").onclick = function(){
     if(document.getElementById("pagename").value.length > 1 && document.getElementById("memeoutbox").innerHTML.length > 1){
         
+        hrefs = document.getElementById("imagelinktable").getElementsByTagName("input");
+        for(var index = 0;index < localmemejson.topimages.length;index++){
+            localmemejson.topimages[index].href = hrefs[index].value;
+        }
         currentFile = document.getElementById("pagename").value;
         data = encodeURIComponent(JSON.stringify(localmemejson,null,"    "));
         var httpc = new XMLHttpRequest();
@@ -167,6 +188,28 @@ document.getElementById("publish").onclick = function(){
     #publish:active{
         background-color:yellow;
     }
+    #imagelinktable{
+        position:absolute;
+        left:41%;
+        right:41%;
+        top:5em;
+        border:solid;
+    }
+    #imagelinktable img{
+        width:50px;
+    }
+    #imagelinktable input{
+        font-size:25px;
+        width:10em;
+        font-family:courier;
+    }
+    #imagelinktable tr{
+        border:solid;
+        width:100%;
+        overflow:scroll;
+    }
+
+
 </style>
 </body>
 </html>
