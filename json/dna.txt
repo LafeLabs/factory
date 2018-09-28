@@ -29,6 +29,7 @@
 		"files":[
 			"aligner.svg",
 			"combiner.svg",
+			"factory.svg",
 			"images.svg",
 			"page.svg",
 			"shapes.svg",
@@ -62,6 +63,25 @@
 		"files":[
 			"page.txt",
 			"template.txt"
+		]
+	},
+	{
+		"path":"textfeed/php",
+		"files":[
+			"deletealltext.txt",
+			"dnagenerator.txt",
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"replicator.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"textfeed/json",
+		"files":[
+			"dna.txt"
 		]
 	},
 	{

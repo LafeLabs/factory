@@ -49,6 +49,12 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("page/html");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("textfeed/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("textfeed/json");
+$finalstring .= ",\n";
+
+
 $finalstring .= getfiles("feed/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("feed/html");

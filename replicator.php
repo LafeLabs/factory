@@ -14,6 +14,9 @@
         mkdir("feed/json");
     mkdir("factory_symbols");
 
+    mkdir("textfeed");
+        mkdir("textfeed/html");
+
     mkdir("scroll");    
         mkdir("scroll/latex");
         mkdir("scroll/jupyter");
