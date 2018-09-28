@@ -12,6 +12,8 @@
     mkdir("feed");
         mkdir("feed/feed");
         mkdir("feed/json");
+    mkdir("factory_symbols");
+
     mkdir("scroll");    
         mkdir("scroll/latex");
         mkdir("scroll/jupyter");
