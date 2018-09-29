@@ -33,7 +33,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
         echo file_get_contents("json/stylejson.txt");
     }
 ?></div>    
-<a href = "index.php" id = "indexlink">SYMBOL EDITOR</a>
+<a href = "index.php" id = "indexlink"><img style = "width:100px" src = "../factory_symbols/symbol.svg"/></a>
 
 <table id = "maintable">
     <tr>

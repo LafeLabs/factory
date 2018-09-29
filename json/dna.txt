@@ -85,67 +85,6 @@
 		]
 	},
 	{
-		"path":"feed/php",
-		"files":[
-			"curvetree.txt",
-			"dnagenerator.txt",
-			"editor.txt",
-			"feededitor.txt",
-			"fileloader.txt",
-			"filesaver.txt",
-			"index.txt",
-			"loadfeed.txt",
-			"loadhtmlfeed.txt",
-			"loadjsonfeed.txt",
-			"loadmemefeed.txt",
-			"loadsvgfeed.txt",
-			"makefeedsindex.txt",
-			"makehtmlindex.txt",
-			"makejsonindex.txt",
-			"makememeindex.txt",
-			"makesvgindex.txt",
-			"newdir.txt",
-			"replicator.txt",
-			"symboltree.txt",
-			"text2php.txt",
-			"tree.txt",
-			"treednagenerator.txt",
-			"treereplicator.txt"
-		]
-	},
-	{
-		"path":"feed/html",
-		"files":[
-			"feed.txt"
-		]
-	},
-	{
-		"path":"scroll/php",
-		"files":[
-			"dnagenerator.txt",
-			"editor.txt",
-			"feedsaver.txt",
-			"figurelist.txt",
-			"fileloader.txt",
-			"filesaver.txt",
-			"index.txt",
-			"jupyter.txt",
-			"newdir.txt",
-			"replicator.txt",
-			"scrolleditor.txt",
-			"scrolllist.txt",
-			"texeditor.txt",
-			"text2php.txt",
-			"tree.txt"
-		]
-	},
-	{
-		"path":"scroll/html",
-		"files":[
-			"scroll.txt"
-		]
-	},
-	{
 		"path":"symbol/php",
 		"files":[
 			"dnagenerator.txt",
@@ -218,66 +157,6 @@
 		]
 	},
 	{
-		"path":"deck/php",
-		"files":[
-			"editor.txt",
-			"fileloader.txt",
-			"filesaver.txt",
-			"index.txt",
-			"text2php.txt"
-		]
-	},
-	{
-		"path":"curve/javascript",
-		"files":[
-			"init.txt",
-			"pageactions.txt",
-			"pageevents.txt",
-			"redraw.txt",
-			"topfunctions.txt"
-		]
-	},
-	{
-		"path":"curve/html",
-		"files":[
-			"equation.txt"
-		]
-	},
-	{
-		"path":"curve/css",
-		"files":[
-			"style.txt"
-		]
-	},
-	{
-		"path":"curve/json",
-		"files":[
-			"currentjson.txt",
-			"dna.txt",
-			"plotdata.txt",
-			"treedna.txt"
-		]
-	},
-	{
-		"path":"curve/php",
-		"files":[
-			"dnagenerator.txt",
-			"editor.txt",
-			"equationeditor.txt",
-			"feedsaver.txt",
-			"fileloader.txt",
-			"filesaver.txt",
-			"index.txt",
-			"newdir.txt",
-			"replicator.txt",
-			"svgfeed.txt",
-			"text2php.txt",
-			"tree.txt",
-			"treednagenerator.txt",
-			"treereplicator.txt"
-		]
-	},
-	{
 		"path":"combiner/php",
 		"files":[
 			"editor.txt",
@@ -337,49 +216,5 @@
 			"dna.txt"
 		]
 	},
-	{
-		"path":"map/php",
-		"files":[
-			"dnagenerator.txt",
-			"editor.txt",
-			"fileloader.txt",
-			"filesaver.txt",
-			"index.txt",
-			"newdir.txt",
-			"replicator.txt",
-			"text2php.txt",
-			"tree.txt"
-		]
-	},
-	{
-		"path":"map/html",
-		"files":[
-			"head.txt",
-			"page.txt"
-		]
-	},
-	{
-		"path":"map/css",
-		"files":[
-			"style.txt"
-		]
-	},
-	{
-		"path":"map/javascript",
-		"files":[
-			"conversion.txt",
-			"init.txt",
-			"pageevents.txt",
-			"redraw.txt"
-		]
-	},
-	{
-		"path":"map/json",
-		"files":[
-			"dna.txt",
-			"map.txt",
-			"set.txt",
-			"view.txt"
-		]
-	}
+
 ]

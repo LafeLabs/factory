@@ -33,6 +33,9 @@ body{
         left:0px;
         top:0px;
 }
+#linkTable img{
+    width:100px;
+}
 #savesvg{
         position:absolute;
         z-index:2;

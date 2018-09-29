@@ -28,7 +28,7 @@ echo $listtext;
     <a href = "editor.php">editor.php</a>
         </td>
         <td>
-        <a href = "../combiner/">../combiner/</a>
+        <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"/></a>
         </td>
     </tr>
 </table>

@@ -55,16 +55,6 @@ $finalstring .= getfiles("textfeed/json");
 $finalstring .= ",\n";
 
 
-$finalstring .= getfiles("feed/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("feed/html");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("scroll/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("scroll/html");
-$finalstring .= ",\n";
-
 $finalstring .= getfiles("symbol/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("symbol/html");
@@ -78,19 +68,6 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("symbol/json");
 $finalstring .= ",\n";
 
-$finalstring .= getfiles("deck/php");
-$finalstring .= ",\n";
-
-$finalstring .= getfiles("curve/javascript");
-$finalstring .= ",\n";
-$finalstring .= getfiles("curve/html");
-$finalstring .= ",\n";
-$finalstring .= getfiles("curve/css");
-$finalstring .= ",\n";
-$finalstring .= getfiles("curve/json");
-$finalstring .= ",\n";
-$finalstring .= getfiles("curve/php");
-$finalstring .= ",\n";
 
 $finalstring .= getfiles("combiner/php");
 $finalstring .= ",\n";
@@ -108,17 +85,6 @@ $finalstring .= getfiles("images/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("images/json");
 $finalstring .= ",\n";
-
-
-$finalstring .= getfiles("map/php");
-$finalstring .= ",\n";
-$finalstring .= getfiles("map/html");
-$finalstring .= ",\n";
-$finalstring .= getfiles("map/css");
-$finalstring .= ",\n";
-$finalstring .= getfiles("map/javascript");
-$finalstring .= ",\n";
-$finalstring .= getfiles("map/json");
 
 
 $finalstring .= "\n]";

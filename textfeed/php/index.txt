@@ -55,7 +55,7 @@ foreach(array_reverse($files) as $value){
 <table id = "bottomtable">
     <tr>
         <td>
-            <a href = "../symbols/">
+            <a href = "../images/">
                 <img src = "../factory_symbols/images.svg">
             </a>
         </td>

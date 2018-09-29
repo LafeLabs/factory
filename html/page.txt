@@ -5,7 +5,7 @@
 </script>
 
 <h1>Watershed Factory</h1>
-
+<div id = "factorybox">
 <table id = "factorytable">
     <tr>
         <td>
@@ -71,24 +71,10 @@
     </tr>
 
 </table>
-
-
-<ul>
-    <li><a href = "textfeed/">textfeed/</a></li>
-    <li><a href = "deck/">deck/</a></li>
-    <li><a href = "page/">page/</a></li>
-    <li><a href = "feed/">feed/</a></li>
-    <li><a href = "scroll/">scroll/</a></li>
-    <li><a href = "symbol/">symbol/</a></li>
-    <li><a href = "curve/">curve/</a></li>
-    <li><a href = "map/">map/</a></li>
-    <li><a href = "images/">images/</a></li>
-    <li><a href = "combiner/">combiner/</a></li>
-    <li><a href = "aligner/">aligner/</a></li>
-</ul>
 <p>
     <a href = "editor.php">editor.php</a>
 </p>
+</div>
 <style>
     h1{
         font-size:3em;
@@ -96,6 +82,15 @@
     ul{
         font-size:2em;
         list-style-type:none;
+    }
+    #factorybox{
+        position:absolute;
+        left:0px;
+        right:0px;
+        top:6em;
+        bottom:0px;
+        border-top:solid;
+        overflow:scroll;
     }
     #factorytable{
         margin:auto;
