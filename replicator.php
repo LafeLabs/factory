@@ -5,29 +5,15 @@
     $dna =json_decode($dnaraw);
     $baseurl = explode("json",$url)[0];
 
-    //Seven Sources
+    //sources
     mkdir("page");
         mkdir("page/pages");
         mkdir("page/json");
-    mkdir("feed");
-        mkdir("feed/feed");
-        mkdir("feed/json");
     mkdir("factory_symbols");
-
     mkdir("textfeed");
         mkdir("textfeed/html");
-
-    mkdir("scroll");    
-        mkdir("scroll/latex");
-        mkdir("scroll/jupyter");
-        mkdir("scroll/scrolls");
-        mkdir("scrolls/figures");
-    mkdir("deck");
     mkdir("symbol");
         mkdir("symbol/svg");
-    mkdir("curve");
-        mkdir("curve/svg");
-    mkdir("map");
     mkdir("images");
         mkdir("images/images");
     mkdir("combiner");
