@@ -45,8 +45,8 @@ document.getElementById("savesvg").onclick = function(){
         }
     }
 
-    svgwidth = currentJSON.svgwidth;
-    svgheight = currentJSON.svgheight;
+//    svgwidth = currentJSON.svgwidth;
+  //  svgheight = currentJSON.svgheight;
     tempx0 = x0;
     tempy0 = y0;
     x0 -= 0.5*(innerWidth - svgwidth);
