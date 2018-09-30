@@ -69,9 +69,11 @@
         </td>
         <td></td>
     </tr>
-
 </table>
+
 <a href = "editor.php"><img src = "factory_symbols/editor.svg" style = "width:80px"/></a>
+
+<a href = "copy.php">COPY THE FACTORY</a>
 </div>
 <style>
     h1{
