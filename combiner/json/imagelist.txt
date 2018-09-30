@@ -1,6 +1,3 @@
 [
-    "http://localhost:8000/images/images/image3",
-    "http://localhost:8000/images/images/image4",
-    "http://localhost:8000/images/images/image4",
-    "http://localhost:8000/images/images/image4"
+    "http://localhost:8000/symbol/svg/svg1538340935.svg"
 ]

@@ -176,6 +176,7 @@ echo file_get_contents("json/stylejson.txt");
         <tr><td class = "button" id = "importbytecode">IMPORT BYTECODE</td></tr>
         <tr><td class = "button" id = "exportshapes">EXPORT SHAPES</td></tr>
         <tr><td class = "button" id = "exportfont">EXPORT FONT</td></tr>
+        <tr><td class=  "button" id = "savesvgbutton">SAVE SVG</td></tr>
     </table>
     <input id = "glyphspellinput"/>
     <img id = "mainImage"/>
@@ -231,8 +232,14 @@ redraw();
 function redraw(){
     ctx = document.getElementById("mainCanvas").getContext("2d");
     ctx.clearRect(0,0,innerWidth,innerHeight);
+    svgheight = 500;
+    svgwidth = 500;
+    ctx.strokeRect(0.5*innerWidth - 0.5*svgwidth,0.5*innerHeight - 0.5*svgheight,svgwidth,svgheight);
+    
     doTheThing(0300);
     drawGlyph(currentGlyph);
+
+    
     doTheThing(0300);
     side = 25;
     x = 150;
@@ -379,6 +386,37 @@ document.getElementById("exportfont").onclick = function(){
     
 }
 
+document.getElementById("savesvgbutton").onclick = function(){
+//    svgwidth = currentJSON.svgwidth;
+  //  svgheight = currentJSON.svgheight;
+    tempx0 = x0;
+    tempy0 = y0;
+    x0 -= 0.5*(innerWidth - svgwidth);
+    y0 -= 0.5*(innerHeight - svgheight);
+    ctx = document.getElementById("invisibleCanvas").getContext("2d");
+    currentSVG = "<svg width=\"" + svgwidth.toString() + "\" height=\"" + svgheight.toString() + "\" viewbox = \"0 0 " + svgwidth.toString() + " " + svgheight.toString() + "\"  xmlns=\"http://www.w3.org/2000/svg\">\n";
+    currentSVG += "\n<!--\n<json>\n" + JSON.stringify(currentJSON,null,"    ") + "\n</json>\n-->\n";
+    doTheThing(0300);
+    drawGlyph(cleanGlyph);
+    currentSVG += "</svg>";
+    document.getElementById("textIO").value = currentSVG;
+
+    var httpc = new XMLHttpRequest();
+    var url = "feedsaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    
+    if(path.length > 1){
+         httpc.send("data=" + encodeURIComponent(document.getElementById("textIO").value) + "&path=" + path);//send text to feedsaver.php
+    }
+    else{
+        httpc.send("data=" + encodeURIComponent(document.getElementById("textIO").value));//send text to feedsaver.php
+    }
+    x0 = tempx0;
+    y0 = tempy0;
+    redraw();
+    
+}
 
 controls[0].onchange = function(){
     currentAddress = parseInt(this.value,8);
