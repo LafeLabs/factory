@@ -8,10 +8,10 @@
     </tr>
 
     <tr><td>
-        <a href = "editor.php">EDIT CODE</a>
+        <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
     </td>
     <td>
-        <a href = "svgfeed.php">FEED</a>
+        <a href = "svgfeed.php"><img style = "width:80px" src = "../factory_symbols/svgfeed.svg"></a>
     </td>
     <td>
         <a href = "stylejsoneditor.php"><img src = "../factory_symbols/style.svg"></a>
@@ -23,7 +23,6 @@
     </tr>
 </table>
 <div class = "button" id = "savesvg">SAVE</div>
- 
 
 <canvas id="invisibleCanvas" style="display:none"></canvas>
 <canvas id="mainCanvas"></canvas>

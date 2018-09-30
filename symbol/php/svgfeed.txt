@@ -32,7 +32,7 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 ?></div>
 
-<a id = "indexlink" href = "index.php">index.php</a>
+<a id = "indexlink" href = "index.php"><img style = "width:80px" src = "../factory_symbols/symbol.svg"></a>
 
 <div id = "scroll">
 <?php
@@ -52,52 +52,14 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
     $svgs = array_reverse($svgs);
     foreach($svgs as $value){
         if($value != "." && $value != ".." && substr($value,-4) == ".svg"){
-            $svgcode = file_get_contents($svgpath2.$value);
-
-            $topcode = explode("</json>",$svgcode)[0];
-            $outcode = explode("<json>",$topcode)[1];
-            $currentjson = json_decode($outcode);
-
-
-            $imgw = $currentjson->imgw;
-            $imgurl = $currentjson->imgurl;
-            $imgleft = $currentjson->imgleft;
-            $imgtop = $currentjson->imgtop;
-            $imgangle = $currentjson->imgangle;
-
-            $svgheight = $currentjson->svgheight;
-            $svgwidth = $currentjson->svgwidth;
-
-            $unit = $currentjson->unit;
-            $x0 = $currentjson->x0;
-            $y0 = $currentjson->y0;
-
-            $x0 = 0.5*$svgwidth;
-            $y0 = 0.5*$svgheight;
-
-            $x0rel = $currentjson->x0rel;
-            $y0rel = $currentjson->y0rel;
-
-            $width = $imgw*$unit;
-            $left = 1 + $x0 + $unit*$imgleft;
-            $top = 1 + $y0 + $unit*$imgtop;
-
-
-            echo "\n<p style = \"position:relative;margin:auto;margin-top:3em;border:solid;width:".$svgwidth."px;height:".$svgheight."px;\">\n    <a href = \"index.php?url=";
+            
+            echo "\n<p>\n   <a href = \"index.php?url=";
             echo $svgpath2.$value;
             echo "&path=";
             echo $path;
-            echo "\">\n        <img src = \"";        
-            echo $imgurl;
-            echo "\" style = \"width:";
-            echo $width;
-            echo "px;";
-//            echo "transform:rotate(".$imgangle."deg);";
-            echo "position:absolute;left:".$left."px;top:".$top."px;\"/>";
-            echo "\n        <img style = \"position:relative;left:0px;top:0px;z-index:0;\" src = \"".$svgpath2.$value."\"/>";
+            echo "\">\n";   
+            echo "\n    <img src = \"".$svgpath2.$value."\"/>";
             echo "\n    </a>\n</p>\n";
-            
-
         }
     }
 ?>
@@ -118,9 +80,10 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
     }
 
     #scroll{
+        border-top:solid;
         position:absolute;
         left:0px;
-        top:0px;
+        top:120px;
         bottom:0px;
         right:0px;
         overflow:scroll;

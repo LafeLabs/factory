@@ -38,16 +38,14 @@ echo $datatext;
 <table id = "linktable">
     <tr>
         <td>
-            <a href=  "editor.php">EDIT CODE</a>
+            <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
-    </tr>
-    <tr>
         <td>
-            <a href=  "index.php">ALIGNER</a>
+            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
         </td>
     </tr>
 </table>
-<div id = "delete">!DELETE ALL!</div>
+<div id = "delete" style = "display:none">!DELETE ALL!</div>
 <div id = "feedbox">
     
 </div>

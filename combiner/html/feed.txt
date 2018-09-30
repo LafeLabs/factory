@@ -1,24 +1,22 @@
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "../textfeed/"><img style = "width:100px" src = "../factory_symbols/textfeed.svg"/></a>
+            <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
         </td>        
         <td>
-            <a href = "../symbol/"><img style = "width:100px" src = "../factory_symbols/symbol.svg"/></a>
+            <a href = "../symbol/"><img style = "width:80px" src = "../factory_symbols/symbol.svg"/></a>
         </td>
         <td>
-            <a href = "../images/"><img style = "width:100px" src = "../factory_symbols/images.svg"/></a>
+            <a href = "../images/"><img style = "width:80px" src = "../factory_symbols/images.svg"/></a>
         </td>
         <td>
-            <a href = "../aligner/"><img style = "width:100px" src = "../factory_symbols/aligner.svg"/></a>
+            <a href = "../aligner/"><img style = "width:80px" src = "../factory_symbols/aligner.svg"/></a>
         </td>
         <td>
-            <a href = "editor.php">editor.php</a>
+            <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
-    </tr>
-    <tr>
         <td>
-            <a href = "../">../</a>
+            <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"/></a>
         </td>
     </tr>
 </table>

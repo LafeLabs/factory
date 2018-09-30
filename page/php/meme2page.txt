@@ -26,10 +26,10 @@ echo $datatext;
 <table id = "linktable">
     <tr>
         <td>
-            <a href=  "editor.php">EDIT CODE</a>
+            <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>
-            <a href=  "../aligner/index.php"><img style = "width:100px" src = "../factory_symbols/aligner.svg"></a>
+            <a href=  "../aligner/index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
         </td>
     </tr>
 </table>

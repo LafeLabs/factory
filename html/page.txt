@@ -71,9 +71,7 @@
     </tr>
 
 </table>
-<p>
-    <a href = "editor.php">editor.php</a>
-</p>
+<a href = "editor.php"><img src = "factory_symbols/editor.svg" style = "width:80px"/></a>
 </div>
 <style>
     h1{

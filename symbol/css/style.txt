@@ -34,7 +34,7 @@ body{
         top:0px;
 }
 #linkTable img{
-    width:100px;
+    width:80px;
 }
 #savesvg{
         position:absolute;

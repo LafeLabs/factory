@@ -4,23 +4,15 @@
 
     <tr>
         <td>
-            <a href = "editor.php">editor.php</a>
+            <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
-    </tr>
-    <tr>
         <td>
-            <a href = "../">../</a>
+            <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"></a>
         </td>
-    </tr>
-    <tr>
         <td>
-            <a href = "memefeed.php">memefeed.php</a>
+            <a href = "memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"></a>
         </td>
-    </tr>
-    <tr>
         <td class = "button" id = "publish">PUBLISH</td>
-    </tr>
-    <tr>
         <td>
             <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
         </td>

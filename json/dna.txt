@@ -29,13 +29,17 @@
 		"files":[
 			"aligner.svg",
 			"combiner.svg",
+			"editor.svg",
 			"factory.svg",
+			"feed.svg",
 			"images.svg",
 			"page.svg",
 			"shapes.svg",
 			"style.svg",
+			"svgfeed.svg",
 			"symbol.svg",
-			"textfeed.svg"
+			"textfeed.svg",
+			"watershedfactory.svg"
 		]
 	},
 	{
@@ -96,7 +100,6 @@
 			"index.txt",
 			"keyboardeditor.txt",
 			"loadtable.txt",
-			"meme.txt",
 			"newdir.txt",
 			"replicator.txt",
 			"savetable.txt",
