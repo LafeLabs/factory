@@ -19,9 +19,22 @@
     </li>
     <li>Navigate to the part of 000webhost where you can upload files to your main web directory.  Create a new file by clicking the appropriate icon and name it replicator.php.</li>
     <li>
-        Open replicator.php in the editor, again clicking the appropriate link in the 000webhost interface, and copy and paste the code from this file:
-        <a href = "php/replicator.txt">php/replicator.txt</a>
-        Then save that file and close it.
+        Open replicator.php in the editor, again clicking the appropriate link in the 000webhost interface, and copy and paste the code in this box:
+        <textarea id = "replicatorcode"></textarea>
+                Then save that file and close it.
+
+        <script>
+            currentFile = "php/replicator.txt";
+            var httpc = new XMLHttpRequest();
+            httpc.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200) {
+                    data = this.responseText;
+                    document.getElementById("replicatorcode").value = data;
+                }
+            };
+            httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+            httpc.send();
+        </script>
     </li>
     <li>
         Navigate your browser to the location of your web address.  This is [your chosen site name].000webhostapp.com/.  You should see a listing of the files in your site, which is just replicator.php.  Click on it to run it, and wait, up to a couple minutes, while the files copy.  

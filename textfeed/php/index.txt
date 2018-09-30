@@ -65,10 +65,10 @@ foreach(array_reverse($files) as $value){
             </a>
         </td>
         <td>
-            <a href = "editor.php">EDIT CODE</a>
+            <a href = "editor.php"><img src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>
-            <a href = "../">../</a>
+            <a href = "../"><img src = "../factory_symbols/factory.svg"></a>
         </td>
     </tr>
 </table>
@@ -93,7 +93,6 @@ function init(){
 document.getElementById("wordsinput").onchange = function(){
     
 
-        
     data = encodeURIComponent(this.value);
     timestamp = Math.round((new Date().getTime())/1000);
     var httpc = new XMLHttpRequest();
@@ -209,7 +208,7 @@ document.getElementById("delete").onclick = function(){
         bottom:0px;
     }
     #bottomtable img{
-        width:100px;
+        width:80px;
     }
     #toptable{
         position:absolute;

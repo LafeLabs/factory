@@ -149,8 +149,8 @@ echo file_get_contents("json/stylejson.txt");
 ?>
 </div>    
 <div id = "page">
-    <a  id = "editorlink" href = "editor.php">editor.php</a>
-    <a  id = "factorylink" href = "index.php">index.php</a>
+    <a  id = "editorlink" href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
+    <a  id = "factorylink" href = "index.php"><img style = "width:80px" src = "../factory_symbols/symbol.svg"></a>
     <a id = "backlink" href = ""></a>
 
     <canvas id="invisibleCanvas" style="display:none"></canvas>
@@ -356,12 +356,12 @@ document.getElementById("importbytecode").onclick = function(){
 }
 document.getElementById("exportshapes").onclick = function(){
     bytecodedata = "";
-    for(var index = 0220;index < 0250;index++){
+    for(var index = 0220;index < 0277;index++){
         if(currentTable[index].length > 1){
             bytecodedata +=  "0" + index.toString(8) + ":" +  currentTable[index] + "\n";   
         }
     }
-    for(var index = 01220;index < 01250;index++){
+    for(var index = 01220;index < 01277;index++){
         if(currentTable[index].length > 1){
             bytecodedata +=  "0" + index.toString(8) + ":" + currentTable[index] + "\n";   
         }

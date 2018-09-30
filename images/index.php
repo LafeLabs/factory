@@ -25,10 +25,10 @@ echo $listtext;
 <table>
     <tr>
         <td>
-    <a href = "editor.php">editor.php</a>
+    <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"/></a>
         </td>
         <td>
-        <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"/></a>
+        <a href = "../combiner/"><img style = "width:80px" src = "../factory_symbols/combiner.svg"/></a>
         </td>
     </tr>
 </table>
@@ -76,6 +76,7 @@ echo $listtext;
     left:0px;
     right:0px;
     overflow:scroll;
+    border-top:solid;
 }
 #imagescroll img{
     display:block;

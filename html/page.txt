@@ -8,12 +8,12 @@
 <div id = "factorybox">
 <table id = "factorytable">
     <tr>
+        <td></td>
         <td>
             <a href = "symbol/stylejsoneditor.php">
                 <img src = "factory_symbols/style.svg">
             </a>
         </td>
-        <td></td>
         <td></td>
         <td>
             <a href = "textfeed/">
