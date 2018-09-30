@@ -1,8 +1,8 @@
 {
     "color0": "black",
     "fill0": "black",
-    "line0": 6,
-    "color1": "white",
+    "line0": "1",
+    "color1": "black",
     "fill1": "white",
     "line1": 6,
     "color2": "red",
