@@ -1,14 +1,7 @@
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 
 <table id = "linktable">
-    <tr>
-        <td>
-            <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
-        </td>
-        <td>
-            <a href = "../page/meme2page.php"><img style = "width:100px" src = "../factory_symbols/page.svg"></a>
-        </td>
-    </tr>
+
     <tr>
         <td>
             <a href = "editor.php">editor.php</a>
@@ -26,6 +19,14 @@
     </tr>
     <tr>
         <td class = "button" id = "publish">PUBLISH</td>
+    </tr>
+    <tr>
+        <td>
+            <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
+        </td>
+        <td>
+            <a href = "../page/meme2page.php"><img style = "width:100px" src = "../factory_symbols/page.svg"></a>
+        </td>
     </tr>
 </table>
 
@@ -70,9 +71,9 @@ for(var index = 1;index < imageslist.length;index++){
     newimg.className = "topimage";
     document.getElementById("imagebox").appendChild(newimg);
     topimages.push(newimg);
-    newimg.style.width = "100px";
-    newimg.style.top = "100px";
-    newimg.style.left = (120*index).toString() + "px";
+    newimg.style.width = "80px";
+    newimg.style.top = "80px";
+    newimg.style.left = (85*index).toString() + "px";
     newimg.style.transform = "rotate(0deg)";
 }
 
@@ -168,25 +169,11 @@ document.getElementById("publish").onclick = function(){
     z-index:2;
     position:absolute;
     right:0px;
-    top:0px;
-}
-#pantable{
-    position:absolute;
     bottom:0px;
-    left:0px;
-    width:50%;
-    z-index:1;
-}
-#pantable td{
-    height:100px;
-    width:100%;
-    font-size:22px;
-    border:solid;
-    text-align:center;
 }
 #rotate{
     position:absolute;
-    right:0px;
+    right:50%;
     height:100px;
     bottom:0px;
     left:0px;
@@ -194,7 +181,7 @@ document.getElementById("publish").onclick = function(){
 }
 #scale{
     position:absolute;
-    right:0px;
+    right:50%;
     height:100px;
     bottom:100px;
     left:0px;
