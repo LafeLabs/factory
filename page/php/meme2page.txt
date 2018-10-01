@@ -42,7 +42,9 @@ echo $datatext;
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "../linkfeed">LINKFEED</a>
+            <a href = "../linkfeed">
+                <img style = "width:80px" src = "../factory_symbols/linkfeed.svg">
+            </a>
         </td>
         <td>
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>

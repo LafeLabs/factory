@@ -1,0 +1,1 @@
+<td>             <a href = "../images/">                 <img src = "../factory_symbols/images.svg">             </a>         </td>

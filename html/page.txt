@@ -67,11 +67,13 @@
                 <img src = "factory_symbols/page.svg">
             </a>
         </td>
-        <td><a href = "linkfeed/">LINKFEED</a></td>
+        <td><a href = "linkfeed/">
+            <img  src = "../factory_symbols/linkfeed.svg">
+        </a></td>
     </tr>
 </table>
 
-<a href = "editor.php"><img src = "factory_symbols/editor.svg" style = "width:80px"/></a>
+<a href = "editor.php"><img style = "width:100px" src = "factory_symbols/editor.svg"/></a>
 
 <a href = "copy.php">COPY THE FACTORY</a>
 </div>
@@ -98,6 +100,9 @@
         width:100%;
         text-align:center;
     }  
+    #factorytable img{
+        width:100px;
+    }
     td{
         text-align:center;
         width:22%;
