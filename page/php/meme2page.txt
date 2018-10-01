@@ -82,6 +82,7 @@ for(var index = 0;index < memejson.length;index++){
     var newimg = document.createElement("IMG");
     newimg.src = memejson[index].imgurl;
     newimg.className = "bottomimage";
+    
     newdiv.id = "m" + index.toString();
     newdiv.onclick = function(){
         document.getElementById("memeoutbox").innerHTML = this.innerHTML;
@@ -94,6 +95,19 @@ for(var index = 0;index < memejson.length;index++){
             var newtd = document.createElement("TD");
             var newimg = document.createElement("IMG");
             newimg.src = localmemejson.topimages[bindex].url;
+            newimg.id = "s" + bindex.toString();
+            newimg.className = "newsymbol";
+            newimg.onclick = function(){
+                var sid = parseInt(this.id.substr(1));
+                linkindices[sid]++;
+                if(linkindices[sid] > linkarray.length - 1){
+                    linkindices[sid] = -1;
+                    document.getElementById("i" + sid.toString()).value = "";
+                }
+                else{
+                    document.getElementById("i" + sid.toString()).value = linkarray[linkindices[sid]].innerHTML;
+                }
+            }
             newtd.appendChild(newimg);
             newtr.appendChild(newtd);
             var newtd = document.createElement("TD");
@@ -260,7 +274,10 @@ document.getElementById("publish").onclick = function(){
         width:100%;
         overflow:scroll;
     }
-
+    .newsymbol{
+        z-index:2;
+        cursor:pointer;
+    }
 
 </style>
 </body>
