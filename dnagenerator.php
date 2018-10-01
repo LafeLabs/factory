@@ -54,6 +54,11 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("textfeed/json");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("linkfeed/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("linkfeed/json");
+$finalstring .= ",\n";
+
 
 $finalstring .= getfiles("symbol/php");
 $finalstring .= ",\n";

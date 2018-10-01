@@ -15,6 +15,11 @@
 	{
 		"path":"html",
 		"files":[
+			"html1538368390.txt",
+			"html1538368401.txt",
+			"html1538368647.txt",
+			"html1538368694.txt",
+			"html1538368706.txt",
 			"page.txt",
 			"replicator.txt"
 		]
@@ -35,6 +40,7 @@
 			"factory.svg",
 			"feed.svg",
 			"images.svg",
+			"linkfeed.svg",
 			"page.svg",
 			"shapes.svg",
 			"style.svg",
@@ -86,6 +92,25 @@
 	},
 	{
 		"path":"textfeed/json",
+		"files":[
+			"dna.txt"
+		]
+	},
+	{
+		"path":"linkfeed/php",
+		"files":[
+			"deletealltext.txt",
+			"dnagenerator.txt",
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"replicator.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"linkfeed/json",
 		"files":[
 			"dna.txt"
 		]

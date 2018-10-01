@@ -12,6 +12,8 @@
     mkdir("factory_symbols");
     mkdir("textfeed");
         mkdir("textfeed/html");
+    mkdir("linkfeed");
+        mkdir("linkfeed/html");
     mkdir("symbol");
         mkdir("symbol/svg");
     mkdir("images");
