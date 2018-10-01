@@ -4,6 +4,22 @@
     <title>Meme 2 Page</title>
 </head>
 <body>
+<div id = "linkdatadiv" style = "display:none">
+<?php
+
+$files = scandir(getcwd()."/../linkfeed/html");
+
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".." && substr($value,-4) == ".txt"){
+        echo "<a>";
+        echo file_get_contents("../linkfeed/html/".$value);
+        echo "</a>\n";
+    }
+}
+
+
+
+?></div>
 <div id = "memedatadiv" style = "display:none"><?php
 
 $files = scandir(getcwd()."/../aligner/memes");
@@ -25,6 +41,9 @@ echo $datatext;
 ?></div>        
 <table id = "linktable">
     <tr>
+        <td>
+            <a href = "../linkfeed">LINKFEED</a>
+        </td>
         <td>
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
@@ -49,6 +68,8 @@ echo $datatext;
 <div id = "memeoutbox"></div>
 <script>
 
+linkarray = document.getElementById("linkdatadiv").getElementsByTagName("A");
+
 feedwidth = 0.4*innerWidth;
 memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
 for(var index = 0;index < memejson.length;index++){
@@ -65,6 +86,7 @@ for(var index = 0;index < memejson.length;index++){
         localmemeindex = parseInt(this.id.substr(1));
         localmemejson = memejson[localmemeindex];
         document.getElementById("imagelinktable").innerHTML = "";
+        linkindices = [];
         for(var bindex = 0;bindex < localmemejson.topimages.length;bindex++){
             var newtr = document.createElement("TR");
             var newtd = document.createElement("TD");
@@ -74,8 +96,38 @@ for(var index = 0;index < memejson.length;index++){
             newtr.appendChild(newtd);
             var newtd = document.createElement("TD");
             newtr.appendChild(newtd);
-            newtd.innerHTML = "<input/>";
+            var newinput = document.createElement("INPUT");
+            newtd.appendChild(newinput);
             document.getElementById("imagelinktable").appendChild(newtr);
+            linkindices.push(-1);
+            newinput.id = "i" + bindex.toString();
+            newinput.onkeydown = function(e){
+                var inputid = parseInt(this.id.substr(1));
+                charCode = e.keyCode || e.which;
+                if(charCode == 046){
+                    linkindices[inputid]++;
+                    if(linkindices[inputid] > linkarray.length - 1){
+                        linkindices[inputid] = -1;
+                        this.value = "";
+                    }
+                    else{
+                        this.value = linkarray[linkindices[inputid]].innerHTML;
+                    }
+                }
+                if(charCode == 050){
+                    linkindices[inputid]--;
+                    if(linkindices[inputid] == -1){
+                        this.value = "";
+                    }
+                    if(linkindices[inputid] == -2){
+                        linkindices[inputid] = linkarray.length - 1;
+                    }
+                    if(linkindices[inputid] != -1){
+                        this.value = linkarray[linkindices[inputid]].innerHTML
+                    }
+
+                }    
+            }
         }
 
     }
@@ -140,7 +192,7 @@ document.getElementById("publish").onclick = function(){
         left:0px;
         top:5em;
         bottom:5em;
-        width:40%;
+        width:35%;
         border:solid;
         text-align:center;
         overflow:scroll;
@@ -150,7 +202,7 @@ document.getElementById("publish").onclick = function(){
         right:0px;
         top:5em;
         bottom:5em;
-        width:40%;
+        width:35%;
         border:solid;
         text-align:center;
         overflow:scroll;
@@ -188,7 +240,7 @@ document.getElementById("publish").onclick = function(){
     }
     #imagelinktable{
         position:absolute;
-        left:41%;
+        left:37%;
         right:41%;
         top:5em;
         border:solid;

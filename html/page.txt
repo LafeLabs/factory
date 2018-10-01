@@ -67,7 +67,7 @@
                 <img src = "factory_symbols/page.svg">
             </a>
         </td>
-        <td></td>
+        <td><a href = "linkfeed/">LINKFEED</a></td>
     </tr>
 </table>
 
