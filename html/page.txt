@@ -55,7 +55,7 @@
     <tr>
         <td></td>
         <td>
-            <a href = "aligner/memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"></a>
+            <a href = "aligner/memefeed.php"><img style = "width:80px" src = "factory_symbols/feed.svg"></a>
         </td>
         <td>
             <a href = "aligner/">
@@ -73,7 +73,7 @@
             </a>
         </td>
         <td><a href = "linkfeed/">
-            <img  src = "../factory_symbols/linkfeed.svg">
+            <img  src = "factory_symbols/linkfeed.svg">
         </a></td>
     </tr>
     <tr>

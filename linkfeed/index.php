@@ -36,7 +36,7 @@ foreach(array_reverse($files) as $value){
     <tr>
         <td>
             <a href = "../page/meme2page.php">
-                <img src = "../factory_symbols/page.svg">
+                <img src = "../factory_symbols/meme2page.svg">
             </a>
         </td>
         <td>

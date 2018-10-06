@@ -13,7 +13,7 @@
             "yoverw": 0.7732441471571906,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/page/meme2page.php"
+            "href": ""
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
@@ -21,7 +21,7 @@
             "yoverw": 0.4421404682274247,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/page/"
+            "href": ""
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
@@ -29,7 +29,7 @@
             "yoverw": 0.17290969899665554,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/symbol/"
+            "href": ""
         }
     ]
 }    
@@ -39,10 +39,25 @@
     <img id = "baseimage"/>
 </div>
 <script>
-    memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
-    fileextension = memejson.imgurl.substr(-4);
-    document.getElementById("baseimage").src = "images/baseimage" + fileextension;
-    feedwidth = innerWidth;
+memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+fileextension = memejson.imgurl.substr(-4);
+document.getElementById("baseimage").src = "images/baseimage" + fileextension;
+    
+    
+document.getElementById("baseimage").onload = function(){
+    if(this.width > innerWidth){
+        this.width = innerWidth;
+        feedwidth = innerWidth;
+    }
+    else{
+        feedwidth = this.width;
+    }
+
+    init();
+}
+    
+
+function init(){
     for(var index = 0;index < memejson.topimages.length;index++){
         var newimg = document.createElement("img");
         newimg.className = "topimage";
@@ -71,7 +86,7 @@
             document.getElementById("imagebox").appendChild(newimg);   
         }
     }
-
+}
 </script>
 <style>
 .topimage{
@@ -79,7 +94,7 @@
     z-index:0;
 }
 #baseimage{
-    width:100%;
+    height:100%;
     position:absolute;
     left:0px;
     top:0px;
@@ -90,6 +105,8 @@
     top:0px;
     left:0px;
     right:0px;
+    bottom:0px;
+    overflow:hidden;
     z-index:-1;
 }        
 </style>

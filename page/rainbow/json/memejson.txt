@@ -7,7 +7,7 @@
             "yoverw": 0.7732441471571906,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/page/meme2page.php"
+            "href": ""
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
@@ -15,7 +15,7 @@
             "yoverw": 0.4421404682274247,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/page/"
+            "href": ""
         },
         {
             "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
@@ -23,7 +23,7 @@
             "yoverw": 0.17290969899665554,
             "woverw": 0.16722408026755853,
             "angle": 0,
-            "href": "http://localhost:8000/symbol/"
+            "href": ""
         }
     ]
 }

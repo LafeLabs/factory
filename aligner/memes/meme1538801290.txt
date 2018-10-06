@@ -1,0 +1,26 @@
+{
+    "imgurl": "http://localhost:8000/images/images/style.svg",
+    "topimages": [
+        {
+            "url": "http://localhost:8000/images/images/symbol.svg",
+            "xoverw": 0.3595317725752508,
+            "yoverw": 0.654515050167224,
+            "woverw": 0.13377926421404682,
+            "angle": 0
+        },
+        {
+            "url": "http://localhost:8000/images/images/symbol.svg",
+            "xoverw": 0.35451505016722407,
+            "yoverw": 0.42876254180602,
+            "woverw": 0.13377926421404682,
+            "angle": 0
+        },
+        {
+            "url": "http://localhost:8000/images/images/symbol.svg",
+            "xoverw": 0.35618729096989965,
+            "yoverw": 0.20969899665551842,
+            "woverw": 0.13377926421404682,
+            "angle": 88.2788
+        }
+    ]
+}
