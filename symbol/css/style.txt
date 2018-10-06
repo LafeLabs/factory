@@ -65,4 +65,7 @@ body{
     overflow:scroll;
     height:120px;
 }
+#actionInput{
+    width:1em;
+}
 

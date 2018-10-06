@@ -40,7 +40,9 @@ document.getElementById("image0").src = imageslist[0];
 
 document.getElementById("image0").onload = function(){
     if(this.width > innerWidth){
+        var aspectRatio = this.width/this.height; 
         this.width = innerWidth;
+        this.height = this.width/aspectRatio;
         imageWidth = innerWidth;
     }
     else{

@@ -35,6 +35,7 @@
 		"path":"factory_symbols",
 		"files":[
 			"aligner.svg",
+			"arrow.svg",
 			"combiner.svg",
 			"copy.svg",
 			"curve.svg",
