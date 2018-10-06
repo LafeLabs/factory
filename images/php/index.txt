@@ -33,7 +33,8 @@ echo $listtext;
     </tr>
 </table>
 
-<div class = "button" id = "delete" style = "display:none">! DELETE ALL !</div>
+<div class = "button" id = "delete">! DELETE ALL IMAGES !</div>
+
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
     Select image to upload:
@@ -112,11 +113,13 @@ h1,h2,h3,h4,h5{
     background-color:yellow;
 }
 #delete{
-    position:absolute;
-    top:1em;
-    right:1em;
     color:red;
     border-color:red;
+    font-size:24px;
+    font-family:Impact;
+    position:absolute;
+    right:24px;
+    top:24px;    
 }
 </style>
 
