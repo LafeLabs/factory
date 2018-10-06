@@ -75,6 +75,9 @@ function init(){
             newimg.style.left = "0px";
             newimg.style.top = "0px";
             newimg.style.width = "100%";
+            newimg.onload = function(){
+                this.parentElement.style.height = (this.height).toString() + "px";
+            }
             newa.appendChild(newimg);
             document.getElementById("imagebox").appendChild(newa);
         }

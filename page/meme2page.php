@@ -72,7 +72,7 @@ echo $datatext;
 
 linkarray = document.getElementById("linkdatadiv").getElementsByTagName("A");
 
-feedwidth = 0.4*innerWidth;
+feedwidth = 0.35*innerWidth;
 memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
 for(var index = 0;index < memejson.length;index++){
     var newdiv = document.createElement("DIV");

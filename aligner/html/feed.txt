@@ -35,23 +35,21 @@
 
 imageslist = JSON.parse(document.getElementById("imagesdatadiv").innerHTML);
 
+document.getElementById("image0").style.height = (innerHeight - 200).toString() + "px";
+
 document.getElementById("image0").src = imageslist[0];
 
-imageWidth = innerWidth;
-document.getElementById("image0").style.width = imageWidth.toString()  +  "px";
+
 
 document.getElementById("image0").onload = function(){
-    screenAspectRatio = innerWidth/innerHeight;
-    imageAspectRatio = this.width/this.height;
-    imageWidth = innerWidth;
-    this.style.width = imageWidth.toString() + "px";
-    heightMax = innerHeight - 200;
-    if(this.height > heightMax){
-        this.style.height = (heightMax).toString() + "px";
-        this.style.width = (heightMax*imageAspectRatio).toString() + "px";
-        imageWidth = heightMax*imageAspectRatio;
+    if(this.width > innerWidth){
+        this.width = innerWidth;
+        imageWidth = innerWidth;
     }
-    
+    else{
+        imageWidth = this.width;
+    }
+
 }
 
 
@@ -153,7 +151,6 @@ document.getElementById("publish").onclick = function(){
 #image0{
     position:absolute;
     left:0px;
-    width:100%;
     top:0px;
     display:block;
 }
