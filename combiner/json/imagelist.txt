@@ -1,4 +1,4 @@
 [
-    "http://localhost:8000/symbol/svg/svg1537941003.svg",
-    "http://localhost:8000/symbol/svg/svg1538158213.svg"
+    "http://lafelabs.org/factory/symbol/svg/svg1538835453.svg",
+    "http://localhost:8000/symbol/svg/svg1537852921.svg"
 ]

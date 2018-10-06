@@ -85,6 +85,13 @@ h1{
         overflow:scroll;
         padding:3em 3em 3em 3em;
     }
+    #replicatorcode{
+        display:block;
+        margin:auto;
+        width:80%;
+        height:35em;
+        font-family:;
+    }
 </style>
 </body>
 </html>

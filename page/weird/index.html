@@ -1,0 +1,117 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+</head>
+<div id = "memedatadiv" style = "display:none">
+{
+    "imgurl": "http://localhost:8000/symbol/svg/svg1537850154.svg",
+    "topimages": [
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1537852920.svg",
+            "xoverw": 0.38390243902439025,
+            "yoverw": 0.2658536585365854,
+            "woverw": 0.34536585365853656,
+            "angle": 0,
+            "href": ""
+        },
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1537852920.svg",
+            "xoverw": 0.675609756097561,
+            "yoverw": 0.009268292682926829,
+            "woverw": 0.2760975609756098,
+            "angle": 52.7788,
+            "href": ""
+        },
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1537852920.svg",
+            "xoverw": 0.4121951219512195,
+            "yoverw": 0.04926829268292683,
+            "woverw": 0.2965853658536585,
+            "angle": 0,
+            "href": ""
+        }
+    ]
+}    
+</div>
+<body>
+<div id = "imagebox">
+    <img id = "baseimage"/>
+</div>
+<script>
+memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+fileextension = memejson.imgurl.substr(-4);
+document.getElementById("baseimage").src = "images/baseimage" + fileextension;
+    
+    
+document.getElementById("baseimage").onload = function(){
+    if(this.width > innerWidth){
+        this.width = innerWidth;
+        feedwidth = innerWidth;
+    }
+    else{
+        feedwidth = this.width;
+    }
+
+    init();
+}
+    
+
+function init(){
+    for(var index = 0;index < memejson.topimages.length;index++){
+        var newimg = document.createElement("img");
+        newimg.className = "topimage";
+        
+        newimg.src = "images/topimage" + index.toString() + memejson.topimages[index].url.substr(-4);
+        
+        if(memejson.topimages[index].href.length > 1){
+            var newa = document.createElement("a");
+            newa.href = memejson.topimages[index].href;
+            newa.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
+            newa.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
+            newa.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
+            newa.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";       
+            newa.style.position = "absolute";
+            newimg.style.left = "0px";
+            newimg.style.top = "0px";
+            newimg.style.width = "100%";
+            newimg.onload = function(){
+                this.parentElement.style.height = (this.height).toString() + "px";
+            }
+            newa.appendChild(newimg);
+            document.getElementById("imagebox").appendChild(newa);
+        }
+        else{
+            newimg.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
+            newimg.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
+            newimg.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
+            newimg.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";
+            document.getElementById("imagebox").appendChild(newimg);   
+        }
+    }
+}
+</script>
+<style>
+.topimage{
+    position:absolute;
+    z-index:0;
+}
+#baseimage{
+    height:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+}
+#imagebox{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow:hidden;
+    z-index:-1;
+}        
+</style>
+</body>
+</html>

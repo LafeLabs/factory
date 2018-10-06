@@ -20,6 +20,18 @@
         </td>
     </tr>
 </table>
+<table id = "extinputtable">
+    <tr>
+        <td>
+            External Symbol or Curve Feed url:
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input id = "urlinput"/>
+        </td>
+    </tr>
+</table>
 
 <div id = "imagesfeed">
 </div>
@@ -83,8 +95,57 @@
         httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
 
     }
+    
+    document.getElementById("urlinput").onchange = function(){
+        //use fileloader.php to grab remote list file
+        //http://lafelabs.org/factory/symbol/   
+        //example: http://lafelabs.org/factory/symbol/  svg/list.txt
+        currentFile = this.value + "svg/list.txt";
+        var httpc = new XMLHttpRequest();
+        httpc.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                filedata = this.responseText;
+                symbollist  = filedata.split(",");
+                for(var index = 0;index < symbollist.length;index++){
+                    if(symbollist[index].length > 1){
+                    var newimg = document.createElement("IMG");
+                    newimg.src = document.getElementById("urlinput").value + "svg/" + symbollist[index];
+                    
+                    var localimglist = document.getElementById("imagesfeed").getElementsByTagName("IMG");
+                    document.getElementById("imagesfeed").insertBefore(newimg,localimglist[0]);
+    //                document.getElementById("imagesfeed").appendChild(newimg);
+                    
+                    
+                    newimg.onclick = function(){
+                        var newimg2 = document.createElement("img");
+                        newimg2.src = this.src;
+                        document.getElementById("outfeed").appendChild(newimg2);
+                        redraw();
+                        newimg2.onclick = function(){
+                            document.getElementById("outfeed").removeChild(this);
+                            redraw();
+                        }
+                
+                    }
+
+                    }
+                }   
+    
+            }
+        };
+        httpc.open("GET", "fileloader.php?filename=" + currentFile, true);
+        httpc.send();
+    }
 </script>
 <style>
+#extinputtable{
+    position:absolute;
+    left:1em;
+    top:1em;
+}
+#extinputtable input{
+    width:12em;
+}
     #imagesfeed{
         position:absolute;
         width:15%;

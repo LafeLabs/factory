@@ -5,6 +5,8 @@
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
+_9_LAWS_OF_GEOMETRON_:
+
 EVERYTHING IS PHYSICAL
 EVERYTHING IS FRACTAL
 EVERYTHING IS RECURSIVE
@@ -13,9 +15,11 @@ NO MONEY
 NO PROPERTY
 NO MINING
 
-LOOK AT THE INSECTS
-LOOK AT THE FUNGI
-LANGUAGE IS HOW THE MIND PARSES REALITY
+EGO DEATH:
+    LOOK AT THE INSECTS
+    LOOK AT THE FUNGI
+    LANGUAGE IS HOW THE MIND PARSES REALITY
+    
 -->
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
@@ -54,15 +58,7 @@ if(isset($_GET['json'])){
 
 ?></div>
 <?php
-    if(isset($_GET['url'])){
-        echo file_get_contents($_GET['url']);
-    }
-    if(isset($_GET['path']) && !isset($_GET['url'])){
-        echo file_get_contents($_GET['path']."html/page.txt");
-    }
-    if(!isset($_GET['url']) && !isset($_GET['path'])){
-        echo file_get_contents("html/page.txt");
-    }
+    echo file_get_contents("html/page.txt");
 ?>
 
 <style>

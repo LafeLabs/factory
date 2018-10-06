@@ -1,0 +1,12 @@
+{
+    "imgurl": "http://lafelabs.org/factory/symbol/svg/svg1538835453.svg",
+    "topimages": [
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1537852921.svg",
+            "xoverw": 0.3126829268292683,
+            "yoverw": 0.2121951219512195,
+            "woverw": 0.33463414634146343,
+            "angle": 0
+        }
+    ]
+}
