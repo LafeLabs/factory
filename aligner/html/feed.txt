@@ -42,7 +42,7 @@ document.getElementById("image0").onload = function(){
     if(this.width > innerWidth){
         var aspectRatio = this.width/this.height; 
         this.width = innerWidth;
-        this.height = this.width/aspectRatio;
+        this.style.height = (this.width/aspectRatio).toString() + "px";
         imageWidth = innerWidth;
     }
     else{
