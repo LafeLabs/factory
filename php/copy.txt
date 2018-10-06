@@ -4,14 +4,14 @@
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "index.php">
-                <img style = "width:80px" src = "factory_symbols/factory.svg"/>
-            </a>        
-        </td>
-        <td>
             <a href = "editor.php">
                 <img style = "width:80px" src = "factory_symbols/editor.svg"/>
             </a>
+        </td>
+        <td>
+            <a href = "index.php">
+                <img style = "width:80px" src = "factory_symbols/factory.svg"/>
+            </a>        
         </td>
     </tr>
 </table>

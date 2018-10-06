@@ -25,10 +25,16 @@ echo $listtext;
 <table>
     <tr>
         <td>
-    <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"/></a>
+        <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
         </td>
         <td>
         <a href = "../combiner/"><img style = "width:80px" src = "../factory_symbols/combiner.svg"/></a>
+        </td>
+        <td>
+    <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"/></a>
+        </td>
+        <td>
+    <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"/></a>
         </td>
     </tr>
 </table>

@@ -1,16 +1,25 @@
+
+<div id = "navbar">
 <table id = "linktable">
     <tr>
         <td>
-            <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
-        </td>        
+            <a href = "../curve/"><img style = "width:80px" src = "../factory_symbols/curve.svg"/></a>
+        </td>
         <td>
             <a href = "../symbol/"><img style = "width:80px" src = "../factory_symbols/symbol.svg"/></a>
         </td>
         <td>
+            <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
+        </td>        
+        <td>
             <a href = "../images/"><img style = "width:80px" src = "../factory_symbols/images.svg"/></a>
         </td>
+
         <td>
             <a href = "../aligner/"><img style = "width:80px" src = "../factory_symbols/aligner.svg"/></a>
+        </td>
+        <td>
+            <a href = "../aligner/memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"/></a>
         </td>
         <td>
             <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
@@ -19,22 +28,23 @@
             <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"/></a>
         </td>
     </tr>
-</table>
-<table id = "extinputtable">
+</table>    
+</div>
+<div id = "actiondiv">
+<table>
     <tr>
         <td>
             External Symbol or Curve Feed url:
         </td>
-    </tr>
-    <tr>
         <td>
             <input id = "urlinput"/>
         </td>
     </tr>
 </table>
-
+</div>
 <div id = "imagesfeed">
 </div>
+<img id = "arrowimg" src = "../factory_symbols/arrow.svg"/>
 <div id = "outfeed">
 </div>
 
@@ -146,11 +156,12 @@
 #extinputtable input{
     width:12em;
 }
+
     #imagesfeed{
         position:absolute;
-        width:15%;
+        width:25%;
         left:5%;
-        top:5em;
+        top:200px;
         bottom:1em;
         overflow:scroll;
         border:solid;
@@ -169,11 +180,17 @@
         background-color:yellow;
         border-width:5px;
     }
+    #arrowimg{
+        position:absolute;
+        top:25%;
+        left:35%;
+        width:30%;
+    }
     #outfeed{
         position:absolute;
         width:25%;
         right:5%;
-        top:5em;
+        top:200px;
         bottom:1em;
         overflow:scroll;
         border:solid;
@@ -193,8 +210,22 @@
         border-width:5px;
     }
 #linktable{
+    
+}
+#navbar{
     position:absolute;
+    left:0px;
     top:0px;
-    right:10px;
+    right:0px;
+    overflow:hidden;
+    height:100px;
+}
+#actiondiv{
+    position:absolute;
+    left:0px;
+    top:100px;
+    right:0px;
+    height:100px;
+    text-align:center;
 }
 </style>
