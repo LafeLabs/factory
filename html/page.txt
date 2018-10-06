@@ -4,7 +4,10 @@
 
 </script>
 
-<h1>Watershed Factory</h1>
+<a id = "editlink" href = "editor.php"><img style = "width:100px" src = "factory_symbols/editor.svg"/></a>            
+<a id = "copylink" href = "copy.php"><img style = "height:100px" src = "factory_symbols/copy.svg"/></a>
+
+<h1>Meme Factory</h1>
 <div id = "factorybox">
 <table id = "factorytable">
     <tr>
@@ -66,18 +69,45 @@
         <td></td>
         <td>
             <a href = "page/meme2page.php">
-                <img src = "factory_symbols/page.svg">
+                <img src = "factory_symbols/meme2page.svg">
             </a>
         </td>
         <td><a href = "linkfeed/">
             <img  src = "../factory_symbols/linkfeed.svg">
         </a></td>
     </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td>
+            <a href = "page/">
+                <table>
+                    <tr>
+                        <td>
+                <img src = "factory_symbols/page.svg" style = "width:40px">            
+                        </td>
+                        <td>
+                            <img src = "factory_symbols/page.svg" style = "width:40px">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                <img src = "factory_symbols/page.svg" style = "width:40px">            
+                        </td>
+                        <td>
+                            <img src = "factory_symbols/page.svg" style = "width:40px">
+                        </td>
+                    </tr>
+                </table>
+                
+            </a>
+        </td>
+        <td></td>
+    </tr>
 </table>
 
-<a href = "editor.php"><img style = "width:100px" src = "factory_symbols/editor.svg"/></a>
 
-<a href = "copy.php">COPY THE FACTORY</a>
+
 </div>
 <style>
     h1{
@@ -112,5 +142,17 @@
     tr{
         text-align:center;
         width:100%;
+    }
+    #editlink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        left:0px;
+    }
+    #copylink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        right:0px;
     }
 </style>

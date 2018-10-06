@@ -1,7 +1,24 @@
+<table>
+    <tr>
+        <td>
+            <a href = "../">
+            <img src = "../factory_symbols/factory.svg" style = "width:80px"/>
+            </a>
+        </td>
+        <td>
+            <a href = "editor.php">
+            <img src = "../factory_symbols/editor.svg" style = "width:80px"/>
+            </a>
+        </td>
+        <td>
+            <a href = "meme2page.php">
+            <img src = "../factory_symbols/meme2page.svg" style = "width:80px"/>
+            </a>
+        </td>
+    </tr>
+</table>
     <h1>Page Factory Products</h1>
-<p><a href = "../">../</a></p>
-<p><a href = "editor.php">editor.php</a></p>
-<p><a href = "meme2page.php">meme2page.php</a></p>
+
 <ul id = "dirlinklist">
     
 </ul>

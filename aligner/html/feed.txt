@@ -17,7 +17,7 @@
             <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
         </td>
         <td>
-            <a href = "../page/meme2page.php"><img style = "width:100px" src = "../factory_symbols/page.svg"></a>
+            <a href = "../page/meme2page.php"><img style = "width:100px" src = "../factory_symbols/meme2page.svg"></a>
         </td>
     </tr>
 </table>
