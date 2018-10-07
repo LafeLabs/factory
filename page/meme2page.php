@@ -39,6 +39,7 @@ echo $datatext;
 
 
 ?></div>        
+<a id = "publink"></a>
 <table id = "linktable">
     <tr>
         <td>
@@ -47,10 +48,16 @@ echo $datatext;
             </a>
         </td>
         <td>
+            <a href=  "../aligner/index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
+        </td>
+        <td>
+            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/page.svg"></a>
+        </td>
+        <td>
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>
-            <a href=  "../aligner/index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
+            <a href=  "../"><img style = "height:80px" src = "../factory_symbols/factory.svg"></a>
         </td>
     </tr>
 </table>
@@ -177,10 +184,9 @@ document.getElementById("publish").onclick = function(){
         httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
         httpc.send("data="+data+"&filename="+currentFile);//send text to makenewpage.php
         
-        newa = document.createElement("a");
-        newa.innerHTML = "pages/" + currentFile;
-        newa.href = "pages/" + currentFile + "/";
-        document.getElementById("pagelink").appendChild(newa);
+        publink = document.getElementById("publink");
+        publink.innerHTML = "pages/" + currentFile;
+        publink.href = "pages/" + currentFile + "/";
     }
     else{
         alert("Not enough information inputted, need both a meme and a name.");
@@ -278,7 +284,11 @@ document.getElementById("publish").onclick = function(){
         z-index:2;
         cursor:pointer;
     }
-
+#publink{
+    position:absolute;
+    left:5px;
+    top:5px;
+}
 </style>
 </body>
 </html>
