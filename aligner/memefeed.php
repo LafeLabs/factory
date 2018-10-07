@@ -38,11 +38,15 @@ echo $datatext;
 <table id = "linktable">
     <tr>
         <td>
+            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
+        </td>
+        <td>
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>
-            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
+            <a href=  "../"><img style = "height:80px" src = "../factory_symbols/factory.svg"></a>
         </td>
+
     </tr>
 </table>
 <div id = "delete" style = "display:none">!DELETE ALL!</div>
@@ -95,7 +99,7 @@ document.getElementById("delete").onclick = function(){
         position:absolute;
         left:0px;
         top:5em;
-        bottom:5em;
+        bottom:0px;
         right:0px;
         border:solid;
         text-align:center;

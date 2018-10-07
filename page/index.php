@@ -41,9 +41,9 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 <body>
 <div id = "dirlistdiv" style = "display:none"><?php
 
-$files = scandir(getcwd());
+$files = scandir(getcwd()."/pages");
 foreach($files as $value){
-    if($value != "." && $value != ".." && is_dir($value) && $value != "json" && $value != "html" && $value != "php" && $value != "pages"){
+    if($value != "." && $value != ".."){
         echo $value.",";
     }
 }
@@ -64,15 +64,7 @@ if(isset($_GET['json'])){
 
 ?></div>
 <?php
-    if(isset($_GET['url'])){
-        echo file_get_contents($_GET['url']);
-    }
-    if(isset($_GET['path']) && !isset($_GET['url'])){
-        echo file_get_contents($_GET['path']."html/page.txt");
-    }
-    if(!isset($_GET['url']) && !isset($_GET['path'])){
-        echo file_get_contents("html/page.txt");
-    }
+    echo file_get_contents("html/page.txt");
 ?>
 
 <style>

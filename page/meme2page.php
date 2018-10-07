@@ -178,8 +178,8 @@ document.getElementById("publish").onclick = function(){
         httpc.send("data="+data+"&filename="+currentFile);//send text to makenewpage.php
         
         newa = document.createElement("a");
-        newa.innerHTML = currentFile;
-        newa.href = currentFile + "/";
+        newa.innerHTML = "pages/" + currentFile;
+        newa.href = "pages/" + currentFile + "/";
         document.getElementById("pagelink").appendChild(newa);
     }
     else{

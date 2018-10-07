@@ -11,7 +11,7 @@
         
 */
     $data = $_POST["data"]; //get data 
-    $filename = $_POST["filename"];//name of new directory
+    $filename = "pages/".$_POST["filename"];//name of new directory
 
     $inputmemejson =json_decode($data);
     $baseimageurl = $inputmemejson->imgurl; 

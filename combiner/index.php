@@ -26,6 +26,18 @@ PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 -->
 </head>
 <body>
+<div id = "curvesdatadiv" style = "display:none"><?php
+
+$files = scandir(getcwd()."/../curve/svg");
+$listtext = "";
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".." && substr($value,-4) == ".svg"){
+        $listtext .= $value.",";
+    }
+}
+echo $listtext;
+
+?></div>
 <div id = "symbolsdatadiv" style = "display:none"><?php
 
 $files = scandir(getcwd()."/../symbol/svg");

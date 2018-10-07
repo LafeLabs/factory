@@ -58,21 +58,13 @@
 	{
 		"path":"page/php",
 		"files":[
-			"dnagenerator.txt",
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
 			"index.txt",
-			"loadpage.txt",
-			"makejsonindex.txt",
 			"makenewpage.txt",
-			"makepagesindex.txt",
 			"meme2page.txt",
-			"newdir.txt",
-			"pageeditor.txt",
-			"replicator.txt",
-			"text2php.txt",
-			"tree.txt"
+			"text2php.txt"
 		]
 	},
 	{

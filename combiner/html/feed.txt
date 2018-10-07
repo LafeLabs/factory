@@ -90,6 +90,27 @@
         }
     }   
     
+    curvelist  = document.getElementById("curvesdatadiv").innerHTML.split(",");
+    for(var index = 0;index < curvelist.length;index++){
+        if(curvelist[index].length > 1){
+            var newimg = document.createElement("IMG");
+            newimg.src = "../curve/svg/" + curvelist[index];
+            document.getElementById("imagesfeed").appendChild(newimg);
+            newimg.onclick = function(){
+                var newimg2 = document.createElement("img");
+                newimg2.src = this.src;
+                document.getElementById("outfeed").appendChild(newimg2);
+                redraw();
+                newimg2.onclick = function(){
+                    document.getElementById("outfeed").removeChild(this);
+                    redraw();
+                }
+                
+            }
+
+        }
+    }   
+    
     function redraw(){
         currentFile = "json/imagelist.txt";
         imagelist = [];

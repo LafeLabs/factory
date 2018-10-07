@@ -29,7 +29,7 @@ for(var index = 0;index < dirlist.length - 1;index++){
     var newli = document.createElement("LI");
     var newa = document.createElement("A");
     newa.innerHTML = dirlist[index];
-    newa.href = dirlist[index] + "/";
+    newa.href = "pages/" + dirlist[index] + "/";
     newli.appendChild(newa);
     document.getElementById("dirlinklist").appendChild(newli);
     

@@ -17,7 +17,8 @@
                 <img src = "factory_symbols/style.svg">
             </a>
         </td>
-        <td></td>
+        <td>
+        </td>
         <td>
             <a href = "textfeed/">
                 <img src = "factory_symbols/textfeed.svg">
@@ -35,7 +36,11 @@
                 <img src = "factory_symbols/symbol.svg">
             </a>
         </td>
-        <td></td>
+        <td>
+            <a href = "curve/">
+                <img src = "factory_symbols/curve.svg">
+            </a>
+        </td>
         <td>
             <a href = "images/">
                 <img src = "factory_symbols/images.svg">
