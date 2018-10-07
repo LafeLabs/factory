@@ -51,6 +51,9 @@ echo $datatext;
             <a href=  "../aligner/index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
         </td>
         <td>
+            <a href=  "../aligner/memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"></a>
+        </td>
+        <td>
             <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/page.svg"></a>
         </td>
         <td>
