@@ -23,8 +23,25 @@
     $indexbottom = explode("<!--<memedata/>-->",$indextemplate)[1];
 
     $indexhtml = $indextop.$data.$indexbottom;
+    
+    $indextop = explode("<!--<captiondata/>-->",$indexhtml)[0];
+    $indexbottom = explode("<!--<captiondata/>-->",$indexhtml)[1];
+        
+    $arraylength = count(json_decode($data));
+    $captiondata = "";
+    for ($index = 0; $index < $arraylength; $index++) {
+        $captiondata .= "\n<div class = \"caption\"></div>\n";
+    } 
+    $indexhtml = $indextop.$captiondata.$indexbottom;
+
     $file = fopen($filename."/index.html","w");// create new file with this name
     fwrite($file,$indexhtml); //write data to file
     fclose($file);  //close file
+    
+    
+    $filesaver = file_get_contents("php/filesaver.txt");
+    $fileloader = file_get_contents("php/fileloader.txt");
+    file_put_contents($filename."/filesaver.php",$filesaver);
+    file_put_contents($filename."/fileloader.php",$fileloader);
     
 ?>
