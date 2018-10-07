@@ -82,8 +82,8 @@
         </a></td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
+        <td><a href = "scroll/">SCROLL</a></td>
+        <td><a href = "deck/">DECK</a></td>
         <td>
             <a href = "page/">
                 <table>
@@ -107,7 +107,7 @@
                 
             </a>
         </td>
-        <td></td>
+        <td><a href = "map/">MAP</a></td>
     </tr>
 </table>
 

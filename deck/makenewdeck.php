@@ -11,44 +11,11 @@
         
 */
     $data = $_POST["data"]; //get data 
-    $filename = "pages/".$_POST["filename"];//name of new directory
+    $filename = "decks/".$_POST["filename"];//name of new directory
 
-    $inputmemejson =json_decode($data);
-    $baseimageurl = $inputmemejson->imgurl; 
-    $patharray = explode("/",$baseimageurl);
-    
-    $fullfilename = "../".$patharray[count($patharray) - 3]."/".$patharray[count($patharray) - 2]."/".$patharray[count($patharray) - 1];
-    $fileextension = substr($fullfilename,-4);
-
+    //make the new directory, and the subdirectory for images
     mkdir($filename);
-        mkdir($filename."/images");
-        mkdir($filename."/json");  
-        
-    $deletedfiles = scandir(getcwd()."/".$filename."/images");
-    foreach($deletedfiles as $value){
-        if($value != "." && $value != ".."){
-            //delete file:
-            unlink($filename."/images/".$value);
-        }
-    }
 
-        
-    copy($fullfilename,$filename."/images/baseimage".$fileextension);
-    
-    $file = fopen($filename."/json/memejson.txt","w");// create new file with this name
-    fwrite($file,$data); //write data to file
-    fclose($file);  //close file
-
-    $topimagesarray = $inputmemejson->topimages;
-    $topimageindex = 0;
-    foreach($topimagesarray as $value){
-        $patharray = explode("/",$value->url);
-        $fullfilename = "../".$patharray[count($patharray) - 3]."/".$patharray[count($patharray) - 2]."/".$patharray[count($patharray) - 1];   
-        $fileextension = substr($fullfilename,-4);
-        copy($fullfilename,$filename."/images/topimage".$topimageindex.$fileextension);
-        $topimageindex += 1;
-    }   
-    
     //make index.html
     $indextemplate = file_get_contents("html/template.txt");
     
