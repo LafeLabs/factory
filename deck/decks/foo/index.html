@@ -15,7 +15,8 @@
                 "woverw": 0.4572898799313894,
                 "angle": 0
             }
-        ]
+        ],
+        "title": "Sine"
     },
     {
         "imgurl": "http://lafelabs.org/factory/symbol/svg/svg1538835453.svg",
@@ -27,7 +28,8 @@
                 "woverw": 0.33463414634146343,
                 "angle": 0
             }
-        ]
+        ],
+        "title": "Square"
     },
     {
         "imgurl": "http://localhost:8000/images/images/image7",
@@ -46,7 +48,8 @@
                 "woverw": 0.1228878648233487,
                 "angle": 0
             }
-        ]
+        ],
+        "title": "Geometron"
     }
 ]    
 </div>
@@ -83,6 +86,9 @@ function init(){
         newimg.style.top = (memejson[memeIndex].topimages[index].yoverw*feedwidth).toString() + "px";
         newimg.style.transform = "rotate(" + (memejson[memeIndex].topimages[index].angle).toString() + "deg)";
         document.getElementById("imagebox").appendChild(newimg);
+        var newh1 = document.createElement("h1");
+        newh1.innerHTML = memejson[memeIndex].title;
+        document.getElementById("imagebox").appendChild(newh1);
     }
 }
 
@@ -116,6 +122,14 @@ document.getElementById("imagebox").onclick = function(){
     overflow:hidden;
     z-index:-1;
 }        
+h1{
+    position:absolute;
+    top:1em;
+    font-size:2em;
+    font-family:Arial;
+    width:100%;
+    text-align:center;
+}
 </style>
 </body>
 </html>

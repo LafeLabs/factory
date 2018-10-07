@@ -62,7 +62,9 @@ for(var index = 0;index < memejson.length;index++){
         newnewdiv.appendChild(newh1);
         newnewdiv.onclick = function(){
             document.getElementById("memeoutbox").removeChild(this);
+            tableredraw();
         }
+        tableredraw();
     }
     newdiv.appendChild(newimg);
     for(var imgindex = 0;imgindex < memejson[index].topimages.length;imgindex++){
@@ -79,14 +81,35 @@ for(var index = 0;index < memejson.length;index++){
     
 }
 
+function tableredraw(){
+    titles = document.getElementById("memeoutbox").getElementsByTagName("H1");
+    document.getElementById("titletable").innerHTML = "";
+    for(var index = 0;index < titles.length;index++){
+        var newtr = document.createElement("TR");
+        var newtd = document.createElement("TD");
+        var newinput = document.createElement("INPUT");
+        newinput.id = "i" + index.toString();
+        newinput.value = titles[index].innerHTML;
+        newtd.appendChild(newinput);
+        newtr.appendChild(newtd);
+        document.getElementById("titletable").appendChild(newtr);
+        newinput.onchange = function(){
+            localtitleindex = parseInt(this.id.substr(1));
+            titles[localtitleindex].innerHTML = this.value;
+        }
+    }
+}
 
 document.getElementById("publish").onclick = function(){
     if(document.getElementById("deckname").value.length > 1 && document.getElementById("memeoutbox").innerHTML.length > 1){
         
         memedata = document.getElementById("memeoutbox").getElementsByClassName("datadiv");
+        titles = document.getElementById("memeoutbox").getElementsByTagName("H1");
         deckjson = [];
         for(var index = 0;index < memedata.length;index++){
+            
             deckjson.push(JSON.parse(memedata[index].innerHTML));
+            deckjson[index].title = titles[index].innerHTML;
         }
 
         currentFile = document.getElementById("deckname").value;
@@ -152,6 +175,15 @@ document.getElementById("publish").onclick = function(){
         margin-bottom:1em;
         cursor:pointer;
         z-index:3;
+    }
+    h1{
+        width:100%;
+        position:absolute;
+        z-index:3;
+        top:1em;
+        text-align:center;
+        font-size:2em;
+        font-family:arial;
     }
     .bottomimage{
         width:100%;
