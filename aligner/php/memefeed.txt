@@ -41,6 +41,12 @@ echo $datatext;
             <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
         </td>
         <td>
+            <a href=  "../page/meme2page.php"><img style = "width:80px" src = "../factory_symbols/meme2page.svg"></a>
+        </td>
+        <td>
+            <a href=  "../page/index.php"><img style = "width:80px" src = "../factory_symbols/page.svg"></a>
+        </td>
+        <td>
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>

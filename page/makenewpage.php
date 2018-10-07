@@ -22,7 +22,17 @@
 
     mkdir($filename);
         mkdir($filename."/images");
-        mkdir($filename."/json");   
+        mkdir($filename."/json");  
+        
+    $deletedfiles = scandir(getcwd()."/".$filename."/images");
+    foreach($deletedfiles as $value){
+        if($value != "." && $value != ".."){
+            //delete file:
+            unlink($filename."/images/".$value);
+        }
+    }
+
+        
     copy($fullfilename,$filename."/images/baseimage".$fileextension);
     
     $file = fopen($filename."/json/memejson.txt","w");// create new file with this name
