@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+<head>
+<title></title>
+</head>
+<div id = "memedatadiv" style = "display:none">
+<!--<memedata/>-->    
+</div>
+<body>
+
+<div id = "feedbox"></div>
+
+<script>
+memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+
+for(var index = 0;index < memejson.length;index++){
+    var newdiv = document.createElement("DIV");
+    newdiv.className = "memebox";
+    newdiv.onclick = function(){
+        //edit caption
+    }
+    document.getElementById("feedbox").appendChild(newdiv);
+    var newimg = document.createElement("IMG");
+    newimg.src = memejson[index].imgurl;
+    newimg.className = "bottomimage";
+    
+
+    newdiv.appendChild(newimg);
+    for(var imgindex = 0;imgindex < memejson[index].topimages.length;imgindex++){
+        var newimg2 = document.createElement("img");
+        newimg2.className = "topimage";
+        newimg2.src = memejson[index].topimages[imgindex].url;
+        
+        newimg2.style.width = (memejson[index].topimages[imgindex].woverw*feedwidth).toString() + "px";
+        newimg2.style.left = (memejson[index].topimages[imgindex].xoverw*feedwidth).toString() + "px";
+        newimg2.style.top = (memejson[index].topimages[imgindex].yoverw*feedwidth).toString() + "px";
+        newimg2.style.transform = "rotate(" + (memejson[index].topimages[imgindex].angle).toString() + "deg)";
+        newdiv.appendChild(newimg2);
+    }
+    
+}
+
+
+
+</script>
+<style>
+.topimage{
+    position:absolute;
+    z-index:0;
+}
+#baseimage{
+    height:100%;
+    position:absolute;
+    left:0px;
+    top:0px;
+    z-index:-1;
+}
+#imagebox{
+    position:absolute;
+    top:0px;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    overflow:hidden;
+    z-index:-1;
+}        
+h1{
+    position:absolute;
+    top:1em;
+    font-size:2em;
+    font-family:Arial;
+    width:100%;
+    text-align:center;
+}
+
+  #feedbox{
+        position:absolute;
+        left:0px;
+        top:5em;
+        bottom:5em;
+        width:35%;
+        border:solid;
+        text-align:center;
+        overflow:scroll;
+    }
+    .memebox{
+        width:100%;
+        position:relative;
+        overflow:hidden;
+        margin-bottom:1em;
+        cursor:pointer;
+        z-index:3;
+    }
+
+</style>
+</body>
+</html>
