@@ -15,13 +15,7 @@
 	{
 		"path":"html",
 		"files":[
-			"html1538368390.txt",
-			"html1538368401.txt",
-			"html1538368647.txt",
-			"html1538368694.txt",
-			"html1538368706.txt",
-			"page.txt",
-			"replicator.txt"
+			"page.txt"
 		]
 	},
 	{
@@ -70,6 +64,26 @@
 	{
 		"path":"page/html",
 		"files":[
+			"page.txt",
+			"template.txt"
+		]
+	},
+	{
+		"path":"deck/php",
+		"files":[
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"makenewdeck.txt",
+			"meme2deck.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"deck/html",
+		"files":[
+			"meme2deckpage.txt",
 			"page.txt",
 			"template.txt"
 		]

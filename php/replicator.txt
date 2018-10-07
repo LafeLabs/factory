@@ -8,7 +8,8 @@
     //sources
     mkdir("page");
         mkdir("page/pages");
-        mkdir("page/json");
+    mkdir("deck");
+        mkdir("deck/decks");
     mkdir("factory_symbols");
     mkdir("textfeed");
         mkdir("textfeed/html");
