@@ -12,23 +12,35 @@
 <body>
 
 <div id = "feedbox"></div>
+<textarea id = "editbox"></textarea>
 
 <script>
 feedwidth = innerWidth;
 memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
 
+memeIndex = 0;
+document.getElementById("editbox").style.display = "none";
+document.getElementById("feedbox").style.bottom = "0px";
+
 for(var index = 0;index < memejson.length;index++){
     var newdiv = document.createElement("DIV");
     newdiv.className = "memebox";
+    newdiv.id = "m" + index.toString();
     newdiv.onclick = function(){
         //edit caption
+        memeIndex = parseInt(this.id.substr(1));
+        document.getElementById("editbox").style.display = "block";
+        document.getElementById("feedbox").style.bottom = "120px";
+        document.getElementById("editbox").onkeyup = function(){
+            captions[memeIndex].innerHTML = this.value;
+        }
     }
     document.getElementById("feedbox").appendChild(newdiv);
     var newimg = document.createElement("IMG");
     newimg.src = memejson[index].imgurl;
     newimg.className = "bottomimage";
     newimg.onload = function(){
-        this.parentNode.style.height = this.height.toString() + "px";
+        this.parentNode.style.height = (this.height + 200).toString() + "px";
     }
 
     newdiv.appendChild(newimg);
@@ -44,8 +56,12 @@ for(var index = 0;index < memejson.length;index++){
         newdiv.appendChild(newimg2);
     }
     
+    var newcap = document.createElement("DIV");
+    newcap.className = "caption";
+    newdiv.appendChild(newcap);
 }
 
+captions = document.getElementById("feedbox").getElementsByClassName("caption");
 
 
 </script>
@@ -69,14 +85,30 @@ h1{
     width:100%;
     text-align:center;
 }
-
+.caption{
+    text-align:justify;
+    font-family:Helvetica;
+    font-size:22px;
+    padding-left:10%;
+    padding-right:10%;
+    position:absolute;
+    bottom:0px;
+    height:100px;
+}
 #feedbox{
     position:absolute;
     left:0px;
     top:0px;
-    bottom:0px;
+    bottom:120px;
     right:0px;
     overflow:scroll;
+}
+#editbox{
+    position:absolute;
+    bottom:0px;
+    height:100px;
+    left:0px;
+    width:50%;
 }
     .memebox{
         width:100%;
@@ -85,6 +117,8 @@ h1{
         margin-bottom:1em;
         cursor:pointer;
         z-index:3;
+        border-bottom:solid;
+        border-width:10px;
     }
 
 </style>
