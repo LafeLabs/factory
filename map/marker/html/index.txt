@@ -1,0 +1,59 @@
+<style>
+#mapbox{
+    position:absolute;
+    top:40%;
+    bottom:0px;
+    left:0px;
+    right:0px;
+    border-top:solid;
+    border-width:10px;
+    cursor:crosshair;
+}
+#map{
+    width:100%;
+    height:100%;
+    position:absolute;
+    top:0px;
+    left:0px;
+}    
+</style>
+
+    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
+        <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
+<h1><a href = "editor.php">editor.php</a></h1>
+
+<div id = "mapbox">
+    <div id="map" class="map"></div>
+    <canvas id = "markercanvas"></canvas>
+</div>
+<script type="text/javascript">
+
+
+//https://openlayers.org/en/latest/doc/quickstart.html
+
+      var map = new ol.Map({
+        target: 'map',
+        layers: [
+          new ol.layer.Tile({
+            source: new ol.source.OSM()
+          })
+        ],
+        view: new ol.View({
+          center: ol.proj.fromLonLat([-77.0400000,38.8500000]),
+          zoom: 8
+        })
+      });
+
+
+
+
+
+
+map.on('click', function(evt) {
+  var lonlat = ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326');
+  var lon = lonlat[0];
+  var lat = lonlat[1];
+  alert(lat.toString() + "," + lon.toString());
+});
+
+</script>
