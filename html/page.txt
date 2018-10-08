@@ -107,7 +107,7 @@
                 
             </a>
         </td>
-        <td><a href = "map/">MAP</a><br><a href = "map/marker/editor.php">MARKER</a></td>
+        <td><a href = "map/">MAP</a><br><a href = "map/marker/">MARKER</a></td>
     </tr>
 </table>
 

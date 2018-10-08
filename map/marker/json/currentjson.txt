@@ -6,5 +6,9 @@
     {
         "latlon": "38.88166,-77.03680",
         "name": "Jefferson memorial"
+    },
+    {
+        "latlon": "38.89882,-77.03947",
+        "name": "Penn Ave NW and 17th St. NW, DC"
     }
 ]

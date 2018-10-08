@@ -1,0 +1,272 @@
+<script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+<table id = "linktable">
+<tr>
+    <td>
+        <a href = "editor.php">
+    <img src = "../factory_symbols/editor.svg"/>    
+        </a>
+    </td>
+    <td>
+        <a href = "../marker/">
+        <img src = "../factory_symbols/marker.svg"/>    
+        </a>
+    </td>
+    <td>
+        <a href = "../">
+    <img src = "../factory_symbols/factory.svg"/>    
+        </a>
+    </td>
+    <td>
+        <a href = "../map2page/">
+    <img src = "../factory_symbols/map2page.svg"/>    
+        </a>
+    </td>
+
+</tr>
+
+</table>
+<div class = "button" id = "publishbutton">PUBLISH</div>
+
+<img id = "mainImage"/>
+<canvas id = "mainCanvas"></canvas>
+
+<script>
+
+meme2map= JSON.parse(document.getElementById("meme2mapdatadiv").innerHTML);
+
+markerjson = JSON.parse(document.getElementById("markerjsondatadiv").innerHTML);
+
+markerIndex = 0;
+
+document.getElementById("mainImage").src = meme2map.imgurl;
+
+ctx = document.getElementById("mainCanvas").getContext("2d");
+ctx.strokeStyle= "black";
+ctx.lineWidth = 4;
+ctx.fillStyle = "black";
+
+
+
+document.getElementById("mainImage").onload = function(){
+    if(this.width < innerWidth){
+        imageWidth = this.width;
+    }
+    else{
+        aspectRatio = this.width/this.height;
+        this.style.width = innerWidth.toString() + "px";
+        this.style.height = (innerWidth/aspectRatio).toString() + "px";
+        imageWidth = innerWidth;
+    }
+    document.getElementById("mainCanvas").width = document.getElementById("mainImage").width;
+    document.getElementById("mainCanvas").height = document.getElementById("mainImage").height;
+    x0 = 0.5*document.getElementById("mainImage").width;
+    y0 = 0.5*document.getElementById("mainImage").height;
+    x = x0;
+    y = y0;
+    x1 = x0;
+    y1 = y0;
+
+    feetperdegree = 364567;
+/*
+    lat0 = parseFloat(currentjson[images[imageIndex]].latlon0.split(",")[0]);
+    lon0 = parseFloat(currentjson[images[imageIndex]].latlon0.split(",")[1]);
+    lat1 = parseFloat(currentjson[images[imageIndex]].latlon1.split(",")[0]);
+    lon1 = parseFloat(currentjson[images[imageIndex]].latlon1.split(",")[1]);
+    
+    deltay = (lat1 - lat0)*feetperdegree;//feet
+    deltax = (lon1 - lon0)*feetperdegree*Math.cos(Math.PI*lat0/180);//feet
+    deltar = Math.sqrt(deltax*deltax + deltay*deltay);//distance between markers in feet
+    angle = Math.atan2(deltax,deltay);
+        */
+    redraw();
+}
+
+
+function redraw(){
+    ctx.clearRect(0,0,innerWidth,innerHeight);
+    ctx.lineWidth = 2;    	
+
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, 2 * Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(x,y - 100);
+    ctx.lineTo(x,y + 100);
+    ctx.stroke();		
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.moveTo(x - 100,y);
+    ctx.lineTo(x + 100,y);
+    ctx.stroke();		
+    ctx.closePath();
+    
+   // ctx.strokeStyle = "black";
+    
+    ctx.beginPath();
+    ctx.arc(x1, y1, 10, 0, 2 * Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x1,y1 - 100);
+    ctx.lineTo(x1,y1 + 100);
+    ctx.stroke();		
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.moveTo(x1 - 100,y1);
+    ctx.lineTo(x1 + 100,y1);
+    ctx.stroke();		
+    ctx.closePath();
+
+
+      
+    deltaxoverwidth = (x1 - x)/document.getElementById("mainImage").width;
+    deltayoverwidth = -(y1 - y)/document.getElementById("mainImage").width; 
+    deltaroverwidth = Math.sqrt(deltaxoverwidth*deltaxoverwidth + deltayoverwidth*deltayoverwidth);
+    anglepx = Math.atan2(deltaxoverwidth,deltayoverwidth);
+    deltaangle = (anglepx - angle)*180/Math.PI;
+    
+    widthfeet = deltar/deltaroverwidth;//feet divided by r as a fraction of width
+
+    rx2corner = widthfeet*Math.sqrt(x*x + y*y)/document.getElementById("mainImage").width;
+    anglecorner = Math.atan2(-x,y);
+/*
+    latcorner = lat0 + rx2corner*Math.cos(anglecorner)/feetperdegree;
+    loncorner = lon0 + (1/Math.cos(lat0*Math.PI/180))*rx2corner*Math.sin(anglecorner)/feetperdegree;
+    
+    currentjson[images[imageIndex]].widthfeet  = widthfeet;
+    currentjson[images[imageIndex]].angle = deltaangle;
+    currentjson[images[imageIndex]].fontfeet = widthfeet/20;
+    currentjson[images[imageIndex]].latlon = latcorner.toString() + "," + loncorner.toString();
+    currentjson[images[imageIndex]].imgurl = document.getElementById("mainImage").src;
+
+    */
+}
+
+
+mc = new Hammer(document.getElementById("mainCanvas"));
+mc.get('pan').set({ direction: Hammer.DIRECTION_ALL });
+mc.on("panleft panright panup pandown tap press", function(ev) {
+    if(markerIndex == 0){
+        x = x0 + ev.deltaX;
+        y = y0 + ev.deltaY;
+    }
+    if(markerIndex == 1){
+        x1 = x0 + ev.deltaX;
+        y1 = y0 + ev.deltaY;
+    }
+    redraw();
+});
+
+
+
+document.getElementById("publishbutton").onclick = function(){
+
+
+    data = encodeURIComponent(JSON.stringify(currentjson,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=json/currentjson.txt");//send text to filesaver.php
+
+}
+
+
+</script>
+<style>
+
+p{
+    text-align:right;
+}
+#inputtable{
+    position:absolute;
+    top:1em;
+    left:1em;
+    z-index:2;
+}
+input{
+    width:20em;
+    font-size:22px;
+}
+
+a{
+    z-index:3;
+}
+#mainCanvas{
+    position:absolute;
+    z-index:0;
+    left:0px;
+    top:0px;
+}
+#mainImage{
+   position:absolute;
+   z-index:-1;
+   left:0px;
+   top:0px;
+   overflow:hidden;
+   height:100%;
+}
+#backbutton{
+    position:absolute;
+    left:0px;
+    bottom:0px;
+    z-index:3;
+}
+#fwdbutton{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    z-index:3;
+}
+#publishbutton{
+    position:absolute;
+    z-index:3;
+    bottom:0px;
+    left:35%;
+    width:30%;
+}
+#flowdecklink{
+    position:relative;
+    z-index:3;
+}
+.button{
+    cursor:pointer;
+    text-align:center;
+    height:4em;
+    padding-top:2em;
+    padding-left:2em;
+    padding-right:2em;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
+}
+#markertable{
+    position:absolute;
+    right:0px;
+    top:50%;
+}
+#markertable td{
+    cursor:pointer;
+}
+#markertable td:hover{
+    border:solid;
+}
+
+#linktable{
+    position:absolute;
+    z-index:2;
+    right:0px;
+    top:0px;
+}
+#linktable img{
+    width:80px;
+}
+#foo{
+    display:none;
+}
+</style>

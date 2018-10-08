@@ -25,16 +25,14 @@ EGO DEATH:
     <a href = "text2php.php">text2php.php</a>
     <a href = "meme2map.php">meme2map.php</a>
     <a href = "index.php">index.php</a>
-    <a href = "getmeme.php">getmeme.php</a>
+    <a href = "mapalign.php">mapalign.php</a>
 
 </div>
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
     <div class = "html file">html/index.txt</div>
-    <div class = "html file">html/getmeme.txt</div>
     <div class = "html file">html/meme2map.txt</div>
-    <div class = "html file">html/mapmarkers.txt</div>
     <div class = "html file">html/mapalign.txt</div>
 
     <div class = "php file">php/index.txt</div>
@@ -43,9 +41,7 @@ EGO DEATH:
     <div class = "php file">php/fileloader.txt</div>
     <div class = "php file">php/text2php.txt</div>
     <div class = "php file">php/meme2map.txt</div>
-    <div class = "php file">php/mapmarkers.txt</div>
     <div class = "php file">php/mapalign.txt</div>
-    <div class = "php file">php/getmeme.txt</div>
 
     <div class = "php file">php/makenewmap.txt</div>
     
