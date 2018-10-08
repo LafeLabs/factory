@@ -59,6 +59,17 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("scroll/html");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("map/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("map/html");
+$finalstring .= ",\n";
+
+$finalstring .= getfiles("map/marker/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("map/marker/html");
+$finalstring .= ",\n";
+
+
 $finalstring .= getfiles("textfeed/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("textfeed/json");
@@ -82,7 +93,6 @@ $finalstring .= getfiles("symbol/bytecode");
 $finalstring .= ",\n";
 $finalstring .= getfiles("symbol/json");
 $finalstring .= ",\n";
-
 
 $finalstring .= getfiles("combiner/php");
 $finalstring .= ",\n";

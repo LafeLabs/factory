@@ -109,6 +109,41 @@
 		]
 	},
 	{
+		"path":"map/php",
+		"files":[
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"makenewmap.txt",
+			"meme2map.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"map/html",
+		"files":[
+			"index.txt",
+			"meme2map.txt"
+		]
+	},
+	{
+		"path":"map/marker/php",
+		"files":[
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"map/marker/html",
+		"files":[
+			"index.txt"
+		]
+	},
+	{
 		"path":"textfeed/php",
 		"files":[
 			"deletealltext.txt",

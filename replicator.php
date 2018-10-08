@@ -12,6 +12,12 @@
         mkdir("deck/decks");
     mkdir("scroll");
         mkdir("scroll/scrolls");
+    mkdir("map");
+        mkdir("map/maps");
+        mkdir("map/json");
+        mkdir("map/marker");
+            mkdir("map/marker/json");
+
     mkdir("factory_symbols");
     mkdir("textfeed");
         mkdir("textfeed/html");
