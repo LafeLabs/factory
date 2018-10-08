@@ -32,8 +32,8 @@ EGO DEATH:
 <div id = "filescroll">
     <div class = "html file">html/page.txt</div>
     <div class = "html file">html/meme2scrollpage.txt</div>
-    <div class = "html file">html/template.txt</div>    
-    
+
+    <div class = "php file">php/template.txt</div>    
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>
     <div class = "php file">php/filesaver.txt</div>

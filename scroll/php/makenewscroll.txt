@@ -15,33 +15,37 @@
 
     //make the new directory, and the subdirectory for images
     mkdir($filename);
+        mkdir($filename."/html");
 
     //make index.html
-    $indextemplate = file_get_contents("html/template.txt");
+    $indextemplate = file_get_contents("php/template.txt");
     
     $indextop = explode("<!--<memedata/>-->",$indextemplate)[0];
     $indexbottom = explode("<!--<memedata/>-->",$indextemplate)[1];
 
     $indexhtml = $indextop.$data.$indexbottom;
     
-    $indextop = explode("<!--<captiondata/>-->",$indexhtml)[0];
-    $indexbottom = explode("<!--<captiondata/>-->",$indexhtml)[1];
-        
-    $arraylength = count(json_decode($data));
-    $captiondata = "";
-    for ($index = 0; $index < $arraylength; $index++) {
-        $captiondata .= "\n<div class = \"caption\"></div>\n";
-    } 
-    $indexhtml = $indextop.$captiondata.$indexbottom;
-
-    $file = fopen($filename."/index.html","w");// create new file with this name
+    $file = fopen($filename."/index.php","w");// create new file with this name
     fwrite($file,$indexhtml); //write data to file
     fclose($file);  //close file
-    
     
     $filesaver = file_get_contents("php/filesaver.txt");
     $fileloader = file_get_contents("php/fileloader.txt");
     file_put_contents($filename."/filesaver.php",$filesaver);
     file_put_contents($filename."/fileloader.php",$fileloader);
     
+    //delete any exisitng caption files
+    $deletedfiles = scandir(getcwd()."/".$filename."/html");
+    foreach($deletedfiles as $value){
+        if($value != "." && $value != ".."){
+            //delete file:
+            unlink($filename."/html/".$value);
+        }
+    }
+    
+    for ($index = 0; $index < count(json_decode($data)); $index++) {
+        file_put_contents($filename."/html/caption".$index.".txt","");
+    } 
+
+
 ?>
