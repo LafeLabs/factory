@@ -39,6 +39,9 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 </head>
 <body>
+<div id = "jsondatadiv" style = "display:none"><?php
+  echo file_get_contents("json/currentjson.txt");  
+?></div>
 <?php
     echo file_get_contents("html/index.txt");
 ?>

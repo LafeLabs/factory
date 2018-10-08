@@ -16,21 +16,67 @@
     top:0px;
     left:0px;
 }    
+input{
+    font-size:22px;
+    font-family:courier;
+    width:14em;
+}
+#maintable{
+    font-size:22px;
+    font-family:Helvetica;
+}
+#markerfeed{
+    position:absolute;
+    right:0px;
+    bottom:65%;
+    top:0px;
+    width:40%;
+    overflow:scroll;
+    border:solid;
+}
+#publish{
+    border:solid;
+    text-align:center;
+    border-radius:10px;
+    cursor:pointer;
+}
+#publish:active{
+    background-color:yellow;
+}
 </style>
 
-    <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
-        <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
-<h1><a href = "editor.php">editor.php</a></h1>
+<link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
+<script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
 
+<h1><a href = "editor.php">editor.php</a></h1>
+<table id = "maintable">
+    <tr>
+        <td>Latitude/Longitude:</td><td><input id = "latloninput"/></td>
+    </tr>
+    <tr>
+        <td>Marker Name:</td><td><input id = "nameinput"/></td>
+    </tr>
+    <tr>
+        <td id = "publish">
+        PUBLISH        
+        </td>
+    </tr>
+</table>
+<div id = "markerfeed"></div>
 <div id = "mapbox">
     <div id="map" class="map"></div>
-    <canvas id = "markercanvas"></canvas>
 </div>
 <script type="text/javascript">
 
+currentjson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+
+for(var index = 0;index <currentjson.length;index++){
+    var newpre = document.createElement("PRE");
+    newpre.innerHTML = JSON.stringify(currentjson[index],null,"    ");
+    document.getElementById("markerfeed").appendChild(newpre);
+}
 
 //https://openlayers.org/en/latest/doc/quickstart.html
-
       var map = new ol.Map({
         target: 'map',
         layers: [
@@ -38,22 +84,44 @@
             source: new ol.source.OSM()
           })
         ],
-        view: new ol.View({
-          center: ol.proj.fromLonLat([-77.0400000,38.8500000]),
-          zoom: 8
+        view: new ol.View({   
+          center: ol.proj.fromLonLat([-77.03847,38.87948]),
+          zoom: 14
         })
       });
-
-
-
-
-
 
 map.on('click', function(evt) {
   var lonlat = ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326');
   var lon = lonlat[0];
   var lat = lonlat[1];
-  alert(lat.toString() + "," + lon.toString());
+  document.getElementById("latloninput").value = lat.toFixed(5) + "," + lon.toFixed(5);
+  
 });
 
+document.getElementById("publish").onclick = function(){
+    var newjson = {};
+    newjson.latlon = document.getElementById("latloninput").value;
+    newjson.name = document.getElementById("nameinput").value;
+    var newpre = document.createElement("PRE");
+    newpre.innerHTML = JSON.stringify(newjson,null,"    ");
+    document.getElementById("markerfeed").appendChild(newpre);
+
+    pres = document.getElementById("markerfeed").getElementsByTagName("PRE");
+    currentjson = [];
+    for(var index = 0;index < pres.length;index++){
+        currentjson.push(JSON.parse(pres[index].innerHTML));
+    }
+    
+    currentFile = "json/currentjson.txt";
+    data = encodeURIComponent(JSON.stringify(currentjson,null,"    "));
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data="+data+"&filename="+currentFile);//send text to filesaver.php
+    
+}
+
+
 </script>
+

@@ -1,0 +1,10 @@
+[
+    {
+        "latlon": "38.88914,-77.02456",
+        "name": "carousel"
+    },
+    {
+        "latlon": "38.88166,-77.03680",
+        "name": "Jefferson memorial"
+    }
+]
