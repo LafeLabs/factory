@@ -10,6 +10,8 @@
         mkdir("page/pages");
     mkdir("deck");
         mkdir("deck/decks");
+    mkdir("scroll");
+        mkdir("scroll/scrolls");
     mkdir("factory_symbols");
     mkdir("textfeed");
         mkdir("textfeed/html");

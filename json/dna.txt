@@ -89,6 +89,26 @@
 		]
 	},
 	{
+		"path":"scroll/php",
+		"files":[
+			"editor.txt",
+			"fileloader.txt",
+			"filesaver.txt",
+			"index.txt",
+			"makenewscroll.txt",
+			"meme2scroll.txt",
+			"template.txt",
+			"text2php.txt"
+		]
+	},
+	{
+		"path":"scroll/html",
+		"files":[
+			"meme2scrollpage.txt",
+			"page.txt"
+		]
+	},
+	{
 		"path":"textfeed/php",
 		"files":[
 			"deletealltext.txt",

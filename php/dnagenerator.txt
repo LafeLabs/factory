@@ -54,6 +54,11 @@ $finalstring .= ",\n";
 $finalstring .= getfiles("deck/html");
 $finalstring .= ",\n";
 
+$finalstring .= getfiles("scroll/php");
+$finalstring .= ",\n";
+$finalstring .= getfiles("scroll/html");
+$finalstring .= ",\n";
+
 $finalstring .= getfiles("textfeed/php");
 $finalstring .= ",\n";
 $finalstring .= getfiles("textfeed/json");
