@@ -7,8 +7,8 @@
         </a>
     </td>
     <td>
-        <a href = "../marker/">
-        <img src = "../factory_symbols/marker.svg"/>    
+        <a href = "marker/">
+            MARKER
         </a>
     </td>
     <td>
@@ -17,26 +17,56 @@
         </a>
     </td>
     <td>
-        <a href = "../map2page/">
-    <img src = "../factory_symbols/map2page.svg"/>    
+        <a href = "meme2map.php">
+        MEME2MAP    
         </a>
     </td>
 
 </tr>
 
 </table>
-<div class = "button" id = "publishbutton">PUBLISH</div>
+
+<table id = "controlTable">
+    <tr  id = "marker0tr">
+        <td class = "button" id = "marker0td" style = "color:red">Marker 0:</td><td><select name = "marker0" id = "marker0select"></select></td>
+    </tr>
+    <tr id = "marker1tr">
+        <td class = "button" id = "marker1td"  style = "color:blue">Marker 1:</td><td><select name = "marker0" id = "marker1select"></select></td>
+    </tr>
+</table>
+        <div class = "button" id = "publish">PUBLISH</div>
 
 <img id = "mainImage"/>
 <canvas id = "mainCanvas"></canvas>
 
 <script>
+markertrs = []
+markertrs.push(document.getElementById("marker0tr"));
+markertrs.push(document.getElementById("marker1tr"));
 
 meme2map= JSON.parse(document.getElementById("meme2mapdatadiv").innerHTML);
 
 markerjson = JSON.parse(document.getElementById("markerjsondatadiv").innerHTML);
 
+for(var index = 0;index < markerjson.length;index++){
+    var newoption = document.createElement("OPTION");
+    newoption.value = markerjson[index].latlon;
+    newoption.innerHTML = markerjson[index].name;
+    document.getElementById("marker0select").appendChild(newoption);
+    newoption.className = "m" + index.toString();
+    var newoption = document.createElement("OPTION");
+    newoption.value = markerjson[index].latlon;
+    newoption.innerHTML = markerjson[index].name;
+    document.getElementById("marker1select").appendChild(newoption);
+    newoption.className = "m" + index.toString();
+    
+}
+
 markerIndex = 0;
+ 
+document.getElementById("marker1select").selectedIndex = "1"; 
+ 
+markertrs[markerIndex].style.border = "solid";
 
 document.getElementById("mainImage").src = meme2map.imgurl;
 
@@ -67,17 +97,6 @@ document.getElementById("mainImage").onload = function(){
     y1 = y0;
 
     feetperdegree = 364567;
-/*
-    lat0 = parseFloat(currentjson[images[imageIndex]].latlon0.split(",")[0]);
-    lon0 = parseFloat(currentjson[images[imageIndex]].latlon0.split(",")[1]);
-    lat1 = parseFloat(currentjson[images[imageIndex]].latlon1.split(",")[0]);
-    lon1 = parseFloat(currentjson[images[imageIndex]].latlon1.split(",")[1]);
-    
-    deltay = (lat1 - lat0)*feetperdegree;//feet
-    deltax = (lon1 - lon0)*feetperdegree*Math.cos(Math.PI*lat0/180);//feet
-    deltar = Math.sqrt(deltax*deltax + deltay*deltay);//distance between markers in feet
-    angle = Math.atan2(deltax,deltay);
-        */
     redraw();
 }
 
@@ -85,25 +104,8 @@ document.getElementById("mainImage").onload = function(){
 function redraw(){
     ctx.clearRect(0,0,innerWidth,innerHeight);
     ctx.lineWidth = 2;    	
-
-    ctx.beginPath();
-    ctx.arc(x, y, 10, 0, 2 * Math.PI);
-    ctx.closePath();
-    ctx.stroke();
-
-    ctx.beginPath();
-    ctx.moveTo(x,y - 100);
-    ctx.lineTo(x,y + 100);
-    ctx.stroke();		
-    ctx.closePath();
-    ctx.beginPath();
-    ctx.moveTo(x - 100,y);
-    ctx.lineTo(x + 100,y);
-    ctx.stroke();		
-    ctx.closePath();
     
-   // ctx.strokeStyle = "black";
-    
+    ctx.strokeStyle= "blue";
     ctx.beginPath();
     ctx.arc(x1, y1, 10, 0, 2 * Math.PI);
     ctx.closePath();
@@ -119,29 +121,22 @@ function redraw(){
     ctx.stroke();		
     ctx.closePath();
 
+    ctx.strokeStyle= "red";
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, 2 * Math.PI);
+    ctx.closePath();
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(x,y - 100);
+    ctx.lineTo(x,y + 100);
+    ctx.stroke();		
+    ctx.closePath();
+    ctx.beginPath();
+    ctx.moveTo(x - 100,y);
+    ctx.lineTo(x + 100,y);
+    ctx.stroke();		
+    ctx.closePath();
 
-      
-    deltaxoverwidth = (x1 - x)/document.getElementById("mainImage").width;
-    deltayoverwidth = -(y1 - y)/document.getElementById("mainImage").width; 
-    deltaroverwidth = Math.sqrt(deltaxoverwidth*deltaxoverwidth + deltayoverwidth*deltayoverwidth);
-    anglepx = Math.atan2(deltaxoverwidth,deltayoverwidth);
-    deltaangle = (anglepx - angle)*180/Math.PI;
-    
-    widthfeet = deltar/deltaroverwidth;//feet divided by r as a fraction of width
-
-    rx2corner = widthfeet*Math.sqrt(x*x + y*y)/document.getElementById("mainImage").width;
-    anglecorner = Math.atan2(-x,y);
-/*
-    latcorner = lat0 + rx2corner*Math.cos(anglecorner)/feetperdegree;
-    loncorner = lon0 + (1/Math.cos(lat0*Math.PI/180))*rx2corner*Math.sin(anglecorner)/feetperdegree;
-    
-    currentjson[images[imageIndex]].widthfeet  = widthfeet;
-    currentjson[images[imageIndex]].angle = deltaangle;
-    currentjson[images[imageIndex]].fontfeet = widthfeet/20;
-    currentjson[images[imageIndex]].latlon = latcorner.toString() + "," + loncorner.toString();
-    currentjson[images[imageIndex]].imgurl = document.getElementById("mainImage").src;
-
-    */
 }
 
 
@@ -161,10 +156,39 @@ mc.on("panleft panright panup pandown tap press", function(ev) {
 
 
 
-document.getElementById("publishbutton").onclick = function(){
+document.getElementById("publish").onclick = function(){
 
 
-    data = encodeURIComponent(JSON.stringify(currentjson,null,"    "));
+    lat0 = parseFloat(document.getElementById("marker0select").value.split(",")[0]);
+    lon0 = parseFloat(document.getElementById("marker0select").value.split(",")[1]);
+    lat1 = parseFloat(document.getElementById("marker1select").value.split(",")[0]);
+    lon1 = parseFloat(document.getElementById("marker1select").value.split(",")[1]);
+    
+    deltay = (lat1 - lat0)*feetperdegree;//feet
+    deltax = (lon1 - lon0)*feetperdegree*Math.cos(Math.PI*lat0/180);//feet
+    deltar = Math.sqrt(deltax*deltax + deltay*deltay);//distance between markers in feet
+    angle = Math.atan2(deltax,deltay);
+    
+    deltaxoverwidth = (x1 - x)/document.getElementById("mainImage").width;
+    deltayoverwidth = -(y1 - y)/document.getElementById("mainImage").width; 
+    deltaroverwidth = Math.sqrt(deltaxoverwidth*deltaxoverwidth + deltayoverwidth*deltayoverwidth);
+    anglepx = Math.atan2(deltaxoverwidth,deltayoverwidth);
+    deltaangle = (anglepx - angle)*180/Math.PI;
+    
+    widthfeet = deltar/deltaroverwidth;//feet divided by r as a fraction of width
+
+    rx2corner = widthfeet*Math.sqrt(x*x + y*y)/document.getElementById("mainImage").width;
+    anglecorner = Math.atan2(-x,y);
+
+    latcorner = lat0 + rx2corner*Math.cos(anglecorner)/feetperdegree;
+    loncorner = lon0 + (1/Math.cos(lat0*Math.PI/180))*rx2corner*Math.sin(anglecorner)/feetperdegree;
+    
+    meme2map.widthfeet  = widthfeet;
+    meme2map.angle = deltaangle;
+    meme2map.fontfeet = widthfeet/20;
+    meme2map.latlon = latcorner.toString() + "," + loncorner.toString();
+
+    data = encodeURIComponent(JSON.stringify(meme2map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        
     httpc.open("POST", url, true);
@@ -173,10 +197,22 @@ document.getElementById("publishbutton").onclick = function(){
 
 }
 
+markertrs[0].onclick = function(){
+    markerIndex = 0;
+    markertrs[markerIndex].style.border = "solid";
+    markertrs[1].style.border = "none";
+}
+markertrs[1].onclick = function(){
+    markerIndex = 1;
+    markertrs[markerIndex].style.border = "solid";
+    markertrs[0].style.border = "none";
+}
 
 </script>
 <style>
-
+body{
+    overflow:hidden
+}
 p{
     text-align:right;
 }
@@ -188,7 +224,7 @@ p{
 }
 input{
     width:20em;
-    font-size:22px;
+    font-size:36px;
 }
 
 a{
@@ -234,10 +270,6 @@ a{
 .button{
     cursor:pointer;
     text-align:center;
-    height:4em;
-    padding-top:2em;
-    padding-left:2em;
-    padding-right:2em;
 }
 .button:hover{
     background-color:green;
@@ -266,7 +298,30 @@ a{
 #linktable img{
     width:80px;
 }
-#foo{
-    display:none;
+#publish{
+    position:absolute;
+    right:0px;
+    top:50%;
+    text-align:center;
+    padding: 1em 1em 1em 1em;
+    border:solid;
+    border-radius:1em;
+}
+#controlTable{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    border-collapse:collapse;
+    font-size:36px;
+    font-family:Helvetica;
+}
+select{
+    width:100%;
+    font-size:24px;
+    font-family:Helvetica;
+}
+option{
+        font-size:24px;
+    font-family:Helvetica;
 }
 </style>

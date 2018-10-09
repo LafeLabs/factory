@@ -10,5 +10,21 @@
     {
         "latlon": "38.89882,-77.03947",
         "name": "Penn Ave NW and 17th St. NW, DC"
+    },
+    {
+        "latlon": "38.85331,-77.04950",
+        "name": "crystal and 23rd"
+    },
+    {
+        "latlon": "38.85613,-77.04936",
+        "name": "crystal and 20th"
+    },
+    {
+        "latlon": "38.85754,-77.04928",
+        "name": "crystal and 18th"
+    },
+    {
+        "latlon": "38.86229,-77.04869",
+        "name": "crystal and 12th"
     }
 ]

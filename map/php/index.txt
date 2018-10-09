@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Page</title>
+<title>Map</title>
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
 
@@ -20,23 +20,6 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 <!--Stop Google:-->
 <META NAME="robots" CONTENT="noindex,nofollow">
 
-
-<!-- links to MathJax JavaScript library, un-comment to use math-->
-<!--
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-<script>
-	MathJax.Hub.Config({
-		tex2jax: {
-		inlineMath: [['$','$'], ['\\(','\\)']],
-		processEscapes: true,
-		processClass: "mathjax",
-        ignoreClass: "no-mathjax"
-		}
-	});//			MathJax.Hub.Typeset();//tell Mathjax to update the math
-</script>
--->
-
 </head>
 <body>
 <div id = "dirlistdiv" style = "display:none"><?php
@@ -49,22 +32,13 @@ foreach($files as $value){
 }
 
 ?></div>
-<div id = "jsondiv" style = "display:none"><?php
+<div id = "jsondatadiv" style = "display:none"><?php
 
-if(isset($_GET['json'])){
-    echo file_get_contents($_GET['json']);
-}
-
-?></div>
-<div id = "pathdiv" style= "display:none"><?php
-
-    if(isset($_GET['path'])){
-        echo $_GET['path'];
-    }
+echo file_get_contents("json/currentjson.txt");
 
 ?></div>
 <?php
-    echo file_get_contents("html/page.txt");
+    echo file_get_contents("html/index.txt");
 ?>
 
 <style>

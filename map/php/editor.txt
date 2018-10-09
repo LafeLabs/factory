@@ -43,6 +43,8 @@ EGO DEATH:
     <div class = "php file">php/meme2map.txt</div>
     <div class = "php file">php/mapalign.txt</div>
 
+    <div class = "php file">php/maptemplate.txt</div>
+
     <div class = "php file">php/makenewmap.txt</div>
     
 
