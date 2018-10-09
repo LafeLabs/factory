@@ -109,6 +109,10 @@
         </td>
         <td><a href = "map/">MAP</a><br><a href = "map/marker/">MARKER</a></td>
     </tr>
+    <tr>
+        <td><a href = "map/meme2map.php">MEME2MAP</a></td>
+        <td><a href = "map/mapalign.php">MAPALIGN</a></td>
+    </tr>
 </table>
 
 
