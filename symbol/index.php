@@ -93,8 +93,7 @@ function doTheThing(localCommand){
 ?></div>
 <div id = "stylejsondiv" style = "display:none"><?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/stylejson.txt");
-
+        echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
     }
     else{
         echo file_get_contents("json/stylejson.txt");
@@ -110,7 +109,7 @@ function doTheThing(localCommand){
 <div id = "datadiv" style = "display:none">
 <?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/currentjson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/currentjson.txt");
     }
     else{
         echo file_get_contents("json/currentjson.txt");

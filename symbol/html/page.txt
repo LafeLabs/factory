@@ -4,7 +4,7 @@
         <a href = "svgfeed.php"><img style = "width:80px" src = "../factory_symbols/svgfeed.svg"></a>
     </td>
     <td>
-        <a href = "stylejsoneditor.php"><img src = "../factory_symbols/style.svg"></a>
+        <a id = "stylelink" href = "stylejsoneditor.php"><img src = "../factory_symbols/style.svg"></a>
     </td>
     <td>
         <a href = "shapetableeditor.php"><img src = "../factory_symbols/shapes.svg"></a>

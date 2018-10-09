@@ -14,121 +14,98 @@ EVERYTHING IS RECURSIVE
 <META NAME="robots" CONTENT="noindex,nofollow">
 </head>
 <body>
-<table>
+<div id = "dirlistdiv" style = "display:none"><?php
+
+$files = scandir(getcwd()."/symbols");
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        echo $value.",";
+    }
+}
+
+?></div>
+
+<table id  = "linktable">
     <tr>
-        <td>Action:</td>
-        <td>
-            <input id = "actioninput"/>
-        </td>
-        <td>path:</td>
-        <td>
-            <input id = "pathinput"/>
-        </td>
+        <td><a href = "editor.php">
+                <img  style = "width:80px" src = "../factory_symbols/editor.svg"/>
+            </a></td>
+        <td><a href = "index.php">
+            <img style = "width:80px" src = "../factory_symbols/symbol.svg"/>
+        </a></td>
+        <td><a href = "../">
+                        <img style = "height:80px" src = "../factory_symbols/factory.svg"/>
+            </a></td>
+    </tr>
+</table>
+
+<table id = "maintable">
+    <tr>
         <td>filename:</td>
         <td>
             <input id = "nameinput"/>
         </td>
-        <td class = "button" id = "newbutton">CREATE NEW</td>
+        <td class = "button" id = "newbutton">CREATE NEW SYMBOL FACTORY</td>
     </tr>
 </table>
 
+    <h1>SYMBOL FACTORIES</h1>
 
-<?php
-function listfiles($localpath){
-    $fullpath = getcwd().$localpath;
-    $files = scandir($fullpath);
-    foreach($files as $filename){
-        if($filename != "tables" && $filename != "svg" && $filename != "json" && $filename != "javascript" && $filename != "css" && $filename != "bytecode" && $filename != "php" && $filename != "html" && $filename != "." && $filename != ".." && is_dir($fullpath."/".$filename)){
-            
-           $fileandpath = substr($localpath,1)."/".$filename;
-           if($fileandpath[0] == "/"){
-               $fileandpath = substr($fileandpath,1);
-           } 
-           echo  "\n<li><a href = \"index.php?path=".$fileandpath."/\">".$fileandpath."/</a></li>\n";
-               $nextpath = $localpath."/".$filename;                
-            echo "<ul>";
-           listfiles($nextpath);
-            echo "</ul>";
-        }
-    }
+<ul id = "dirlinklist">
+    
+</ul>
+
+<script>
+
+dirlist = document.getElementById("dirlistdiv").innerHTML.split(",");
+for(var index = 0;index < dirlist.length - 1;index++){
+    var newli = document.createElement("LI");
+    var newa = document.createElement("A");
+    newa.innerHTML = dirlist[index];
+    newa.href = "index.php?path=" + dirlist[index] + "/";
+    newli.appendChild(newa);
+    document.getElementById("dirlinklist").appendChild(newli);
 }
 
 
-echo "<ul>\n";
-
-listfiles("");
-
-echo "</ul>\n";
-
-?>
-
-<p><a href = "../">../</a></p>
-<p><a href = "index.php">index.php</a></p>
-<p><a href = "editor.php">editor.php</a></p>
-<p><a href = "shapetableeditor.php">shapetableeditor.php</a></p>
-<p><a href = "keybaordeditor.php">keybaordeditor.php</a></p>
-
-<script>
-    lindex = 0;
-    lis = document.getElementsByTagName("LI");
-    if(lis.length > 0){
-        redraw();
-    }
-
-    function redraw(){
-            lis[lindex].style.backgroundColor = "pink";
-            path =  lis[lindex].getElementsByTagName("A")[0].innerHTML;
-            document.getElementById("pathinput").value = path;
-    }
-    document.getElementById("actioninput").onkeydown = function(a){
-        if(a.key == "ArrowDown"){
-            lis[lindex].style.backgroundColor = "white";
-            lindex++;
-            if(lindex > lis.length-1){
-                lindex = 0;
-            }
-            redraw();
-
-        }
-        if(a.key == "ArrowUp"){
-            lis[lindex].style.backgroundColor = "white";
-            lindex--;
-            if(lindex < 0){
-                lindex = lis.length-1;
-            }
-            redraw();
-        }
-    }
+document.getElementById("newbutton").onclick = function(){
+    path = document.getElementById("nameinput").value;
+    if(path.length > 0){
+        var httpc = new XMLHttpRequest();
+        var url = "newdir.php";        
+        httpc.open("POST", url, true);
+        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+        httpc.send("path=" + path);//send text to newdir.php            
     
-    document.getElementById("actioninput").select();
-
-    document.getElementById("newbutton").onclick = function(){
-        name = document.getElementById("nameinput").value;
-        path = document.getElementById("pathinput").value;
-        if(name.length>1){
-            console.log("path=" + path + ",name=" + name);
-            var httpc = new XMLHttpRequest();
-            var url = "newdir.php";        
-            httpc.open("POST", url, true);
-            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-            httpc.send("path="+path+"&name="+name);//send text to newdir.php            
-        }
-
+        var newli = document.createElement("LI");
+        var newa = document.createElement("A");
+        newa.innerHTML = path;
+        newa.href = "index.php?path=" + path + "/";
+        newli.appendChild(newa);
+        document.getElementById("dirlinklist").appendChild(newli);        
     }
+
+}
+
 </script>
 <style>
     body{
-        font-size:2em;
-        background-color:white;
+        font-size:24px;
         font-family:Helvetica;
     }
-    ul ul{
-        font-size:0.5em;
-        margin-left:6em;
-    }
-    #actioninput{
-        width:1em;
-    }
+    
+    
+#maintable{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+#linktable{
+    position:absolute;
+    top:0px;
+    right:0px;
+}
+    
     
 .button{
     cursor:pointer;

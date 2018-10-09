@@ -6,6 +6,10 @@ styleJSON = JSON.parse(document.getElementById("stylejsondiv").innerHTML);
 
 path = document.getElementById("pathdiv").innerHTML;
 
+if(path.length > 0){
+    document.getElementById("stylelink").href = "stylejsoneditor.php?path=" + path;
+}
+
 document.getElementById("mainCanvas").width = innerWidth;
 document.getElementById("mainCanvas").height = innerHeight;
 

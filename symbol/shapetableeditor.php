@@ -123,14 +123,7 @@ function doTheThing(localCommand){
 </script>
 </head>
 <body>
-<div id = "backurldata" style = "display:none"><?php
 
-    if(isset($_GET['backlink'])){
-        echo $_GET['backlink'];
-    }
-    
-
-?></div>
 <div id = "pathdiv" style= "display:none"><?php
 
     if(isset($_GET['path'])){
@@ -140,18 +133,31 @@ function doTheThing(localCommand){
 ?></div>
 <div id = "stylejsondiv"  style = "display:none"><?php
 
-echo file_get_contents("json/stylejson.txt");
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']."json/stylejson.txt");
+    }
+    else{
+        echo file_get_contents("json/stylejson.txt");
+    }
+
     
 ?></div>
 <div id = "datadiv" style = "display:none">
 <?php
-    echo file_get_contents("json/currentjson.txt");
+
+    if(isset($_GET['path'])){
+        echo file_get_contents($_GET['path']."json/currentjson.txt");
+    }
+    else{
+        echo file_get_contents("json/currentjson.txt");
+    }
+
+
 ?>
 </div>    
 <div id = "page">
     <a  id = "editorlink" href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
     <a  id = "factorylink" href = "index.php"><img style = "width:80px" src = "../factory_symbols/symbol.svg"></a>
-    <a id = "backlink" href = ""></a>
 
     <canvas id="invisibleCanvas" style="display:none"></canvas>
     <canvas id="mainCanvas"></canvas>
@@ -194,16 +200,6 @@ function init(){
         document.getElementById("factorylink").href = "index.php?path=" + path;
     }
 
-    backlink = document.getElementById("backurldata").innerHTML;
-
-    if(backlink.length>1){
-        document.getElementById("backlink").href = backlink;
-        document.getElementById("backlink").innerHTML = backlink;
-    }
-    else{
-        document.getElementById("backlink").href = "tree.php";
-        document.getElementById("backlink").innerHTML = "tree.php";
-    }
 
 
     currentJSON = JSON.parse(document.getElementById("datadiv").innerHTML);

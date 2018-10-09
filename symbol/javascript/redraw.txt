@@ -43,7 +43,7 @@ currentJSON.glyph = cleanGlyph;
 //un-comment the code below to make social:
 
 if(path.length>1){
-    currentFile = path + "json/currentjson.txt";
+    currentFile = "symbols/" +path + "json/currentjson.txt";
 }
 else{
     currentFile = "json/currentjson.txt";

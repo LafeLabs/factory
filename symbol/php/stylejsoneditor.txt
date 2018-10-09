@@ -27,7 +27,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
 ?></div>
 <div style = "display:none" id = "datadiv"><?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."/json/stylejson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
     }
     else{
         echo file_get_contents("json/stylejson.txt");
@@ -114,7 +114,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
 
 path = document.getElementById("pathdiv").innerHTML;
 if(path.length>1){
-    currentFile = path + "json/stylejson.txt";
+    currentFile = "symbols/" + path + "json/stylejson.txt";
     document.getElementById("indexlink").href = "index.php?path=" + path; 
 }
 else{

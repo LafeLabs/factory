@@ -37,7 +37,7 @@ document.getElementById("savesvg").onclick = function(){
 
     if(isset($_POST['path'])){
         $path = $_POST['path'];
-        $feedpath = $path."svg/";   
+        $feedpath = "symbols/".$path."svg/";   
     }
     else{
         $feedpath = "svg/";
@@ -52,7 +52,7 @@ document.getElementById("savesvg").onclick = function(){
 
 
     if(isset($_POST['path'])){
-        $files = scandir(getcwd()."/".$path."svg");
+        $files = scandir(getcwd()."/symbols/".$path."svg");
     }
     else{
         $files = scandir(getcwd()."/svg");
@@ -68,13 +68,26 @@ document.getElementById("savesvg").onclick = function(){
         }
     }
 
-    $file = fopen($path."svg/index.html","w");// create new file with this name
-    fwrite($file,$outtext); //write data to file
-    fclose($file);  //close file
+    if(isset($_POST['path'])){
+        $file = fopen("symbols/".$path."svg/index.html","w");// create new file with this name
+        fwrite($file,$outtext); //write data to file
+        fclose($file);  //close file
 
-    $file = fopen($path."svg/list.txt","w");// create new file with this name
-    fwrite($file,$listtext); //write data to file
-    fclose($file);  //close file
+        $file = fopen("symbols/".$path."svg/list.txt","w");// create new file with this name
+        fwrite($file,$listtext); //write data to file
+        fclose($file);  //close file
+    }
+    else{
+        $file = fopen($path."svg/index.html","w");// create new file with this name
+        fwrite($file,$outtext); //write data to file
+        fclose($file);  //close file
+
+        $file = fopen($path."svg/list.txt","w");// create new file with this name
+        fwrite($file,$listtext); //write data to file
+        fclose($file);  //close file
+        
+    }
+
 
     
     
