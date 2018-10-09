@@ -116,6 +116,8 @@
 			"filesaver.txt",
 			"index.txt",
 			"makenewmap.txt",
+			"mapalign.txt",
+			"maptemplate.txt",
 			"meme2map.txt",
 			"text2php.txt"
 		]
@@ -124,6 +126,7 @@
 		"path":"map/html",
 		"files":[
 			"index.txt",
+			"mapalign.txt",
 			"meme2map.txt"
 		]
 	},
