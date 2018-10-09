@@ -1,7 +1,5 @@
 <table id = "linkTable">
-    <tr><td>
-        <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
-    </td>
+    <tr>
     <td>
         <a href = "svgfeed.php"><img style = "width:80px" src = "../factory_symbols/svgfeed.svg"></a>
     </td>
@@ -12,6 +10,13 @@
         <a href = "shapetableeditor.php"><img src = "../factory_symbols/shapes.svg"></a>
     </td>
     <td><a href = "../combiner/"><img src = "../factory_symbols/combiner.svg"></a></td>
+    <td><a href = "vieweditor.php">VIEW EDITOR</a></td>
+    <td>
+        <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
+    </td>
+    <td>
+        <a href = "../"><img style = "height:80px" src = "../factory_symbols/factory.svg"></a>
+    </td>
     </tr>
     <tr>
     <td><input id = "actionInput"/></td>

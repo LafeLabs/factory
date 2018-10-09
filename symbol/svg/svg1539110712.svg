@@ -1,16 +1,16 @@
-<svg width="373" height="250" viewbox = "0 0 373 250"  xmlns="http://www.w3.org/2000/svg">
+<svg width="377" height="250" viewbox = "0 0 377 250"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 373,
+    "svgwidth": 377,
     "svgheight": 250,
-    "unit": 67,
-    "x0": 607,
-    "y0": 380,
-    "x0rel": -77,
-    "y0rel": -19,
-    "glyph": "0336,0332,0337,0341,0224,0223,0223,0223,0333,0341,",
+    "unit": 100,
+    "x0": 684,
+    "y0": 399,
+    "x0rel": 0,
+    "y0rel": 0,
+    "glyph": "0336,0332,0337,0341,0333,0341,",
     "table": [
         "0220:0304,0313,0210,0210,0336,0333,0331,0337,0204,0336,0330,0332,0337,0211,0211,",
         "0221:0304,0313,0330,0220,",
@@ -65,6 +65,6 @@
 }
 </json>
 -->
-    <circle cx="76" cy = "106" r = "67" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M84 106 L68 106 M67.625 106           A16.75 16.75 0 0 1 84.375 89.25L84 106 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M84 98 L84 89 L118 89 L135 89 L135 81 L143 89 L151 98 L143 106 L135 114 L135 106 L101 106 L84 106 L84 98 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M151 98 L151 89 L185 89 L202 89 L202 81 L210 89 L218 98 L210 106 L202 114 L202 106 L168 106 L151 106 L151 98 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M218 98 L218 89 L252 89 L269 89 L269 81 L277 89 L285 98 L277 106 L269 114 L269 106 L235 106 L218 106 L218 98 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="285" cy = "165" r = "67" stroke = "black" stroke-width = "3" fill = "none" />
+    <circle cx="139" cy = "125" r = "100" stroke = "black" stroke-width = "3" fill = "none" />
+    <circle cx="239" cy = "125" r = "100" stroke = "black" stroke-width = "3" fill = "none" />
 </svg>

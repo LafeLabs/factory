@@ -30,6 +30,8 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <a href = "shapetableeditor.php">shapetableeditor.php</a>
     <a href = "keyboardeditor.php">keyboardeditor.php</a>
     <a href = "stylejsoneditor.php">stylejsoneditor.php</a>
+    <a href = "vieweditor.php">vieweditor.php</a>
+
     <a href = "treednagenerator.php">treednagenerator.php</a>
     <a href = "dnagenerator.php">dnagenerator.php</a>
     
@@ -53,7 +55,6 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "javascript file">javascript/topfunctions.txt</div>
     <div class = "javascript file">javascript/actions0xx.txt</div>
     <div class = "javascript file">javascript/actions03xx.txt</div>
-    <div class = "javascript file">javascript/jslibrary.txt</div>
     <div class = "javascript file">javascript/init.txt</div>
     <div class = "javascript file">javascript/redraw.txt</div>
     <div class = "javascript file">javascript/pageevents.txt</div>
@@ -67,6 +68,7 @@ ALL CODE IS PUBLIC DOMAIN NO PATENTS NO COPYRIGHTS
     <div class = "php file">php/shapetableeditor.txt</div>
     <div class = "php file">php/keyboardeditor.txt</div>
     <div class = "php file">php/stylejsoneditor.txt</div>
+    <div class = "php file">php/vieweditor.txt</div>
     <div class = "php file">php/svgfeed.txt</div>
     <div class = "php file">php/tree.txt</div>
     <div class = "php file">php/newdir.txt</div>

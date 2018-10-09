@@ -8,10 +8,8 @@ currentJSON.y0rel = y0 - 0.5*innerHeight;
    
 ctx = document.getElementById("mainCanvas").getContext("2d");
 ctx.clearRect(0,0,innerWidth,innerHeight);
-    svgheight = 500;
-    svgwidth = 500;
-    ctx.strokeRect(0.5*innerWidth - 0.5*svgwidth,0.5*innerHeight - 0.5*svgheight,svgwidth,svgheight);
-
+    //ctx.strokeRect(0.5*innerWidth - 0.5*svgwidth,0.5*innerHeight - 0.5*svgheight,svgwidth,svgheight);
+    ctx.strokeRect(0.5*innerWidth - 0.5*currentJSON.svgwidth,0.5*innerHeight - 0.5*currentJSON.svgheight,currentJSON.svgwidth,currentJSON.svgheight);
 
 doTheThing(0300);
 drawGlyph(currentGlyph);

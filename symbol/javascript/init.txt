@@ -110,11 +110,13 @@ for(var index = 0;index < softkeys.length;index++){
     document.getElementById("keytable").appendChild(newtr);
 }
 
-currentGlyph = currentJSON.glyph + "0207,";
-unit = 100;
-x0 =  0.5*innerWidth;
-y0 = 0.5*innerHeight;
+document.getElementById("keytable").style.display = "none";
 
-currentJSON.svgwidth = innerWidth;
-currentJSON.svgheight = innerHeight;
+currentGlyph = currentJSON.glyph + "0207,";
+//unit = 100;
+//x0 =  0.5*innerWidth;
+//y0 = 0.5*innerHeight;
+unit = currentJSON.unit;
+x0 =  0.5*innerWidth + currentJSON.x0rel;
+y0 = 0.5*innerHeight + currentJSON.y0rel;
 

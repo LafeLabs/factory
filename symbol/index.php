@@ -4,13 +4,32 @@
 <title>Geometron Symbol</title>
 <!-- 
 PUBLIC DOMAIN, NO COPYRIGHTS, NO PATENTS.
+
+_9_LAWS_OF_GEOMETRON_:
+
+EVERYTHING IS PHYSICAL
+EVERYTHING IS FRACTAL
+EVERYTHING IS RECURSIVE
+
+NO MONEY
+NO PROPERTY
+NO MINING
+
+EGO DEATH:
+    LOOK AT THE INSECTS
+    LOOK AT THE FUNGI
+    LANGUAGE IS HOW THE MIND PARSES REALITY
+    
 -->
+<!--Stop Google:-->
+<META NAME="robots" CONTENT="noindex,nofollow">
+
 <script id = "bytecodeScript">/*
 <?php
 echo file_get_contents("bytecode/baseshapes.txt")."\n";
 echo file_get_contents("bytecode/shapetable.txt")."\n";
 echo file_get_contents("bytecode/font.txt")."\n";
-echo file_get_contents("bytecode/symbolkeyboard.txt")."\n";
+echo file_get_contents("bytecode/keyboard.txt")."\n";
 echo file_get_contents("bytecode/symbols013xx.txt")."\n";
 echo file_get_contents("bytecode/symbols010xx.txt")."\n";
 

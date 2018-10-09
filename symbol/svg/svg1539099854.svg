@@ -1,16 +1,16 @@
-<svg width="373" height="250" viewbox = "0 0 373 250"  xmlns="http://www.w3.org/2000/svg">
+<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 373,
+    "svgwidth": 250,
     "svgheight": 250,
-    "unit": 67,
-    "x0": 607,
-    "y0": 380,
-    "x0rel": -77,
-    "y0rel": -19,
-    "glyph": "0336,0332,0337,0341,0224,0223,0223,0223,0333,0341,",
+    "unit": 100,
+    "x0": 684,
+    "y0": 399,
+    "x0rel": 0,
+    "y0rel": 0,
+    "glyph": "0336,0223,0223,0224,0223,0223,0224,0223,0223,0223,0223,0224,0223,0223,0223,0223,0224,0223,0223,0223,0223,",
     "table": [
         "0220:0304,0313,0210,0210,0336,0333,0331,0337,0204,0336,0330,0332,0337,0211,0211,",
         "0221:0304,0313,0330,0220,",
@@ -65,6 +65,4 @@
 }
 </json>
 -->
-    <circle cx="76" cy = "106" r = "67" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M84 106 L68 106 M67.625 106           A16.75 16.75 0 0 1 84.375 89.25L84 106 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M84 98 L84 89 L118 89 L135 89 L135 81 L143 89 L151 98 L143 106 L135 114 L135 106 L101 106 L84 106 L84 98 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M151 98 L151 89 L185 89 L202 89 L202 81 L210 89 L218 98 L210 106 L202 114 L202 106 L168 106 L151 106 L151 98 Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M218 98 L218 89 L252 89 L269 89 L269 81 L277 89 L285 98 L277 106 L269 114 L269 106 L235 106 L218 106 L218 98 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="285" cy = "165" r = "67" stroke = "black" stroke-width = "3" fill = "none" />
-</svg>
+	<path d = "M125 125 L119 125 L119 100 L119 88 L113 88 L119 81 L125 75 L131 81 L138 88 L131 88 L131 113 L131 125 L125 125 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M125 75 L119 75 L119 50 L119 38 L112 38 L119 31 L125 25 L131 31 L138 38 L131 38 L131 63 L131 75 L125 75 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M131 25 L119 25 M118.74999999999997 25           A12.5 12.5 0 0 1 131.25 12.499999999999996L131 25 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M131 19 L131 12 L156 13 L169 13 L169 6 L175 13 L181 19 L175 25 L169 31 L169 25 L144 25 L131 25 L131 19 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M181 19 L181 13 L206 13 L219 13 L219 6 L225 13 L231 19 L225 25 L219 31 L219 25 L194 25 L181 25 L181 19 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M231 25 L231 13 M231.25000000000014 12.500000000000615           A12.5 12.5 0 0 1 243.75 25.00000000000078L231 25 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M238 25 L244 25 L244 50 L244 63 L250 63 L244 69 L237 75 L231 69 L225 63 L231 63 L231 38 L231 25 L238 25 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M237 75 L244 75 L244 100 L244 113 L250 113 L244 119 L237 125 L231 119 L225 113 L231 113 L231 88 L231 75 L237 75 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M237 125 L244 125 L244 150 L244 163 L250 163 L244 169 L237 175 L231 169 L225 163 L231 163 L231 138 L231 125 L237 125 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M237 175 L244 175 L244 200 L244 213 L250 213 L244 219 L237 225 L231 219 L225 213 L231 213 L231 188 L231 175 L237 175 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M231 225 L244 225 M243.74999999999795 225.00000000000034           A12.5 12.5 0 0 1 231.2499999999982 237.50000000000054L231 225 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M231 231 L231 238 L206 238 L194 238 L194 244 L187 238 L181 231 L187 225 L194 219 L194 225 L219 225 L231 225 L231 231 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M181 231 L181 238 L156 238 L144 238 L144 244 L137 238 L131 231 L137 225 L144 219 L144 225 L169 225 L181 225 L181 231 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M131 231 L131 238 L106 238 L94 238 L94 244 L87 238 L81 231 L87 225 L94 219 L94 225 L119 225 L131 225 L131 231 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M81 231 L81 238 L56 238 L44 238 L44 244 L37 238 L31 231 L37 225 L44 219 L44 225 L69 225 L81 225 L81 231 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M31 225 L31 238 M31.249999999998682 237.50000000001205           A12.5 12.5 0 0 1 18.749999999997513 225.0000000000133L31 225 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M25 225 L19 225 L19 200 L19 188 L12 188 L19 181 L25 175 L31 181 L37 188 L31 188 L31 213 L31 225 L25 225 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M25 175 L19 175 L19 150 L19 138 L12 138 L19 131 L25 125 L31 131 L37 138 L31 138 L31 163 L31 175 L25 175 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M25 125 L19 125 L19 100 L19 88 L12 88 L19 81 L25 75 L31 81 L37 88 L31 88 L31 113 L31 125 L25 125 Z" stroke = "black" stroke-width = "1" fill = "black" />	<path d = "M25 75 L19 75 L19 50 L19 38 L12 38 L19 31 L25 25 L31 31 L37 38 L31 38 L31 63 L31 75 L25 75 Z" stroke = "black" stroke-width = "1" fill = "black" /></svg>

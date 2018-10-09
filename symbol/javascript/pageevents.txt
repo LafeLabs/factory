@@ -45,8 +45,8 @@ document.getElementById("savesvg").onclick = function(){
         }
     }
 
-//    svgwidth = currentJSON.svgwidth;
-  //  svgheight = currentJSON.svgheight;
+    svgwidth = currentJSON.svgwidth;
+    svgheight = currentJSON.svgheight;
     tempx0 = x0;
     tempy0 = y0;
     x0 -= 0.5*(innerWidth - svgwidth);
@@ -123,11 +123,19 @@ function saveSVG(){
     currentJSON.table = [];
 
 
-
  }
  
 
+document.getElementById("mainCanvas").onclick = function(){
+    document.getElementById("keytable").style.display = "block";
+}
 
+document.getElementById("actionInput").onclick = function(){
+    document.getElementById("keytable").style.display = "none";
+}
+document.getElementById("actionInput").onselect = function(){
+    document.getElementById("keytable").style.display = "none";
+}
 
 document.getElementById("actionInput").onkeydown = function(e) {
 //        if(document.getElementById("pngimage").style.display == "block"){
@@ -159,6 +167,8 @@ document.getElementById("actionInput").onkeydown = function(e) {
     }
     
     
+    
+
     
 document.getElementById("actionInput").onkeypress = function(a){//action
     charCode = a.keyCode || a.which;
