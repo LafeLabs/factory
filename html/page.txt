@@ -107,11 +107,17 @@
                 
             </a>
         </td>
-        <td><a href = "map/">MAP</a><br><a href = "map/marker/">MARKER</a></td>
+        <td>
+            <a href = "map/">
+                <img  src = "factory_symbols/map.svg">
+            </a>
+        </td>
     </tr>
     <tr>
         <td><a href = "map/meme2map.php">MEME2MAP</a></td>
-        <td><a href = "map/mapalign.php">MAPALIGN</a></td>
+        <td><a href = "map/mapalign.php">
+    <img  src = "factory_symbols/mapalign.svg">
+        </a></td>
     </tr>
 </table>
 

@@ -1,6 +1,16 @@
 <table id = "linktable">
     <tr>
         <td>
+            <a href = "mapalign.php">
+                <img style = "width:80px" src = "../factory_symbols/mapalign.svg"/>
+            </a>
+        </td>
+        <td>
+            <a href = "marker/">
+                <img style = "width:80px" src = "../factory_symbols/marker.svg"/>
+            </a>
+        </td>
+        <td>
             <a href=  "../"><img style = "height:80px" src = "../factory_symbols/factory.svg"></a>
         </td>
         <td>

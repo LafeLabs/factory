@@ -1,4 +1,9 @@
 <style>
+#linktable{
+    position:absolute;
+    left:0px;
+    top:0px;
+}
 #mapbox{
     position:absolute;
     top:40%;
@@ -24,6 +29,9 @@ input{
 #maintable{
     font-size:22px;
     font-family:Helvetica;
+    position:absolute;
+    top:120px;
+    left:0px;
 }
 #markerfeed{
     position:absolute;
@@ -47,8 +55,25 @@ input{
 
 <link rel="stylesheet" href="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/css/ol.css" type="text/css">
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.2.0/build/ol.js"></script>
-
-<h1><a href = "editor.php">editor.php</a></h1>
+<table id = "linktable">
+<tr>
+    <td>
+        <a  style = "width:80px" href = "editor.php">
+        <img  style = "height:80px" src = "../../factory_symbols/editor.svg"/>
+        </a>
+    </td>
+    <td>
+        <a href = "../">
+            <img style = "height:80px" src = "../../factory_symbols/map.svg"/>
+        </a>
+    </td>
+    <td>
+        <a href = "../../">
+        <img style = "height:80px" src = "../../factory_symbols/factory.svg"/>
+        </a>
+    </td>
+</tr>
+</table>
 <table id = "maintable">
     <tr>
         <td>Latitude/Longitude:</td><td><input id = "latloninput"/></td>

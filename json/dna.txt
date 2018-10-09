@@ -39,6 +39,8 @@
 			"images.svg",
 			"linkfeed.svg",
 			"map.svg",
+			"mapalign.svg",
+			"marker.svg",
 			"meme2page.svg",
 			"page.svg",
 			"shapes.svg",

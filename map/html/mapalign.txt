@@ -8,7 +8,7 @@
     </td>
     <td>
         <a href = "marker/">
-            MARKER
+    <img src = "../factory_symbols/marker.svg"/>
         </a>
     </td>
     <td>
@@ -16,6 +16,12 @@
     <img src = "../factory_symbols/factory.svg"/>    
         </a>
     </td>
+    <td>
+        <a href = "index.php">
+    <img src = "../factory_symbols/map.svg"/>    
+        </a>
+    </td>
+
     <td>
         <a href = "meme2map.php">
         MEME2MAP    
