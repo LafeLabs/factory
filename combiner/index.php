@@ -38,6 +38,27 @@ foreach(array_reverse($files) as $value){
 echo $listtext;
 
 ?></div>
+<div id = "symbolssymbolsdatadiv" style = "display:none"><?php
+
+$symbolsfiles = scandir(getcwd()."/../symbol/symbols");
+
+foreach($symbolsfiles as $derp){
+    if($derp != ".." && $derp != "."){
+        $listtext = "";  
+        $files = scandir(getcwd()."/../symbol/symbols/".$derp."/svg");
+        foreach(array_reverse($files) as $value){
+            if($value != "." && $value != ".." && substr($value,-4) == ".svg"){
+                $listtext .= $derp."/svg/".$value.",";
+            }
+        }
+        echo $listtext;    
+        
+    }
+}
+
+
+?></div>
+
 <div id = "symbolsdatadiv" style = "display:none"><?php
 
 $files = scandir(getcwd()."/../symbol/svg");

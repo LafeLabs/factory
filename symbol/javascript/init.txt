@@ -10,6 +10,8 @@ if(path.length > 0){
     document.getElementById("stylelink").href = "stylejsoneditor.php?path=" + path;
     document.getElementById("shapeslink").href = "shapetableeditor.php?path=" + path;
     document.getElementById("viewlink").href = "vieweditor.php?path=" + path;
+    document.getElementById("svglink").href = "svgfeed.php?path=" + path;
+    
 }
 
 document.getElementById("mainCanvas").width = innerWidth;

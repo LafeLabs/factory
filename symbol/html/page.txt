@@ -1,7 +1,7 @@
 <table id = "linkTable">
     <tr>
     <td>
-        <a href = "svgfeed.php"><img style = "width:80px" src = "../factory_symbols/svgfeed.svg"></a>
+        <a id = "svglink" href = "svgfeed.php"><img style = "width:80px" src = "../factory_symbols/svgfeed.svg"></a>
     </td>
     <td>
         <a id = "stylelink" href = "stylejsoneditor.php"><img src = "../factory_symbols/style.svg"></a>
@@ -10,7 +10,9 @@
         <a id = "shapeslink" href = "shapetableeditor.php"><img src = "../factory_symbols/shapes.svg"></a>
     </td>
     <td><a href = "../combiner/"><img src = "../factory_symbols/combiner.svg"></a></td>
-    <td><a id = "viewlink" href = "vieweditor.php">VIEW EDITOR</a></td>
+    <td><a id = "viewlink" href = "vieweditor.php">
+        <img src= "../factory_symbols/vieweditor.svg"/>
+    </a></td>
     <td>
         <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
     </td>
@@ -18,7 +20,9 @@
         <a href = "../"><img style = "height:80px" src = "../factory_symbols/factory.svg"></a>
     </td>
     <td>
-        <a href = "tree.php">TREE</a>
+        <a href = "tree.php">
+        <img style = "width:80px" src = "../factory_symbols/tree.svg">
+        </a>
     </td>
     </tr>
     <tr>

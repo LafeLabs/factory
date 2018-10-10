@@ -13,9 +13,6 @@
     <tr>
         <td></td>
         <td>
-            <a href = "symbol/stylejsoneditor.php">
-                <img src = "factory_symbols/style.svg">
-            </a>
         </td>
         <td>
         </td>
@@ -27,13 +24,10 @@
     </tr>
     <tr>
         <td>
-            <a href = "symbol/shapetableeditor.php">
-                <img src = "factory_symbols/shapes.svg">
-            </a>
         </td>
         <td>
             <a href = "symbol/">
-                <img src = "factory_symbols/symbol.svg">
+                <img src = "factory_symbols/symbol2.svg">
             </a>
         </td>
         <td>

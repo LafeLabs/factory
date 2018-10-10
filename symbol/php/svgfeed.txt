@@ -39,8 +39,8 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
     if(isset($_GET['path'])){
         $path = $_GET['path'];
-        $svgpath = "/".$path."svg";
-        $svgpath2 = $path."svg/";
+        $svgpath = "/symbols/".$path."svg";
+        $svgpath2 = "symbols/".$path."svg/";
 
     }
     else{

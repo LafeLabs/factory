@@ -1,4 +1,5 @@
 [
-    "http://localhost:8000/curve/svg/svg1538866539.svg",
-    "http://localhost:8000/symbol/svg/svg1537847268.svg"
+    "http://localhost:8000/symbol/svg/svg1537847479.svg",
+    "http://localhost:8000/symbol/symbols/factorysymbols/svg/svg1539140883.svg",
+    "http://localhost:8000/symbol/symbols/factorysymbols/svg/svg1539138093.svg"
 ]
