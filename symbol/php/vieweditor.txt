@@ -305,6 +305,7 @@ body{
     position:absolute;
     bottom:0px;
     left:0px;
+    z-index:3;
     width:100%;
 }
 #hammertable tr{
