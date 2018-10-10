@@ -25,6 +25,7 @@
         mkdir("linkfeed/html");
     mkdir("symbol");
         mkdir("symbol/svg");
+        mkdir("symbol/symbols");
     mkdir("images");
         mkdir("images/images");
     mkdir("combiner");
