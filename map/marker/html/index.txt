@@ -58,6 +58,16 @@ input{
 <table id = "linktable">
 <tr>
     <td>
+        <a href = "../meme2map.php">
+            <img style = "width:80px" src = "../../factory_symbols/meme2map.svg"/>
+        </a>
+    </td>
+    <td>
+        <a href = "../mapalign.php">
+            <img style = "width:80px" src = "../../factory_symbols/mapalign.svg"/>
+        </a>
+    </td>
+    <td style = "display:none">
         <a  style = "width:80px" href = "editor.php">
         <img  style = "height:80px" src = "../../factory_symbols/editor.svg"/>
         </a>

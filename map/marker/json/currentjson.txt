@@ -26,5 +26,9 @@
     {
         "latlon": "38.86229,-77.04869",
         "name": "crystal and 12th"
+    },
+    {
+        "latlon": "38.88925,-77.05017",
+        "name": "lincoln memorial center"
     }
 ]

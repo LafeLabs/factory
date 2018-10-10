@@ -40,16 +40,11 @@ foreach(array_reverse($files) as $value){
             </a>
         </td>
         <td>
-            <a href = "../images/">
-                <img src = "../factory_symbols/images.svg">
+            <a href = "../map/meme2map.php">
+                <img src = "../factory_symbols/meme2map.svg">
             </a>
         </td>
-        <td>
-            <a href = "../combiner/">
-                <img src = "../factory_symbols/combiner.svg">
-            </a>
-        </td>
-        <td>
+        <td style = "display:none">
             <a href = "editor.php"><img src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>

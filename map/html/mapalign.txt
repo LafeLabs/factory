@@ -24,7 +24,7 @@
 
     <td>
         <a href = "meme2map.php">
-        MEME2MAP    
+    <img src = "../factory_symbols/meme2map.svg"/>    
         </a>
     </td>
 

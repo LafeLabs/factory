@@ -11,12 +11,17 @@
             <a href=  "../aligner/index.php"><img style = "width:80px" src = "../factory_symbols/aligner.svg"></a>
         </td>
         <td>
-            <a href=  "../aligner/memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"></a>
+            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/map.svg"></a>
         </td>
         <td>
-            <a href=  "index.php"><img style = "width:80px" src = "../factory_symbols/page.svg"></a>
+            <a href = "marker/">
+                <img style = "width:80px" src = "../factory_symbols/marker.svg"/>
+            </a>
         </td>
         <td>
+            <a href=  "mapalign.php"><img style = "width:80px" src = "../factory_symbols/mapalign.svg"></a>
+        </td>
+        <td style = "display:none">
             <a href=  "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
         </td>
         <td>
