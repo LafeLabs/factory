@@ -93,7 +93,13 @@ input{
 </div>
 <script type="text/javascript">
 
-currentjson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+
+if(document.getElementById("jsondatadiv").innerHTML.length>0){
+currentjson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);    
+}
+else{
+    currentjson = {};
+}
 
 for(var index = 0;index <currentjson.length;index++){
     var newpre = document.createElement("PRE");

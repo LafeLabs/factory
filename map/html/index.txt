@@ -27,7 +27,13 @@
 
 <script>
 
-memejson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+
+if(document.getElementById("jsondatadiv").innerHTML.length>0){
+    memejson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+}
+else{
+    memejson = {};
+}
 
 document.getElementById("mainImage").src = memejson.imgurl;
 document.getElementById("mainImage").onload = function(){

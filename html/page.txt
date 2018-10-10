@@ -90,6 +90,7 @@
         display:block;
         width:100%;
         text-align:center;
+        width:500px;
     }  
     #factorytable img{
         width:100px;
