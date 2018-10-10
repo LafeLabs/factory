@@ -1,2 +1,4 @@
-Quantum GEometron.
+
+Quantum Geometron. Some basic gates, along with a hexagon because why not?
+
 

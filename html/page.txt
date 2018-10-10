@@ -11,18 +11,6 @@
 <div id = "factorybox">
 <table id = "factorytable">
     <tr>
-        <td></td>
-        <td>
-        </td>
-        <td>
-        </td>
-        <td>
-            <a href = "textfeed/">
-                <img src = "factory_symbols/textfeed.svg">
-            </a>
-        </td>
-    </tr>
-    <tr>
         <td>
         </td>
         <td>
@@ -53,9 +41,7 @@
     </tr>
     <tr>
         <td></td>
-        <td>
-            <a href = "aligner/memefeed.php"><img style = "width:80px" src = "factory_symbols/feed.svg"></a>
-        </td>
+        <td></td>
         <td>
             <a href = "aligner/">
                 <img src = "factory_symbols/aligner.svg">
@@ -64,55 +50,19 @@
         <td></td>
     </tr>
     <tr>
-        <td></td>
-        <td></td>
-        <td>
-            <a href = "page/meme2page.php">
-                <img src = "factory_symbols/meme2page.svg">
-            </a>
-        </td>
-        <td><a href = "linkfeed/">
-            <img  src = "factory_symbols/linkfeed.svg">
-        </a></td>
-    </tr>
-    <tr>
-        <td><a href = "scroll/">SCROLL</a></td>
-        <td><a href = "deck/">DECK</a></td>
+        <td><a href = "map/"><img  src = "factory_symbols/map.svg">
+            </a></td>
+        <td><a href = "deck/"><img  src = "factory_symbols/deck.svg"></a></td>
         <td>
             <a href = "page/">
-                <table>
-                    <tr>
-                        <td>
-                <img src = "factory_symbols/page.svg" style = "width:40px">            
-                        </td>
-                        <td>
-                            <img src = "factory_symbols/page.svg" style = "width:40px">
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                <img src = "factory_symbols/page.svg" style = "width:40px">            
-                        </td>
-                        <td>
-                            <img src = "factory_symbols/page.svg" style = "width:40px">
-                        </td>
-                    </tr>
-                </table>
-                
+                <img src = "factory_symbols/page.svg">
             </a>
         </td>
         <td>
-            <a href = "map/">
-                <img  src = "factory_symbols/map.svg">
-            </a>
+            <a href = "scroll/"><img  src = "factory_symbols/scroll.svg"></a>
         </td>
     </tr>
-    <tr>
-        <td><a href = "map/meme2map.php">MEME2MAP</a></td>
-        <td><a href = "map/mapalign.php">
-    <img  src = "factory_symbols/mapalign.svg">
-        </a></td>
-    </tr>
+
 </table>
 
 
