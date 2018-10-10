@@ -207,7 +207,8 @@
 			"text2php.txt",
 			"tree.txt",
 			"treednagenerator.txt",
-			"treereplicator.txt"
+			"treereplicator.txt",
+			"vieweditor.txt"
 		]
 	},
 	{

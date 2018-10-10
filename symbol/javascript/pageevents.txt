@@ -112,10 +112,10 @@ function saveSVG(){
     httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
 
     if(path.length > 1){
-        httpc.send("data="+currentSVG+"&filename=" + path + "currentsvg.svg");//send text to filesaver.php
+        httpc.send("data="+currentSVG+"&filename=symbols/" + path + "currentsvg.svg");//send text to filesaver.php
     }
     else{
-        httpc.send("data="+currentSVG+"&filename=" + "currentsvg.svg");//send text to filesaver.php
+        httpc.send("data="+currentSVG+"&filename=currentsvg.svg");//send text to filesaver.php
 
     }
     x0 = tempx0;

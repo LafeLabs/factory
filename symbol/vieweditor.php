@@ -36,11 +36,11 @@ echo file_get_contents("bytecode/symbols013xx.txt")."\n";
 echo file_get_contents("bytecode/symbols010xx.txt")."\n";
 
 if(isset($_GET['path'])){
-    if(file_exists($_GET['path']."/bytecode/shapetable.txt")){
-        echo file_get_contents($_GET['path']."/bytecode/shapetable.txt");
+    if(file_exists("symbols/".$_GET['path']."/bytecode/shapetable.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/shapetable.txt");
     }
-    if(file_exists($_GET['path']."/bytecode/font.txt")){
-        echo file_get_contents($_GET['path']."/bytecode/font.txt");
+    if(file_exists("symbols/".$_GET['path']."/bytecode/font.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/font.txt");
     }
 }
 
@@ -84,7 +84,7 @@ function doTheThing(localCommand){
 <body>
 <div id = "stylejsondiv" style = "display:none"><?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/stylejson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
 
     }
     else{
@@ -101,7 +101,7 @@ function doTheThing(localCommand){
 <div id = "datadiv" style = "display:none">
 <?php
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/currentjson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/currentjson.txt");
     }
     else{
         echo file_get_contents("json/currentjson.txt");
@@ -126,7 +126,7 @@ if(isset($_GET['url'])){
 <table id = "linkTable">
     <tr>
         <td>
-            <a href = "index.php"><img src = "../factory_symbols/symbol.svg"></a>
+            <a id = "indexlink" href = "index.php"><img src = "../factory_symbols/symbol.svg"></a>
         </td>
     </tr>
 </table>
@@ -156,6 +156,11 @@ function init(){
 
     path = document.getElementById("pathdiv").innerHTML;
 
+
+    if(path.length > 0){
+        document.getElementById("indexlink").href = "index.php?path=" + path;
+    }
+
     document.getElementById("mainCanvas").width = innerWidth;
     document.getElementById("mainCanvas").height = innerHeight;
 
@@ -167,7 +172,6 @@ function init(){
         var localaddr = parseInt(currentJSON.table[index].split(":")[0],8);    
         currentTable[localaddr] = currentJSON.table[index].split(":")[1];
     }
-
 
 
     cleanGlyph = "";
@@ -190,7 +194,9 @@ function redraw(){
 
     ctx = document.getElementById("mainCanvas").getContext("2d");
     ctx.clearRect(0,0,innerWidth,innerHeight);
-    //ctx.strokeRect(0.5*innerWidth - 0.5*svgwidth,0.5*innerHeight - 0.5*svgheight,svgwidth,svgheight);
+ctx.strokeStyle= "black";
+ctx.lineWidth = 1;    	
+
     ctx.strokeRect(0.5*innerWidth - 0.5*currentJSON.svgwidth,0.5*innerHeight - 0.5*currentJSON.svgheight,currentJSON.svgwidth,currentJSON.svgheight);
 
     doTheThing(0300);
@@ -198,7 +204,7 @@ function redraw(){
 
 
     if(path.length>1){
-        currentFile = path + "json/currentjson.txt";
+        currentFile = "symbols/" + path + "json/currentjson.txt";
     }
     else{
         currentFile = "json/currentjson.txt";

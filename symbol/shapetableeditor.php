@@ -15,11 +15,19 @@ echo file_get_contents("bytecode/keyboard.txt")."\n";
 echo file_get_contents("bytecode/symbols013xx.txt")."\n";
 echo file_get_contents("bytecode/symbols010xx.txt")."\n";
 
+
+?>
+*/
+</script>
+<script id = "localbytecodeScript">
+/*
+<?php
+
 if(isset($_GET['path'])){
-    if(file_exists($_GET['path']."/bytecode/shapetable.txt")){
-        echo file_get_contents($_GET['path']."/bytecode/shapetable.txt")."\n";
+    if(file_exists("symbols/".$_GET['path']."/bytecode/shapetable.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/shapetable.txt")."\n";
     }
-    if(file_exists($_GET['path']."/bytecode/font.txt")){
+    if(file_exists("symbols/".$_GET['path']."/bytecode/font.txt")){
         echo file_get_contents($_GET['path']."/bytecode/font.txt")."\n";
     }
 }
@@ -27,6 +35,7 @@ if(isset($_GET['path'])){
 ?>
 */
 </script>
+
 <script id = "topfunctions">
 
  function string2byteCode(localString){
@@ -134,7 +143,7 @@ function doTheThing(localCommand){
 <div id = "stylejsondiv"  style = "display:none"><?php
 
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/stylejson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/stylejson.txt");
     }
     else{
         echo file_get_contents("json/stylejson.txt");
@@ -146,7 +155,7 @@ function doTheThing(localCommand){
 <?php
 
     if(isset($_GET['path'])){
-        echo file_get_contents($_GET['path']."json/currentjson.txt");
+        echo file_get_contents("symbols/".$_GET['path']."json/currentjson.txt");
     }
     else{
         echo file_get_contents("json/currentjson.txt");
@@ -198,6 +207,18 @@ function init(){
     path = document.getElementById("pathdiv").innerHTML;
     if(path.length > 1){
         document.getElementById("factorylink").href = "index.php?path=" + path;
+        
+        var inputbytecode = document.getElementById("localbytecodeScript").text;
+        var bytecodearray = inputbytecode.split("\n");
+        for(var index = 0;index < bytecodearray.length;index++){
+            if(bytecodearray[index].includes(":")){
+                var localBytecode = bytecodearray[index].split(":");
+                var localAddress = parseInt(localBytecode[0],8);
+                currentTable[localAddress] = localBytecode[1];
+            }
+        }
+
+
     }
 
 
@@ -262,59 +283,60 @@ function redraw(){
     
 
 
-if(currentAddress >= 0220 && currentAddress < 0277){
+if((currentAddress >= 0220 && currentAddress < 0277) || (currentAddress >= 01220 && currentAddress < 01277)){
     if(path.length > 1){
-        currentFile = path + "bytecode/shapetable.txt";
+        currentFile = "symbols/" + path + "bytecode/shapetable.txt";
+        data = "";
+        for(var index = 0220;index < 0277;index++){
+            if(currentTable[index].length > 2  && currentTable[index] != currentTableStart[index]){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }
+        for(var index = 01220;index < 01277;index++){
+            if(currentTable[index].length > 2 && currentTable[index] != currentTableStart[index]){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }
+
     }
     else{
         currentFile = "bytecode/shapetable.txt";
-    }
-    data = "";
-    for(var index = 0220;index < 0277;index++){
-        if(currentTable[index].length > 2){
-            data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+        data = "";
+        for(var index = 0220;index < 0277;index++){
+            if(currentTable[index].length > 2){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
         }
-    }
-    for(var index = 01220;index < 01277;index++){
-        if(currentTable[index].length > 2){
-            data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
-        }
-    }
-}
-if(currentAddress >= 01220 && currentAddress < 01277){
-    if(path.length > 1){
-        currentFile = path + "bytecode/shapetable.txt";
-    }
-    else{
-        currentFile = "bytecode/shapetable.txt";
-    }
-    data = "";
-    for(var index = 0220;index < 0277;index++){
-        if(currentTable[index].length > 2){
-            data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
-        }
-    }
-    for(var index = 01220;index < 01277;index++){
-        if(currentTable[index].length > 2){
-            data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
-        }
+        for(var index = 01220;index < 01277;index++){
+            if(currentTable[index].length > 2){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }    
     }
 }
 
 if(currentAddress >= 01040 && currentAddress < 01177){
     if(path.length > 1){
-        currentFile = path + "bytecode/font.txt";
+        currentFile = "symbols/" + path + "bytecode/font.txt";
+        data = "";
+        for(var index = 01040;index < 01177;index++){
+            if(currentTable[index].length > 2 && currentTable[index] != currentTableStart[index]){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
+        }
     }
     else{
         currentFile = "bytecode/font.txt";
-    }
-    data = "";
-    for(var index = 01040;index < 01177;index++){
-        if(currentTable[index].length > 2){
-            data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+        data = "";
+        for(var index = 01040;index < 01177;index++){
+            if(currentTable[index].length > 2){
+                data += "0" + index.toString(8) + ":" + currentTable[index] + "\n";
+            }
         }
     }
 }
+    
+    
     
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        

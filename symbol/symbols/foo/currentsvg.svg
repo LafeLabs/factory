@@ -1,18 +1,18 @@
-<svg width="250" height="250" viewbox = "0 0 250 250"  xmlns="http://www.w3.org/2000/svg">
+<svg width="460" height="238" viewbox = "0 0 460 238"  xmlns="http://www.w3.org/2000/svg">
 
 <!--
 <json>
 {
-    "svgwidth": 250,
-    "svgheight": 250,
-    "unit": 100,
-    "x0": 684,
-    "y0": 399,
-    "x0rel": 0,
-    "y0rel": 0,
-    "glyph": "0336,0331,0331,0222,0222,0222,0222,0222,0335,0222,0222,0222,0222,0222,0222,0222,0222,0335,0222,0222,0222,0222,0222,0363,0335,0222,0222,0222,0222,",
+    "svgwidth": 460,
+    "svgheight": 238,
+    "unit": 59,
+    "x0": 575,
+    "y0": 483,
+    "x0rel": -109,
+    "y0rel": 84,
+    "glyph": "0221,0221,0335,0221,0221,0221,0221,",
     "table": [
-        "0220:0304,0313,0210,0210,0336,0333,0331,0337,0204,0336,0330,0332,0337,0211,0211,0341,",
+        "0220:0341,",
         "0221:0304,0313,0330,0220,",
         "0222:0313,0304,0336,0334,0336,0336,0362,0203,0335,0337,0337,0203,0203,0335,0336,0203,0335,0337,0203,0203,0335,0336,0336,0203,0363,0335,0337,0337,0330,0330,0337,0336,0336,0333,0333,0341,0332,0332,0337,0337,",
         "0223:0304,0313,0334,0336,0336,0336,0362,0203,0335,0337,0337,0203,0336,0203,0334,0336,0203,0335,0310,0350,0335,0337,0203,0203,0335,0335,0203,0203,0335,0335,0335,0336,0203,0313,0304,0334,0337,0337,0203,0336,0203,0335,0336,0203,0363,0335,0337,0337,0337,0330,",
@@ -65,26 +65,10 @@
 }
 </json>
 -->
-	<path d = "M125 225 L119 225 L119 200 L119 175 L131 175 L131 200 L131 225 L125 225 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="150" cy = "175" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M125 175 L119 175 L119 150 L119 125 L131 125 L131 150 L131 175 L125 175 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="150" cy = "125" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M125 125 L119 125 L119 100 L119 75 L131 75 L131 100 L131 125 L125 125 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="150" cy = "75" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M125 75 L119 75 L119 50 L119 25 L131 25 L131 50 L131 75 L125 75 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="150" cy = "25" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M125 25 L119 25 L119 0 L119 -25 L131 -25 L131 0 L131 25 L125 25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="150" cy = "-25" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M125 -25 L125 -31 L150 -31 L175 -31 L175 -19 L150 -19 L125 -19 L125 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="175" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M175 -25 L175 -31 L200 -31 L225 -31 L225 -19 L200 -19 L175 -19 L175 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="225" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M225 -25 L225 -31 L250 -31 L275 -31 L275 -19 L250 -19 L225 -19 L225 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="275" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M275 -25 L275 -31 L300 -31 L325 -31 L325 -19 L300 -19 L275 -19 L275 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="325" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M325 -25 L325 -31 L350 -31 L375 -31 L375 -19 L350 -19 L325 -19 L325 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="375" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M375 -25 L375 -31 L400 -31 L425 -31 L425 -19 L400 -19 L375 -19 L375 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="425" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M425 -25 L425 -31 L450 -31 L475 -31 L475 -19 L450 -19 L425 -19 L425 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="475" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M475 -25 L475 -31 L500 -31 L525 -31 L525 -19 L500 -19 L475 -19 L475 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="525" cy = "0" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M525 -25 L531 -25 L531 0 L531 25 L519 25 L519 0 L519 -25 L525 -25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="500" cy = "25" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M525 25 L531 25 L531 50 L531 75 L519 75 L519 50 L519 25 L525 25 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="500" cy = "75" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M525 75 L531 75 L531 100 L531 125 L519 125 L519 100 L519 75 L525 75 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="500" cy = "125" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M525 125 L531 125 L531 150 L531 175 L519 175 L519 150 L519 125 L525 125 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="500" cy = "175" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M525 175 L531 175 L531 200 L531 225 L519 225 L519 200 L519 175 L525 175 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="500" cy = "225" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-Z" stroke = "black" stroke-width = "3" fill = "black" />	<path d = "M525 225 L525 231 L500 231 L475 231 L475 219 L500 219 L525 219 L525 225 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="475" cy = "200" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M475 225 L475 231 L450 231 L425 231 L425 219 L450 219 L475 219 L475 225 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="425" cy = "200" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M425 225 L425 231 L400 231 L375 231 L375 219 L400 219 L425 219 L425 225 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="375" cy = "200" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
-	<path d = "M375 225 L375 231 L350 231 L325 231 L325 219 L350 219 L375 219 L375 225 Z" stroke = "black" stroke-width = "3" fill = "black" />    <circle cx="325" cy = "200" r = "12.5" stroke = "black" stroke-width = "3" fill = "none" />
+    <circle cx="121" cy = "144" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
+    <circle cx="121" cy = "85" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
+    <circle cx="180" cy = "85" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
+    <circle cx="239" cy = "85" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
+    <circle cx="298" cy = "85" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
+    <circle cx="357" cy = "85" r = "59" stroke = "black" stroke-width = "6" fill = "none" />
 </svg>

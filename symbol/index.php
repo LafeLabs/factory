@@ -34,8 +34,8 @@ echo file_get_contents("bytecode/symbols013xx.txt")."\n";
 echo file_get_contents("bytecode/symbols010xx.txt")."\n";
 
 if(isset($_GET['path'])){
-    if(file_exists($_GET['path']."/bytecode/shapetable.txt")){
-        echo file_get_contents($_GET['path']."/bytecode/shapetable.txt");
+    if(file_exists("symbols/".$_GET['path']."/bytecode/shapetable.txt")){
+        echo file_get_contents("symbols/".$_GET['path']."/bytecode/shapetable.txt");
     }
     if(file_exists($_GET['path']."/bytecode/font.txt")){
         echo file_get_contents($_GET['path']."/bytecode/font.txt");
