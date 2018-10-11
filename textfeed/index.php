@@ -161,7 +161,7 @@ document.getElementById("delete").onclick = function(){
 <style>
     body{
         font-family:Helvetica;
-        font-size:22px;
+        font-size:36px;
     }
 
     .button{

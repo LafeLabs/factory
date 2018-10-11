@@ -6,7 +6,7 @@
             <a href = "../curve/"><img style = "width:80px" src = "../factory_symbols/curve.svg"/></a>
         </td>
         <td>
-            <a href = "../symbol/"><img style = "width:80px" src = "../factory_symbols/symbol.svg"/></a>
+            <a href = "../symbol/"><img style = "width:80px" src = "../factory_symbols/symbol2.svg"/></a>
         </td>
         <td>
             <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
