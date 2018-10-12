@@ -41,6 +41,7 @@
 			"linkfeed.svg",
 			"map.svg",
 			"mapalign.svg",
+			"maplist.svg",
 			"marker.svg",
 			"meme2deck.svg",
 			"meme2map.svg",
@@ -127,6 +128,7 @@
 			"index.txt",
 			"makenewmap.txt",
 			"mapalign.txt",
+			"maplist.txt",
 			"maptemplate.txt",
 			"meme2map.txt",
 			"text2php.txt"
