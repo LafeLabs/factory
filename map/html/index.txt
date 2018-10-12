@@ -1,6 +1,11 @@
 <table id = "linktable">
     <tr>
         <td>
+            <a href = "maplist.php">
+                <img style = "width:80px" src = "../factory_symbols/maplist.svg"/>
+            </a>
+        </td>
+        <td>
             <a href = "meme2map.php">
                 <img style = "width:80px" src = "../factory_symbols/meme2map.svg"/>
             </a>
@@ -23,7 +28,6 @@
         </td>
     </tr>
 </table>
-
 <div id = "memebox">
     <img id = "mainImage"/>
 </div>
@@ -31,25 +35,43 @@
 
 
 <script>
+    
+feetperdegree = 364567;
 
 
-if(document.getElementById("jsondatadiv").innerHTML.length>0){
-    memejson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
+if(document.getElementById("submapdatadiv").innerHTML.length > 0){
+    maps = JSON.parse(document.getElementById("submapdatadiv").innerHTML);
 }
 else{
-    memejson = {};
+    maps = [];
 }
 
-document.getElementById("mainImage").src = memejson.imgurl;
+view = {};
+view.latlon = maps[0].latlon;
+view.angle = maps[0].angle;
+view.imgurl = maps[0].imgurl;
+view.widthfeet = maps[0].widthfeet;
+mapIndex = 0 ; 
+for(var index = 0;index < maps.length;index++){
+    if(maps.widthfeet > view.widthfeet){
+        view.latlon = maps[index].latlon;
+        view.angle = maps[index].angle;
+        view.imgurl = maps[index].imgurl;
+        view.widthfeet = maps[index].widthfeet;
+        mapIndex = index;
+    }
+}
+
+document.getElementById("mainImage").src = maps[mapIndex].imgurl;
 document.getElementById("mainImage").onload = function(){
     if(this.width > innerWidth){
         var aspectRatio = this.width/this.height; 
         this.width = innerWidth;
         this.style.height = (this.width/aspectRatio).toString() + "px";
-        feedwidth = innerWidth;
+        mapwidth = innerWidth;
     }
     else{
-        feedwidth = this.width;
+        mapwidth = this.width;
     }
 
     init();
@@ -57,36 +79,44 @@ document.getElementById("mainImage").onload = function(){
 
 
 function init(){
-    for(var index = 0;index < memejson.topimages.length;index++){
-        var newimg = document.createElement("img");
-        newimg.className = "topimage";
-        newimg.src = memejson.topimages[index].url;
-        if(memejson.topimages[index].href.length > 1){
-            var newa = document.createElement("a");
-            newa.href = memejson.topimages[index].href;
-            newa.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
-            newa.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
-            newa.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
-            newa.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";       
-            newa.style.position = "absolute";
-            newimg.style.left = "0px";
-            newimg.style.top = "0px";
+    
+    document.getElementById("mainImage").style.zIndex = Math.round(-10*Math.log10(maps[mapIndex].widthfeet)).toString();
+    feetperpixel = maps[mapIndex].widthfeet/document.getElementById("mainImage").width;
+    for(var index = 0;index < maps.length;index++){
+        if(index != mapIndex && maps[index].widthfeet < maps[mapIndex].widthfeet){
+            var newa = document.createElement("A");
+            var newimg = document.createElement("IMG");
+            newa.appendChild(newimg);
+            document.getElementById("memebox").appendChild(newa);
+            newa.className = "maplink";
+            newa.href =  "maps/" + maps[index].mapname + "/";
+            newimg.src = maps[index].imgurl;
+            var lat1 = parseFloat(maps[mapIndex].latlon.split(",")[0]);
+            var lon1 = parseFloat(maps[mapIndex].latlon.split(",")[1]);
+            var lat2 = parseFloat(maps[index].latlon.split(",")[0]);   
+            var lon2 = parseFloat(maps[index].latlon.split(",")[1]);
+            var deltaxfeet = feetperdegree*(lat2 - lat1)*Math.cos(lat1*Math.PI/180);
+            var deltayfeet = feetperdegree*(lat2 - lat1);
+            var rfeet = Math.sqrt(deltaxfeet*deltaxfeet + deltayfeet*deltayfeet);
+            var deltaangle = maps[index].degree - maps[mapIndex].degree;
+
+            var z = Math.round(-10*Math.log10(maps[index].widthfeet));
+            newa.style.zIndex = parseInt(z).toString();
+            newimg.style.zIndex = parseInt(z).toString();
+            newa.style.width = (maps[index].widthfeet/feetperpixel).toString() + "px";
             newimg.style.width = "100%";
             newimg.onload = function(){
                 this.parentElement.style.height = (this.height).toString() + "px";
             }
-            newa.appendChild(newimg);
-            document.getElementById("memebox").appendChild(newa);
-        }
-        else{
-            newimg.style.width = (memejson.topimages[index].woverw*feedwidth).toString() + "px";
-            newimg.style.left = (memejson.topimages[index].xoverw*feedwidth).toString() + "px";
-            newimg.style.top = (memejson.topimages[index].yoverw*feedwidth).toString() + "px";
-            newimg.style.transform = "rotate(" + (memejson.topimages[index].angle).toString() + "deg)";
-            document.getElementById("memebox").appendChild(newimg);   
+            newa.style.height = (maps[index].widthfeet/feetperpixel).toString() + "px";
+            newa.style.left = (-deltaxfeet/feetperpixel).toString() + "px";
+            newa.style.top  = (-deltayfeet/feetperpixel).toString() + "px";
+            newa.style.transform = "rotate(" + deltaangle.toString() + "deg)";
+                
         }
     }
 }
+
 
 </script>
 <style>
@@ -98,7 +128,6 @@ body{
     height:100%;
     left:0px;
     top:0px;
-    z-index:-1;
 }
 #linktable{
     position:absolute;
@@ -117,5 +146,9 @@ body{
     bottom:0px;
     overflow:hidden;
     z-index:-1;
+}
+.maplink{
+    position:absolute;
+    border:solid;
 }
 </style>

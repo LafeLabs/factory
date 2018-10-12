@@ -197,7 +197,8 @@ document.getElementById("publish").onclick = function(){
     meme2map.angle = deltaangle;
     meme2map.fontfeet = widthfeet/20;
     meme2map.latlon = latcorner.toString() + "," + loncorner.toString();
-
+    meme2map.mapname = document.getElementById("nameinput").value;
+    
     data = encodeURIComponent(JSON.stringify(meme2map,null,"    "));
     var httpc = new XMLHttpRequest();
     var url = "filesaver.php";        

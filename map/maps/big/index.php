@@ -22,9 +22,21 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 </head>
 <body>
-<div id = "maplistjsondatadiv" style = "display:none"><?php
+<div id = "dirlistdiv" style = "display:none"><?php
 
+$files = scandir(getcwd()."/..");
+$outtext = "[\n";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $outtext .= file_get_contents("../".$value."/json/currentjson.txt");
+        $outtext .= ",\n";    
+    }
+}
+$outtext = rtrim($outtext,",\n");
 
+$outtext .="\n]";
+
+echo $outtext;
 
 ?></div>
 <div id = "jsondatadiv" style = "display:none"><?php
@@ -35,11 +47,6 @@ echo file_get_contents("json/currentjson.txt");
 
 <table id = "linktable">
     <tr>
-        <td>
-            <a href = "../../maplist.php">
-                <img style = "width:80px" src = "../../../factory_symbols/maplist.svg"/>
-            </a>
-        </td>
         <td>
             <a href = "../../">
                 <img style = "width:80px" src = "../../../factory_symbols/map.svg"/>
@@ -59,15 +66,14 @@ echo file_get_contents("json/currentjson.txt");
 
 
 <script>
+
+
 if(document.getElementById("jsondatadiv").innerHTML.length>0){
     memejson = JSON.parse(document.getElementById("jsondatadiv").innerHTML);
 }
 else{
     memejson = {};
 }
-
-localmaps = JSON.parse(document.getElementById("maplistjsondatadiv").innerHTML);
-
 
 document.getElementById("mainImage").src = memejson.imgurl;
 document.getElementById("mainImage").onload = function(){
@@ -116,8 +122,6 @@ function init(){
         }
     }
 }
-
-
 
 </script>
 <style>

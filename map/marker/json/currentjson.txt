@@ -30,5 +30,13 @@
     {
         "latlon": "38.88925,-77.05017",
         "name": "lincoln memorial center"
+    },
+    {
+        "latlon": "38.99594,-77.04061",
+        "name": "north boundary stone"
+    },
+    {
+        "latlon": "38.79078,-77.03913",
+        "name": "south boundary stone"
     }
 ]

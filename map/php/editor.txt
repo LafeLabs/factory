@@ -26,6 +26,7 @@ EGO DEATH:
     <a href = "meme2map.php">meme2map.php</a>
     <a href = "index.php">index.php</a>
     <a href = "mapalign.php">mapalign.php</a>
+    <a href = "maplist.php">maplist.php</a>
 
 </div>
 <div id = "namediv"></div>
@@ -42,6 +43,7 @@ EGO DEATH:
     <div class = "php file">php/text2php.txt</div>
     <div class = "php file">php/meme2map.txt</div>
     <div class = "php file">php/mapalign.txt</div>
+    <div class = "php file">php/maplist.txt</div>
 
     <div class = "php file">php/maptemplate.txt</div>
 

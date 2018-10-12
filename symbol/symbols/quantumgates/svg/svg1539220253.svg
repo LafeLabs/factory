@@ -10,7 +10,7 @@
     "y0": 360,
     "x0rel": -158,
     "y0rel": -39,
-    "glyph": "0336,0332,0337,0220,0233,0236,",
+    "glyph": "0336,0332,0337,0220,0233,0236,0331,0236,",
     "table": [
         "0220:0244,0130,0245,",
         "0221:0244,0131,0245,",
@@ -81,4 +81,9 @@
     <line x1="360" y1="124" x2="398" y2="58" style="stroke:black;stroke-width:3" />
     <line x1="398" y1="58" x2="390" y2="63" style="stroke:black;stroke-width:3" />
     <line x1="398" y1="58" x2="398" y2="68" style="stroke:black;stroke-width:3" />
-	<path d = "M398 68 L398 58 L390 63 " stroke = "black" stroke-width = "3" fill = "none" /></svg>
+	<path d = "M398 68 L398 58 L390 63 " stroke = "black" stroke-width = "3" fill = "none" />    <line x1="203" y1="186" x2="303" y2="186" style="stroke:black;stroke-width:3" />
+	<path d = "M303 224 L303 148 L379 148 L417 148 L417 186 L417 224 L379 224 L341 224 L303 224 Z" stroke = "black" stroke-width = "3" fill = "none" />  <path d="M309.25434025152674 195.01699437494744           A58.35921350012619 58.35921350012619 0 0 1 410.3354631235049 195.0169943749474" fill = "none" stroke = "black" stroke-width = "3" />
+    <line x1="360" y1="224" x2="398" y2="158" style="stroke:black;stroke-width:3" />
+    <line x1="398" y1="158" x2="390" y2="163" style="stroke:black;stroke-width:3" />
+    <line x1="398" y1="158" x2="398" y2="168" style="stroke:black;stroke-width:3" />
+	<path d = "M398 168 L398 158 L390 163 " stroke = "black" stroke-width = "3" fill = "none" /></svg>

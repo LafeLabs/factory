@@ -22,6 +22,31 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 </head>
 <body>
+<div id = "pathdiv" style = "display:none"><?php
+
+    if(isset($_GET['path'])){
+        echo $_GET['path'];
+    }
+
+
+?></div>
+<div id = "submapdatadiv" style = "display:none"><?php
+
+$files = scandir(getcwd()."/maps");
+$outtext = "[\n";
+foreach($files as $value){
+    if($value != "." && $value != ".."){
+        $outtext .= file_get_contents("maps/".$value."/json/currentjson.txt");
+        $outtext .= ",\n";    
+    }
+}
+$outtext = rtrim($outtext,",\n");
+
+$outtext .="\n]";
+
+echo $outtext;
+
+?></div>    
 <div id = "dirlistdiv" style = "display:none"><?php
 
 $files = scandir(getcwd()."/maps");

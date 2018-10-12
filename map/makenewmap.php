@@ -16,16 +16,15 @@
 
     mkdir($filename);
         mkdir($filename."/json");  
-        
+
     $file = fopen($filename."/json/currentjson.txt","w");// create new file with this name
     fwrite($file,$data); //write data to file
     fclose($file);  //close file
 
     //make index.php
-    $indextemplate = file_get_contents("php/template.txt");
-    
+    $indextemplate = file_get_contents("php/maptemplate.txt");
     $file = fopen($filename."/index.php","w");// create new file with this name
     fwrite($file,$indextemplate); //write data to file
     fclose($file);  //close file
-    
+
 ?>

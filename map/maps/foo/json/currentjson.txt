@@ -1,0 +1,34 @@
+{
+    "imgurl": "http://localhost:8000/images/images/image3",
+    "mapname": "foo",
+    "topimages": [
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1538341463.svg",
+            "xoverw": 0.2667844522968198,
+            "yoverw": 0.8159010600706714,
+            "woverw": 0.2826855123674912,
+            "angle": 0,
+            "href": "http://geometron.000webhostapp.com/factory/"
+        },
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1538340935.svg",
+            "xoverw": 0.3127208480565371,
+            "yoverw": 0.4484098939929329,
+            "woverw": 0.2826855123674912,
+            "angle": 0,
+            "href": "http://lafelabs.org/factory/"
+        },
+        {
+            "url": "http://localhost:8000/symbol/svg/svg1537941003.svg",
+            "xoverw": 0.15724381625441697,
+            "yoverw": 0.038515901060070676,
+            "woverw": 0.2826855123674912,
+            "angle": 0,
+            "href": "http://geometron.000webhostapp.com/factory/"
+        }
+    ],
+    "widthfeet": 2553.0608484091968,
+    "angle": 1.5499923820632635,
+    "fontfeet": 127.65304242045984,
+    "latlon": "38.85855298296799,-77.05309226466255"
+}

@@ -111,7 +111,7 @@ else{
     currentjson = {};
 }
 
-for(var index = 0;index <currentjson.length;index++){
+for(var index = 0;index < currentjson.length;index++){
     var newpre = document.createElement("PRE");
     newpre.innerHTML = JSON.stringify(currentjson[index],null,"    ");
     document.getElementById("markerfeed").appendChild(newpre);
