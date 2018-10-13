@@ -51,8 +51,8 @@
     document.getElementById("memescroll").style.left = scrollmargin;
     document.getElementById("memescroll").style.right = scrollmargin;
 
-    document.getElementById("leftsidebar").style.left = (0.5*(innerWidth - 500) - 100).toString() + "px"; 
-    document.getElementById("rightsidebar").style.right = (0.5*(innerWidth - 500) - 100).toString() + "px"; 
+    document.getElementById("leftsidebar").style.left = (0.5*(innerWidth - 500) - 50).toString() + "px"; 
+    document.getElementById("rightsidebar").style.right = (0.5*(innerWidth - 500) - 50).toString() + "px"; 
     
     
 feedwidth = 500;
@@ -111,7 +111,7 @@ body{
     position:absolute;
     top:115px;
     bottom:0px;
-    width:100px;
+    width:50px;
     border-left:solid;
     border-right:solid;
         overflow:hidden;    
@@ -121,7 +121,7 @@ body{
     position:absolute;
     top:115px;
     bottom:0px;
-    width:100px;
+    width:50px;
     border-left:solid;
     border-right:solid;
     overflow:hidden;    

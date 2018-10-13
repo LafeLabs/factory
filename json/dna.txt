@@ -65,6 +65,7 @@
 	{
 		"path":"page/php",
 		"files":[
+			"deletepage.txt",
 			"editor.txt",
 			"fileloader.txt",
 			"filesaver.txt",
