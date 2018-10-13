@@ -22,11 +22,6 @@ LANGUAGE IS HOW THE MIND PARSES REALITY
 
 </head>
 <body>
-<div id = "maplistjsondatadiv" style = "display:none"><?php
-
-
-
-?></div>
 <div id = "jsondatadiv" style = "display:none"><?php
 
 echo file_get_contents("json/currentjson.txt");
@@ -65,8 +60,6 @@ if(document.getElementById("jsondatadiv").innerHTML.length>0){
 else{
     memejson = {};
 }
-
-localmaps = JSON.parse(document.getElementById("maplistjsondatadiv").innerHTML);
 
 
 document.getElementById("mainImage").src = memejson.imgurl;

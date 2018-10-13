@@ -1,99 +1,134 @@
 <script>
 //redirect to [redirect url] : (uncomment and add url to redirect)
 //window.location.href = "[redirect url]";
-
 </script>
+<div id = "navbar">
+    <a id = "editlink" href = "editor.php"><img src = "factory_symbols/editor.svg"/></a>            
+    <a id = "copylink" href = "copy.php"><img src = "factory_symbols/copy.svg"/></a>
 
-<a id = "editlink" href = "editor.php"><img style = "width:100px" src = "factory_symbols/editor.svg"/></a>            
-<a id = "copylink" href = "copy.php"><img style = "height:100px" src = "factory_symbols/copy.svg"/></a>
-
-<h1>Meme Factory</h1>
-<div id = "factorybox">
-<table id = "factorytable">
+    <table id = "linktable">
     <tr>
-        <td>
-        </td>
-        <td>
-            <a href = "symbol/">
-                <img src = "factory_symbols/symbol2.svg">
-            </a>
-        </td>
-        <td>
-            <a href = "curve/">
-                <img src = "factory_symbols/curve.svg">
-            </a>
-        </td>
         <td>
             <a href = "images/">
-                <img src = "factory_symbols/images.svg">
+                <img src = "factory_symbols/images.svg"/>    
             </a>
         </td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
+        <td style = "width:10px"><img src= "factory_symbols/smallarrow.svg"></td>
         <td>
             <a href = "combiner/">
-                <img src = "factory_symbols/combiner.svg">
+                <img style = "transform:rotate(-90deg)" src = "factory_symbols/combiner.svg"/>
             </a>
         </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td></td>
-        <td></td>
+        <td style = "width:10px"><img src= "factory_symbols/smallarrow.svg"></td>
         <td>
             <a href = "aligner/">
-                <img src = "factory_symbols/aligner.svg">
+                <img src = "factory_symbols/aligner.svg"/>
             </a>
         </td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><a href = "map/"><img  src = "factory_symbols/map.svg">
-            </a></td>
-        <td><a href = "deck/"><img  src = "factory_symbols/deck.svg"></a></td>
+            <td style = "width:10px"><img src= "factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "page/meme2page.php">
+                <img src = "factory_symbols/meme2map.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "factory_symbols/smallarrow.svg"></td>
         <td>
             <a href = "page/">
-                <img src = "factory_symbols/page.svg">
+                <img src = "factory_symbols/maplist.svg"/>
             </a>
         </td>
-        <td>
-            <a href = "scroll/"><img  src = "factory_symbols/scroll.svg"></a>
-        </td>
     </tr>
-
-</table>
-
-
-
+    </table>    
 </div>
+<div id  = "memescroll">
+    
+</div>
+<img id = "leftsidebar" src = "factory_symbols/sidebar.svg"/>
+<img id = "rightsidebar" src = "factory_symbols/sidebar.svg"/>
+
+<script>
+    scrollmargin = (0.5*(innerWidth - 500)).toString() + "px";    
+    document.getElementById("memescroll").style.left = scrollmargin;
+    document.getElementById("memescroll").style.right = scrollmargin;
+
+    document.getElementById("leftsidebar").style.left = (0.5*(innerWidth - 500) - 100).toString() + "px"; 
+    document.getElementById("rightsidebar").style.right = (0.5*(innerWidth - 500) - 100).toString() + "px"; 
+    
+    
+feedwidth = 500;
+
+memejson = JSON.parse(document.getElementById("memedatadiv").innerHTML);
+for(var index = 0;index < memejson.length;index++){
+    var newdiv = document.createElement("DIV");
+    newdiv.className = "memebox";
+    document.getElementById("memescroll").appendChild(newdiv);
+    var newimg = document.createElement("IMG");
+    newimg.src = memejson[index].imgurl;
+    newimg.className = "bottomimage";
+    newdiv.appendChild(newimg);
+    for(var imgindex = 0;imgindex < memejson[index].topimages.length;imgindex++){
+        var newimg2 = document.createElement("img");
+        newimg2.className = "topimage";
+        newimg2.src = memejson[index].topimages[imgindex].url;
+        newimg2.style.width = (memejson[index].topimages[imgindex].woverw*feedwidth).toString() + "px";
+        newimg2.style.left = (memejson[index].topimages[imgindex].xoverw*feedwidth).toString() + "px";
+        newimg2.style.top = (memejson[index].topimages[imgindex].yoverw*feedwidth).toString() + "px";
+        newimg2.style.transform = "rotate(" + (memejson[index].topimages[imgindex].angle).toString() + "deg)";
+        newdiv.appendChild(newimg2);
+    }
+    
+}
+    
+</script>
 <style>
-    h1{
-        font-size:3em;
-    }
-    ul{
-        font-size:2em;
-        list-style-type:none;
-    }
-    #factorybox{
+   .topimage{
         position:absolute;
-        left:0px;
-        right:0px;
-        top:6em;
-        bottom:0px;
-        border-top:solid;
-        overflow:scroll;
+        z-index:0;
     }
-    #factorytable{
-        margin:auto;
-        display:block;
+    .bottomimage{
         width:100%;
-        text-align:center;
-        width:500px;
-    }  
-    #factorytable img{
-        width:100px;
+        position:relative;
+        z-index:-1;
+    }
+    .memebox{
+        width:100%;
+        position:relative;
+        overflow:hidden;
+    }
+
+body{
+    overflow:hidden;
+}
+#memescroll{
+    position:absolute;
+    top:115px;
+    bottom:0px;
+    border-left:solid;
+    border-right:solid;
+    overflow:scroll;
+}    
+#leftsidebar{
+    position:absolute;
+    top:115px;
+    bottom:0px;
+    width:100px;
+    border-left:solid;
+    border-right:solid;
+        overflow:hidden;    
+
+}
+#rightsidebar{
+    position:absolute;
+    top:115px;
+    bottom:0px;
+    width:100px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;    
+}
+    
+    a img{
+        height:60px;
     }
     td{
         text-align:center;
@@ -107,12 +142,35 @@
         position:absolute;
         z-index:1;
         top:0px;
-        left:0px;
+        right:0px;
+        height:50px;
     }
     #copylink{
         position:absolute;
         z-index:1;
         top:0px;
+        left:0px;
+        height:50px;
+    }
+    #linktable td{
+        width:100px;
+    }
+    #linktable img{
+        height:80px;
+    }
+    #linktable{
+        border:solid;
+        margin:auto;
+        border-radius:15px;
+    }
+    #navbar{
+        position:absolute;
+        left:0px;
         right:0px;
+        top:0px;
+        height:100px;
+        border-bottom:solid;
+        border-width:15px;
+        border-color:blue;
     }
 </style>

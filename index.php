@@ -43,20 +43,25 @@ EGO DEATH:
 
 </head>
 <body>
-<div id = "jsondiv" style = "display:none"><?php
+<div id = "memedatadiv" style = "display:none"><?php
 
-if(isset($_GET['json'])){
-    echo file_get_contents($_GET['json']);
-}
+$files = scandir(getcwd()."/aligner/memes");
 
-?></div>
-<div id = "pathdiv" style= "display:none"><?php
+$datatext = "[\n";
 
-    if(isset($_GET['path'])){
-        echo $_GET['path'];
+foreach(array_reverse($files) as $value){
+    if($value != "." && $value != ".." && substr($value,-4) == ".txt"){
+        $datatext .= file_get_contents("aligner/memes/".$value);
+        $datatext .= ",\n";
     }
+}
+$datatext = rtrim($datatext, ",\n");
+$datatext .= "\n]";
+echo $datatext;
 
-?></div>
+
+
+?></div>        
 <?php
     echo file_get_contents("html/page.txt");
 ?>

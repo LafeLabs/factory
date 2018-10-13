@@ -61,8 +61,6 @@ else{
     memejson = {};
 }
 
-localmaps = JSON.parse(document.getElementById("maplistjsondatadiv").innerHTML);
-
 
 document.getElementById("mainImage").src = memejson.imgurl;
 document.getElementById("mainImage").onload = function(){
