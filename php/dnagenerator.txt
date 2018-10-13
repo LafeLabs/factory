@@ -108,6 +108,8 @@ $finalstring .= ",\n";
 
 $finalstring .= getfiles("images/php");
 $finalstring .= ",\n";
+$finalstring .= getfiles("images/html");
+$finalstring .= ",\n";
 $finalstring .= getfiles("images/json");
 
 

@@ -330,6 +330,12 @@
 		]
 	},
 	{
+		"path":"images/html",
+		"files":[
+			"index.txt"
+		]
+	},
+	{
 		"path":"images/json",
 		"files":[
 			"dna.txt"
