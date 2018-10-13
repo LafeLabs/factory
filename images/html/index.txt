@@ -1,9 +1,12 @@
 <div id = "navbar">
 
-    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>            
+                
 
     <table id = "secondlinks">
         <tr>
+            <td>
+    <a href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+            </td>
             <td>
     <a href = "../textfeed/"><img src = "../factory_symbols/textfeed.svg"/></a>       
             </td>
@@ -12,9 +15,9 @@
         </tr>
     </table>        
             
-          
+    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>
         
-    <a id = "copylink" href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+
 
     <table id = "linktable">
     <tr>
@@ -207,9 +210,6 @@ h1,h2,h3,h4,h5{
     right:24px;
     top:24px;    
 }
-    #linktable td{
-        width:100px;
-    }
     #linktable img{
         height:60px;
     }
@@ -237,6 +237,6 @@ h1,h2,h3,h4,h5{
     #secondlinks{
         position:absolute;
         top:0px;
-        left:120px;
+        left:0px;
     }
 </style>
