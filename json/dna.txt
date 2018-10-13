@@ -50,6 +50,8 @@
 			"page.svg",
 			"scroll.svg",
 			"shapes.svg",
+			"sidebar.svg",
+			"smallarrow.svg",
 			"style.svg",
 			"svgfeed.svg",
 			"symbol.svg",
