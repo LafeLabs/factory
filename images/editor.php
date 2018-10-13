@@ -30,6 +30,8 @@ EGO DEATH:
 <div id = "namediv"></div>
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
+    <div class = "html file">html/index.txt</div>
+
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/pageeditor.txt</div>
     <div class = "php file">php/editor.txt</div>
@@ -47,7 +49,7 @@ EGO DEATH:
 </div>
 
 <script>
-currentFile = "php/index.txt";
+currentFile = "html/index.txt";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
@@ -114,12 +116,12 @@ for(var index = 0;index < files.length;index++){
     }
 }
 document.getElementById("namediv").innerHTML = currentFile;
-document.getElementById("namediv").style.color = "#800080";
-document.getElementById("namediv").style.borderColor = "#800080";
+document.getElementById("namediv").style.color = "#0000FF";
+document.getElementById("namediv").style.borderColor = "#0000FF";
 
 editor = ace.edit("maineditor");
 editor.setTheme("ace/theme/cobalt");
-editor.getSession().setMode("ace/mode/php");
+editor.getSession().setMode("ace/mode/html");
 editor.getSession().setUseWrapMode(true);
 editor.$blockScrolling = Infinity;
 

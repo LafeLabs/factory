@@ -1,0 +1,242 @@
+<div id = "navbar">
+
+    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>            
+
+    <table id = "secondlinks">
+        <tr>
+            <td>
+    <a href = "../textfeed/"><img src = "../factory_symbols/textfeed.svg"/></a>       
+            </td>
+            <td>
+    <a  href = "../symbol/"><img src = "../factory_symbols/symbol2.svg"/></a>              </td>
+        </tr>
+    </table>        
+            
+          
+        
+    <a id = "copylink" href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+
+    <table id = "linktable">
+    <tr>
+        <td >
+            <a href = "../images/">
+                <img style = "border-radius:15px;background-color:#50ff50" src = "../factory_symbols/images.svg"/>    
+            </a>
+        </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../combiner/">
+                <img style = "transform:rotate(-90deg)" src = "../factory_symbols/combiner.svg"/>
+            </a>
+        </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../aligner/">
+                <img src = "../factory_symbols/aligner.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/meme2page.php">
+                <img src = "../factory_symbols/meme2map.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/">
+                <img src = "../factory_symbols/maplist.svg"/>
+            </a>
+        </td>
+    </tr>
+    </table>  
+</div>
+
+
+<div id = "imagescroll"></div>
+
+
+<img id = "leftsidebar" src = "../factory_symbols/sidebar.svg"/>
+<img id = "rightsidebar" src = "../factory_symbols/sidebar.svg"/>
+
+
+<div id = "actionbar">
+    <form action="upload.php" method="post" enctype="multipart/form-data">
+    Select image to upload:
+        <input type="file" name="fileToUpload" id="fileToUpload">
+        <input type="submit" value="Upload Image" name="submit">
+    </form>
+<div class = "button" id = "delete">
+    <img style = "width:80px" src = "../factory_symbols/delete.svg"/>
+</div>
+
+</div>
+
+<script>
+
+    scrollmargin = (0.5*(innerWidth - 500)).toString() + "px";    
+    document.getElementById("imagescroll").style.left = scrollmargin;
+    document.getElementById("imagescroll").style.right = scrollmargin;
+
+    document.getElementById("leftsidebar").style.left = (0.5*(innerWidth - 500) - 50).toString() + "px"; 
+    document.getElementById("rightsidebar").style.right = (0.5*(innerWidth - 500) - 50).toString() + "px"; 
+    
+    feedwidth = 500;
+
+    imagenames = document.getElementById("listdiv").innerHTML.split(",");
+
+    for(var index = 0;index < imagenames.length;index++){
+        if(imagenames[index].length> 2){
+            var newimg = document.createElement("IMG");
+            newimg.src = "images/" + imagenames[index];
+            document.getElementById("imagescroll").appendChild(newimg);
+        }
+    }
+    
+    document.getElementById("delete").onclick = function(){
+        if (confirm("Really delete all images? Click OK to confirm, cancel to NOT delete ALL images.")) {
+            var httpc = new XMLHttpRequest();
+            var url = "deleteallimages.php";        
+            httpc.open("POST", url, true);
+            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+            httpc.send();//
+            document.getElementById("imagescroll").innerHTML = "";
+            
+        }
+    }
+    
+</script>
+<style>
+    a img{
+        height:60px;
+    }
+
+#submit:active{
+    background-color:yellow;
+}
+#imagescroll{
+    position:absolute;
+    top:115px;
+    bottom:150px;
+    border-left:solid;
+    border-right:solid;
+    overflow:scroll;
+}
+#imagescroll img{
+    display:block;
+    margin:auto;
+    width:50%;
+}
+#navbar{
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    height:100px;
+    border-bottom:solid;
+    border-width:15px;
+    border-color:blue;
+}
+
+#leftsidebar{
+    position:absolute;
+    top:115px;
+    bottom:150px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;   
+    z-index:-1;
+}
+
+#rightsidebar{
+    position:absolute;
+    top:115px;
+    bottom:150px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;    
+}
+#actionbar{
+    position:absolute;
+    bottom:0px;
+    height:150px;
+    left:0px;
+    right:0px;
+    overflow:hidden;
+    background-color:white;
+    border-top:solid;
+    border-width:15px;
+    border-color:blue;
+}
+body{
+    font-family:Helvetica;
+    font-size:2.5em;
+    overflow:hidden;
+}
+input{
+    font-size:25px;
+    font-family:courier;
+        cursor:pointer;
+
+}
+h1,h2,h3,h4,h5{
+    width:100%;
+    text-align:center;
+}
+.button{
+    cursor:pointer;
+    border:solid;
+    border-radius:5px;
+    text-align:center;
+    padding-left:1em;
+    padding-right:1em;
+}
+.button:hover{
+    background-color:green;
+}
+.button:active{
+    background-color:yellow;
+}
+#delete{
+    color:red;
+    border-color:red;
+    font-size:24px;
+    font-family:Impact;
+    position:absolute;
+    right:24px;
+    top:24px;    
+}
+    #linktable td{
+        width:100px;
+    }
+    #linktable img{
+        height:60px;
+    }
+    #linktable{
+        border:solid;
+        margin:auto;
+        border-radius:15px;
+    }
+    #editlink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        right:0px;
+        height:50px;
+        width:80px;
+    }
+    #copylink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        left:0px;
+        height:50px;
+        width:80px;
+    }
+    #secondlinks{
+        position:absolute;
+        top:0px;
+        left:120px;
+    }
+</style>

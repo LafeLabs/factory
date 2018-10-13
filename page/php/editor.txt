@@ -41,6 +41,7 @@ EGO DEATH:
     <div class = "php file">php/text2php.txt</div>
     <div class = "php file">php/makenewpage.txt</div>
     <div class = "php file">php/deletepage.txt</div>
+    <div class = "php file">php/copyremotepage.txt</div>
     <div class = "php file">php/meme2page.txt</div>
 
 </div>

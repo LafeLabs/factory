@@ -39,7 +39,9 @@ echo $listtext;
     </tr>
 </table>
 
-<div class = "button" id = "delete">! DELETE ALL IMAGES !</div>
+<div class = "button" id = "delete">
+    <img style = "width:80px" src = "../factory_symbols/delete.svg"/>
+</div>
 
 
 <form action="upload.php" method="post" enctype="multipart/form-data">
@@ -63,12 +65,15 @@ echo $listtext;
     }
     
     document.getElementById("delete").onclick = function(){
-        var httpc = new XMLHttpRequest();
-        var url = "deleteallimages.php";        
-        httpc.open("POST", url, true);
-        httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
-        httpc.send();//
-        document.getElementById("imagescroll").innerHTML = "";
+        if (confirm("Really delete all images? Click OK to confirm, cancel to NOT delete ALL images.")) {
+            var httpc = new XMLHttpRequest();
+            var url = "deleteallimages.php";        
+            httpc.open("POST", url, true);
+            httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+            httpc.send();//
+            document.getElementById("imagescroll").innerHTML = "";
+            
+        }
     }
     
 </script>

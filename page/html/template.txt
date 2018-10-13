@@ -3,10 +3,10 @@
 <head>
 <title></title>
 </head>
+<body>
 <div id = "memedatadiv" style = "display:none">
 <!--<memedata/>-->    
 </div>
-<body>
 <div id = "imagebox">
     <img id = "baseimage"/>
 </div>
