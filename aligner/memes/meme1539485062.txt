@@ -1,0 +1,19 @@
+{
+    "imgurl": "http://localhost:8000/images/images/image9.png",
+    "topimages": [
+        {
+            "url": "http://localhost:8000/images/images/images.svg",
+            "xoverw": 0.5124113475177305,
+            "yoverw": 0.44893617021276594,
+            "woverw": 0.06702127659574468,
+            "angle": 16.9646
+        },
+        {
+            "url": "http://localhost:8000/images/images/page.svg",
+            "xoverw": 0.6365248226950354,
+            "yoverw": 0.11560283687943262,
+            "woverw": 0.09539007092198581,
+            "angle": 0
+        }
+    ]
+}
