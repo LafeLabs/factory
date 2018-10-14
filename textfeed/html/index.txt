@@ -1,0 +1,296 @@
+<div id = "navbar">
+    <table id = "secondlinks">
+        <tr>
+            <td>
+    <a href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+            </td>
+            <td>
+    <a href = "../textfeed/"><img style = "border-radius:15px;background-color:#50ff50" src = "../factory_symbols/textfeed.svg"/></a>       
+            </td>
+            <td>
+    <a  href = "../symbol/"><img src = "../factory_symbols/symbol2.svg"/></a>              </td>
+        </tr>
+    </table>        
+            
+    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>
+        
+
+
+    <table id = "linktable">
+    <tr>
+        <td >
+            <a href = "../images/">
+                <img src = "../factory_symbols/images.svg"/>    
+            </a>
+        </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../combiner/">
+                <img style = "transform:rotate(-90deg)" src = "../factory_symbols/combiner.svg"/>
+            </a>
+        </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../aligner/">
+                <img src = "../factory_symbols/aligner.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/meme2page.php">
+                <img src = "../factory_symbols/meme2map.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/">
+                <img src = "../factory_symbols/maplist.svg"/>
+            </a>
+        </td>
+    </tr>
+    </table>  
+</div>
+
+<div id = "scrolldiv"  class = "mathjax"></div>
+
+
+<img id = "leftsidebar" src = "../factory_symbols/sidebar.svg"/>
+<img id = "rightsidebar" src = "../factory_symbols/sidebar.svg"/>
+
+
+<div id = "actionbar">
+<table id = "actiontable">
+    <tr>
+        <td class = "button" id = "wordbutton">ENTER WORDS:</td>
+        <td><input id = "wordsinput"/></td>
+    </tr>
+</table>
+    
+<div class = "button" id = "delete">
+    <img style = "width:80px" src = "../factory_symbols/delete.svg"/>
+</div>
+
+</div>
+
+<script>
+
+document.getElementById("wordsinput").select();
+
+
+init();
+function init(){
+    mathIndex = 0;
+    htmldatadivs = document.getElementById("datadiv").getElementsByTagName("feedbox");
+    for(var index = 0;index < htmldatadivs.length;index++){
+        var newp = document.createElement("p");
+        newp.className = "textp";
+        newp.innerHTML = htmldatadivs[index].innerHTML;
+        document.getElementById("scrolldiv").appendChild(newp);
+    }
+    MathJax.Hub.Typeset();//tell Mathjax to update the math
+}
+
+document.getElementById("wordsinput").onchange = function(){
+    
+
+    data = encodeURIComponent(this.value);
+    timestamp = Math.round((new Date().getTime())/1000);
+    var httpc = new XMLHttpRequest();
+    var url = "filesaver.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send("data=" + data + "&filename=" + "text/text" + timestamp + ".txt");//send text to filesaver.php
+    var httpc = new XMLHttpRequest();
+
+    var oldhtml = document.getElementById("datadiv").innerHTML;
+    var newhtml = "\n<feedbox id = \"html" + timestamp.toString() + "\">\n" + this.value + "\n</feedbox>\n" + oldhtml;
+    document.getElementById("datadiv").innerHTML = newhtml;
+    
+    htmldatadivs = document.getElementById("datadiv").getElementsByTagName("feedbox");
+    mathIndex = 0;
+
+    var newp = document.createElement("P");
+    newp.innerHTML = this.value;
+    newp.className = "textp";
+    
+    document.getElementById("scrolldiv").appendChild(newp);
+    
+    MathJax.Hub.Typeset();//tell Mathjax to update the math
+    this.value = "";
+}
+
+document.getElementById("wordsinput").onkeydown = function(e) {
+    charCode = e.keyCode || e.which;
+    if(charCode == 050){
+        this.value = htmldatadivs[mathIndex].innerHTML;
+        mathIndex++;
+        if(mathIndex > htmldatadivs.length - 1){
+            mathIndex = 0;
+        }
+    }
+    if(charCode == 046){
+        this.value = htmldatadivs[mathIndex].innerHTML;
+        mathIndex--;
+        if(mathIndex < 0){
+            mathIndex = htmldatadivs.length - 1;
+        }
+    }
+}
+document.getElementById("wordbutton").onclick = function(){
+        document.getElementById("wordsinput").value = htmldatadivs[mathIndex].innerHTML;
+        mathIndex++;
+        if(mathIndex > htmldatadivs.length - 1){
+            mathIndex = 0;
+        }
+}
+
+document.getElementById("delete").onclick = function(){
+    var httpc = new XMLHttpRequest();
+    var url = "deletealltext.php";        
+    httpc.open("POST", url, true);
+    httpc.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=utf-8");
+    httpc.send();//
+    document.getElementById("datadiv").innerHTML = "";
+    document.getElementById("scrolldiv").innerHTML = "";
+    document.getElementById("wordsinput").value = "";
+    
+}
+
+</script>
+
+<style>
+    body{
+        font-family:Helvetica;
+        font-size:36px;
+        overflow:hidden;
+    }
+    .textp{
+     text-align:center;   
+    }
+    .button{
+        cursor:pointer;
+        font-size:22px;
+        padding-left:1em;
+        padding-right:1em;
+        padding-top:10px;
+        padding-bottom:10px;
+    }
+    .button:hover{
+        background-color:green;
+    }
+    .button:active{
+        background-color:yellow;
+    }
+    #wordsinput{
+        width:25em;
+        font-size:22px;
+    }
+    #wordsinputbox{
+        position:absolute;
+        top:3em;
+        left:1em;
+    }
+
+    #scrolldiv{
+        position:absolute;
+        top:115px;
+        bottom:150px;
+        left:50px;
+        right:50px;
+        border-left:solid;
+        border-right:solid;
+        overflow:scroll;
+    }
+    a img{
+        height:60px;
+    }
+#navbar{
+    position:absolute;
+    left:0px;
+    right:0px;
+    top:0px;
+    height:100px;
+    border-bottom:solid;
+    border-width:15px;
+    border-color:blue;
+}
+
+#leftsidebar{
+    position:absolute;
+    top:115px;
+    left:0px;
+    bottom:150px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;   
+    z-index:-1;
+}
+
+#rightsidebar{
+    position:absolute;
+    top:115px;
+    bottom:150px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    right:0px;
+    overflow:hidden;    
+}
+#actionbar{
+    position:absolute;
+    bottom:0px;
+    height:100px;
+    left:0px;
+    right:0px;
+    overflow:hidden;
+    background-color:white;
+    border-top:solid;
+    border-width:15px;
+    border-color:blue;
+}
+    #linktable img{
+        height:60px;
+    }
+    #linktable{
+        border:solid;
+        margin:auto;
+        border-radius:15px;
+    }
+    #editlink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        right:0px;
+        height:50px;
+        width:80px;
+    }
+    #copylink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        left:0px;
+        height:50px;
+        width:80px;
+    }
+    #secondlinks{
+        position:absolute;
+        top:0px;
+        left:0px;
+    }
+#delete{
+    color:red;
+    border-color:red;
+    font-size:24px;
+    font-family:Impact;
+    position:absolute;
+    right:0px;
+    top:0px;    
+}
+#actiontable{
+    position:absolute;
+    left:0px;
+    
+}
+
+</style>
