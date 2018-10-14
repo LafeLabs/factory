@@ -23,7 +23,9 @@ echo $listtext;
 
 ?></div>
 <?php
+
 echo file_get_contents("html/index.txt");
+
 ?>
 </body>
 </html>

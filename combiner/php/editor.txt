@@ -29,7 +29,7 @@ EGO DEATH:
 <div id="maineditor" contenteditable="true" spellcheck="false"></div>
 <div id = "filescroll">
 
-    <div class = "html file">html/feed.txt</div>
+    <div class = "html file">html/index.txt</div>
     
     <div class = "php file">php/index.txt</div>
     <div class = "php file">php/editor.txt</div>
@@ -37,10 +37,12 @@ EGO DEATH:
     <div class = "php file">php/fileloader.txt</div>
     <div class = "php file">php/text2php.txt</div>
 
+    <div class = "json file">json/imagelist.txt</div>
+
 </div>
 
 <script>
-currentFile = "html/feed.txt";
+currentFile = "html/index.txt";
 var httpc = new XMLHttpRequest();
 httpc.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {

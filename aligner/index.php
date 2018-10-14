@@ -34,12 +34,5 @@ echo file_get_contents("../combiner/json/imagelist.txt");
 <?php
 echo file_get_contents("html/feed.txt")
 ?>
-<style>
-
-body{
-    font-size:1.5em;
-    font-family:helvetica;
-}
-</style>
 </body>
 </html>

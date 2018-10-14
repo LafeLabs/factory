@@ -1,41 +1,79 @@
 <script src = "https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
 
-<table id = "linktable">
 
+<div id = "navbar">
+    <table id = "secondlinks">
+        <tr>
+            <td>
+    <a href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+            </td>
+            <td>
+    <a href = "../linkfeed/"><img src = "../factory_symbols/linkfeed.svg"/></a>       
+            </td>
+            <td>
+    <a href = "../symbol/"><img src = "../factory_symbols/symbol2.svg"/></a>       
+            </td>
+        </tr>
+    </table>        
+
+    <table id = "linktable">
     <tr>
-        <td class = "button" id = "publish">PUBLISH</td>
-        <td>
-            <a href = "../combiner/"><img style = "width:100px" src = "../factory_symbols/combiner.svg"></a>
+        <td >
+            <a href = "../images/">
+                <img src = "../factory_symbols/images.svg"/>    
+            </a>
         </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"></a>
+            <a href = "../combiner/">
+                <img  style = "transform:rotate(-90deg)" src = "../factory_symbols/combiner.svg"/>
+            </a>
         </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
+            <a href = "../aligner/">
+                <img style = "border-radius:15px;background-color:#50ff50;" src = "../factory_symbols/aligner.svg"/>
+            </a>
         </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"></a>
+            <a href = "../page/meme2page.php">
+                <img src = "../factory_symbols/meme2map.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/">
+                <img src = "../factory_symbols/maplist.svg"/>
+            </a>
         </td>
     </tr>
-</table>
-
+    </table>  
+    
+    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>
+</div>
 
     
 <div id = "imagebox">
-<img id = "image0"/>
-</div>
+    <img id = "image0"/>
+    <img id = "rightsidebar" src = "../factory_symbols/sidebar.svg"/>
 
-<div id = "scale">SCALE</div>
-<div id = "rotate">ROTATE</div>
+</div>
+<div id = "actiondiv">
+    <div id = "scale">SCALE</div>
+    <div id = "rotate">ROTATE</div>
+
+    <div class = "button" id = "publish">PUBLISH</div>
+
+</div>
 
 <script>
 
 imageslist = JSON.parse(document.getElementById("imagesdatadiv").innerHTML);
 
-document.getElementById("image0").style.height = (innerHeight - 200).toString() + "px";
+document.getElementById("image0").style.height = (innerHeight - 234).toString() + "px";
 
 document.getElementById("image0").src = imageslist[0];
-
 
 
 document.getElementById("image0").onload = function(){
@@ -134,6 +172,21 @@ document.getElementById("publish").onclick = function(){
 
 </script>
 <style>
+body{
+    font-size:1.5em;
+    font-family:helvetica;
+}
+#rightsidebar{
+    position:absolute;
+    top:0px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;    
+    z-index:-1;
+    right:0px;
+}
+
 .topimage{
     position:absolute;
     z-index:1;
@@ -141,9 +194,9 @@ document.getElementById("publish").onclick = function(){
 #imagebox{
     position:absolute;
     left:0px;
-    top:0px;
+    top:115px;
     right:0px;
-    bottom:0px;
+    bottom:115px;
     border:solid;
     overflow:hidden;
 }
@@ -151,18 +204,33 @@ document.getElementById("publish").onclick = function(){
     position:absolute;
     left:0px;
     top:0px;
+    height:100%;
+    border-right:solid;
     display:block;
 }
 #linktable{
-    z-index:2;
-    position:absolute;
-    right:0px;
-    bottom:0px;
+    border:solid;
+    margin:auto;
+    border-radius:15px;
 }
+    #linktable img{
+        height:60px;
+    }
+#editlink{
+    position:absolute;
+    z-index:1;
+    top:0px;
+    right:0px;
+}
+
+#editlink img{
+    width:60px;
+}
+
 #rotate{
     position:absolute;
     right:50%;
-    height:100px;
+    height:50px;
     bottom:0px;
     left:0px;
     border:solid;
@@ -170,18 +238,57 @@ document.getElementById("publish").onclick = function(){
 #scale{
     position:absolute;
     right:50%;
-    height:100px;
-    bottom:100px;
+    height:50px;
+    bottom:50px;
     left:0px;
     border:solid;
 }
-
+#navbar{
+    position:absolute;
+    left:0px;
+    top:0px;
+    right:0px;
+    overflow:hidden;
+    height:100px;
+    border-bottom:solid;
+    border-width:15px;
+    border-color:blue;
+}
+#actiondiv{
+    position:absolute;
+    left:0px;
+    right:0px;
+    bottom:0px;
+    height:100px;
+    text-align:center;
+    border-top:solid;
+    border-color:blue;
+    border-width:1px;
+    background-color:white;
+}
+#secondlinks{
+    position:absolute;
+    top:0px;
+    left:0px;
+}
+    #secondlinks img{
+        height:60px;
+    }
 .button{
     cursor:pointer;
     border:solid;
     border-radius:5px;
+    text-align:center;
+    
 }
 .button:active{
     background-color:yellow;
+}
+#publish{
+    position:absolute;
+    right:0px;
+    bottom:0px;
+    width:6em;
+    height:80px;
 }
 </style>

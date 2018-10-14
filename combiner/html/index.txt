@@ -1,35 +1,61 @@
-
 <div id = "navbar">
-<table id = "linktable">
-    <tr>
-        <td>
-            <a href = "../curve/"><img style = "width:80px" src = "../factory_symbols/curve.svg"/></a>
-        </td>
-        <td>
-            <a href = "../symbol/"><img style = "width:80px" src = "../factory_symbols/symbol2.svg"/></a>
-        </td>
-        <td>
-            <a href = "../textfeed/"><img style = "width:80px" src = "../factory_symbols/textfeed.svg"/></a>
-        </td>        
-        <td>
-            <a href = "../images/"><img style = "width:80px" src = "../factory_symbols/images.svg"/></a>
-        </td>
 
+
+    <table id = "secondlinks">
+        <tr>
+            <td>
+    <a href = "../"><img src = "../factory_symbols/factory.svg"/></a>
+            </td>
+            <td>
+    <a href = "../textfeed/"><img src = "../factory_symbols/textfeed.svg"/></a>       
+            </td>
+            <td>
+    <a  href = "../curve/"><img src = "../factory_symbols/curve.svg"/></a>
+            </td>
         <td>
-            <a href = "../aligner/"><img style = "width:80px" src = "../factory_symbols/aligner.svg"/></a>
+    <a  href = "../symbol/"><img src = "../factory_symbols/symbol2.svg"/></a>
+            </td>
+        </tr>
+    </table>        
+
+    <table id = "linktable">
+    <tr>
+        <td >
+            <a href = "../images/">
+                <img src = "../factory_symbols/images.svg"/>    
+            </a>
         </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "../aligner/memefeed.php"><img style = "width:80px" src = "../factory_symbols/feed.svg"/></a>
+            <a href = "../combiner/">
+                <img  style = "border-radius:15px;background-color:#50ff50;transform:rotate(-90deg)" src = "../factory_symbols/combiner.svg"/>
+            </a>
         </td>
+        <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "editor.php"><img style = "width:80px" src = "../factory_symbols/editor.svg"></a>
+            <a href = "../aligner/">
+                <img src = "../factory_symbols/aligner.svg"/>
+            </a>
         </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
         <td>
-            <a href = "../"><img style = "width:80px" src = "../factory_symbols/factory.svg"/></a>
+            <a href = "../page/meme2page.php">
+                <img src = "../factory_symbols/meme2map.svg"/>
+            </a>
+        </td>
+            <td style = "width:10px"><img src= "../factory_symbols/smallarrow.svg"></td>
+        <td>
+            <a href = "../page/">
+                <img src = "../factory_symbols/maplist.svg"/>
+            </a>
         </td>
     </tr>
-</table>    
+    </table>  
+    
+    <a id = "editlink" href = "editor.php"><img src = "../factory_symbols/editor.svg"/></a>
+    
 </div>
+
 <div id = "actiondiv">
 <table>
     <tr>
@@ -44,11 +70,18 @@
 </div>
 <div id = "imagesfeed">
 </div>
-<img id = "arrowimg" src = "../factory_symbols/arrow.svg"/>
+
+    <img id = "arrowimg" src = "../factory_symbols/smallarrow.svg"/>
 <div id = "outfeed">
 </div>
 
+<img id = "leftsidebar" src = "../factory_symbols/sidebar.svg"/>
+<img id = "rightsidebar" src = "../factory_symbols/sidebar.svg"/>
+
 <script>
+    
+    document.getElementById("arrowimg").style.left = (0.5*innerWidth - 50).toString() + "px";
+    document.getElementById("arrowimg").style.top = (0.5*innerHeight - 150).toString() + "px";
 
     imagelist  = document.getElementById("imagesdatadiv").innerHTML.split(",");
     for(var index = 0;index < imagelist.length;index++){
@@ -190,6 +223,22 @@
     }
 </script>
 <style>
+#editlink{
+        position:absolute;
+        z-index:1;
+        top:0px;
+        right:0px;
+    
+}
+#editlink img{
+    width:60px;
+}
+body{
+    font-size:1.5em;
+    font-family:helvetica;
+    overflow:hidden;
+}
+
 #extinputtable{
     position:absolute;
     left:1em;
@@ -203,8 +252,8 @@
         position:absolute;
         width:25%;
         left:5%;
-        top:200px;
-        bottom:1em;
+        top:115px;
+        bottom:115px;
         overflow:scroll;
         border:solid;
     }
@@ -224,16 +273,14 @@
     }
     #arrowimg{
         position:absolute;
-        top:25%;
-        left:35%;
-        width:30%;
+        width:100px;
     }
     #outfeed{
         position:absolute;
         width:25%;
         right:5%;
-        top:200px;
-        bottom:1em;
+        top:115px;
+        bottom:115px;
         overflow:scroll;
         border:solid;
     }
@@ -251,9 +298,15 @@
         background-color:yellow;
         border-width:5px;
     }
-#linktable{
-    
-}
+    #linktable img{
+        height:60px;
+    }
+    #linktable{
+        border:solid;
+        margin:auto;
+        border-radius:15px;
+        
+    }
 #navbar{
     position:absolute;
     left:0px;
@@ -261,13 +314,51 @@
     right:0px;
     overflow:hidden;
     height:100px;
+    border-bottom:solid;
+    border-width:15px;
+    border-color:blue;
 }
 #actiondiv{
     position:absolute;
     left:0px;
-    top:100px;
     right:0px;
+    bottom:0px;
     height:100px;
     text-align:center;
+    border-top:solid;
+    border-color:blue;
+    border-width:15px;
+    background-color:white;
 }
+    #secondlinks{
+        position:absolute;
+        top:0px;
+        left:0px;
+    }
+    #secondlinks img{
+        height:60px;
+    }
+    
+#leftsidebar{
+    position:absolute;
+    top:115px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;   
+    z-index:-1;
+    left:0px;
+}
+
+#rightsidebar{
+    position:absolute;
+    top:115px;
+    width:50px;
+    border-left:solid;
+    border-right:solid;
+    overflow:hidden;    
+    z-index:-1;
+    right:0px;
+}
+
 </style>

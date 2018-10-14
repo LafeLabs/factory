@@ -82,6 +82,7 @@
 	{
 		"path":"page/html",
 		"files":[
+			"meme2page.txt",
 			"page.txt",
 			"template.txt"
 		]
@@ -288,7 +289,7 @@
 	{
 		"path":"combiner/html",
 		"files":[
-			"feed.txt"
+			"index.txt"
 		]
 	},
 	{
